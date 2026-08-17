@@ -1,0 +1,1354 @@
+/* ==========================================================
+   FAR OVERSEAS
+   BRAND STANDARD / TRUST SECTION
+   ========================================================== */
+
+.brand-standard {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #082f31;
+}
+
+
+/* ==========================================================
+   CERTIFICATION HEADER
+   ========================================================== */
+
+.brand-standard__cert-header {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.brand-standard__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.brand-standard__eyebrow span {
+  width: 35px;
+  height: 1px;
+  flex: 0 0 35px;
+  background: #55a88f;
+}
+
+.brand-standard__eyebrow p {
+  margin: 0;
+  color: #087f78;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.brand-standard__cert-text {
+  margin: 0.9rem 0 0;
+  color: #607072;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+
+/* ==========================================================
+   CERTIFICATION LOGOS
+   ========================================================== */
+
+.brand-standard__certifications {
+  width: min(1280px, 92%);
+  margin: 1.3rem auto 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+.brand-standard__cert {
+  width: 10%;
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-right: 1px solid #e7e8df;
+  box-sizing: border-box;
+}
+
+.brand-standard__cert:first-child {
+  border-left: none;
+}
+
+.brand-standard__cert:last-child {
+  border-right: none;
+}
+
+.brand-standard__cert img {
+  display: block;
+
+  width: auto;
+  height: 55px;
+  max-width: 100px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.brand-standard__cert:hover img {
+  transform: scale(1.08);
+}
+
+
+/* ==========================================================
+   TRUST PILLARS
+   ========================================================== */
+
+.brand-standard__trust {
+  position: relative;
+
+  width: min(1360px, 90%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 1.5rem 0;
+
+  background: #f8f7f1;
+  border-radius: 20px;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.trust-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.trust-card:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 10%;
+  bottom: 10%;
+
+  width: 1px;
+
+  background: #dddccf;
+}
+
+.trust-card__icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 0.7rem;
+
+  border: 1px solid #dddccf;
+  border-radius: 50%;
+
+  background: #fffdf8;
+
+  box-sizing: border-box;
+}
+
+.trust-card__icon svg {
+  width: 25px !important;
+  height: 25px !important;
+
+  fill: none;
+  stroke: #0b4c4c;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trust-card h3 {
+  margin: 0;
+
+  color: #073538;
+
+  font-family: var(--font-display, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.trust-card p {
+  max-width: 190px;
+
+  margin: 0.45rem 0 0;
+
+  color: #617073;
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   BRAND PROMISE AREA
+   ========================================================== */
+
+.brand-standard__promise {
+  position: relative;
+  width: 100%;
+
+  display: grid;
+
+  /* IMAGE | PROMISE CARD | CONTENT */
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(220px, 0.65fr)
+    minmax(0, 1.35fr);
+
+  align-items: center;
+  gap: 2.5rem;
+
+  min-height: 520px;
+  margin-top: 1.5rem;
+  padding: 4rem 5vw 5rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      #f5f6ee 0%,
+      #fbfaf4 50%,
+      #f7f7ef 100%
+    );
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BLACK PEPPER IMAGE
+   ========================================================== */
+
+/* ==========================================================
+   BLACK PEPPER IMAGE
+   ========================================================== */
+
+.brand-standard__promise-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  align-self: stretch;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: stretch;
+
+  border-radius: 0;
+
+  box-sizing: border-box;
+
+  /* Pull image toward the left edge */
+  margin-left: -5vw;
+
+  width: calc(100% + 5vw);
+}
+
+
+/* Image itself */
+
+.brand-standard__promise-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  box-sizing: border-box;
+}
+
+
+/* Keep the soft fade on the right */
+
+.brand-standard__promise-image::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(245, 246, 238, 0) 50%,
+      #f5f6ee 100%
+    );
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   DESKTOP
+   ========================================================== */
+
+@media (min-width: 901px) {
+
+  .brand-standard__promise-image {
+    align-self: stretch;
+
+    height: 100%;
+    min-height: 0;
+
+    margin-left: -5vw;
+    width: calc(100% + 5vw);
+  }
+
+  .brand-standard__promise-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .brand-standard__promise-image {
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+
+    margin-left: 0;
+  }
+
+  .brand-standard__promise-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+
+  .brand-standard__promise-image {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+
+    margin-left: 0;
+  }
+
+  .brand-standard__promise-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+}
+/* ==========================================================
+   PROMISE CARD
+   ========================================================== */
+
+.brand-standard__promise-card {
+  position: relative;
+  z-index: 4;
+
+  width: 100%;
+  max-width: 270px;
+
+  padding: 2.4rem 2rem;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid rgba(8, 47, 49, 0.07);
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 35px rgba(8, 47, 49, 0.08);
+
+  box-sizing: border-box;
+}
+
+
+/* Small label */
+
+.promise-label {
+  margin: 0 0 1.15rem;
+
+  color: #087f78;
+
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+
+/* Main heading */
+
+.brand-standard__promise-card h2 {
+  margin: 0;
+
+  color: #073538;
+
+  font-family:
+    var(--font-display),
+    Georgia,
+    serif;
+
+  font-size: clamp(2rem, 2.5vw, 2.65rem);
+
+  line-height: 1.08;
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* Green divider */
+
+.promise-line {
+  width: 32px;
+  height: 2px;
+
+  margin: 1.15rem 0;
+
+  background: #15947e;
+}
+
+
+/* Description */
+
+.brand-standard__promise-card > p:last-child {
+  margin: 0;
+
+  color: #617073;
+
+  font-family:
+    var(--font-body),
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+
+/* ==========================================================
+   DESKTOP
+   ========================================================== */
+
+@media (min-width: 901px) {
+
+  .brand-standard__promise-card {
+    max-width: 270px;
+    justify-self: center;
+  }
+
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+
+  .brand-standard__promise-card {
+    max-width: 245px;
+
+    padding: 2rem 1.5rem;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .brand-standard__promise-card {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 2.2rem 1.8rem;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .brand-standard__promise-card {
+    width: 92%;
+    max-width: none;
+
+    padding: 2rem 1.5rem;
+  }
+
+  .brand-standard__promise-card h2 {
+    font-size: 2rem;
+  }
+
+}
+.promise-label {
+  margin: 0 0 1.2rem;
+
+  color: #087f78;
+
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.promise-label span {
+  margin-left: 0.3rem;
+}
+
+.brand-standard__promise-card h2 {
+  margin: 0;
+
+  color: #073538;
+
+  font-family: var(--font-display, Georgia, serif);
+
+  font-size: clamp(2rem, 2.7vw, 2.8rem);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+}
+
+.promise-line {
+  width: 32px;
+  height: 2px;
+
+  margin: 1.2rem 0;
+
+  background: #15947e;
+}
+
+.brand-standard__promise-card > p:last-child {
+  margin: 0;
+
+  color: #617073;
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   RIGHT SIDE CONTENT
+   ========================================================== */
+
+.brand-standard__promise-content {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.promise-eyebrow {
+  margin: 0 0 0.8rem;
+
+  color: #087f78;
+
+  font-family: var(--font-mono, monospace);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.brand-standard__promise-content h2 {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: #073538;
+
+  font-family: var(--font-display, Georgia, serif);
+
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+
+  line-height: 1.08;
+
+  font-weight: 700;
+}
+
+.promise-description {
+  max-width: 620px;
+
+  margin: 1.2rem 0 1.5rem;
+
+  color: #607072;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   METRICS
+   ========================================================== */
+
+.promise-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.3rem;
+}
+.promise-metric {
+  flex: 0 0 auto;
+  width: 150px;
+  min-height: 118px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.9rem 0.6rem;
+  text-align: center;
+
+  border: 1px solid #d5ddd4;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.35);
+  box-sizing: border-box;
+
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promise-metric:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 25px rgba(8, 47, 49, 0.07);
+}
+
+
+
+/* IMPORTANT:
+   Prevent the metric SVGs from becoming huge.
+*/
+
+.metric-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin-bottom: 0.5rem;
+
+  box-sizing: border-box;
+}
+
+.metric-icon svg {
+  display: block !important;
+
+  width: 32px !important;
+  height: 32px !important;
+
+  min-width: 32px !important;
+  min-height: 32px !important;
+
+  max-width: 32px !important;
+  max-height: 32px !important;
+
+  fill: none !important;
+
+  stroke: #0b4c4c !important;
+
+  stroke-width: 1.7 !important;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  overflow: visible;
+}
+
+/* Premium metric icon colors */
+.promise-metric:nth-child(1) .metric-icon svg {
+  stroke: #188c62 !important;
+}
+
+.promise-metric:nth-child(2) .metric-icon svg {
+  stroke: #0f6f68 !important;
+}
+
+.promise-metric:nth-child(3) .metric-icon svg {
+  stroke: #17805f !important;
+}
+
+.promise-metric:nth-child(4) .metric-icon svg {
+  stroke: #8b6f2f !important;
+}
+
+.promise-metric strong {
+  display: block;
+
+  margin: 0;
+
+  color: #073538;
+
+  font-family: var(--font-display, sans-serif);
+
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.promise-metric span {
+  display: block;
+
+  margin-top: 0.35rem;
+
+  color: #516365;
+
+  font-size: 0.67rem;
+
+  line-height: 1.3;
+}
+
+/* ==========================================================
+   BRAND STANDARD → ABOUT
+   CLEAN ORGANIC TRANSITION
+   ========================================================== */
+
+.brand-standard__bottom-wave {
+    display: none !important;
+}
+
+.brand-standard {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 55px;
+    overflow: visible;
+    z-index: 2;
+}
+
+/* Remove any old section border */
+.brand-standard + section {
+    margin-top: 0 !important;
+    border-top: none !important;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================================
+   SOFT CURVED SEPARATOR
+   ========================================================== */
+
+.brand-standard::after {
+    content: "";
+    position: absolute;
+
+    left: -5%;
+    bottom: -45px;
+
+    width: 110%;
+    height: 75px;
+
+    background: #f8f7f1;
+
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+
+    box-shadow:
+        0 8px 20px rgba(8, 47, 49, 0.025);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   SUBTLE TEAL CURVE
+   ========================================================== */
+
+.brand-standard::before {
+    content: "";
+
+    position: absolute;
+
+    left: -5%;
+    bottom: -22px;
+
+    width: 110%;
+    height: 45px;
+
+    border-top: 2px solid rgba(8, 127, 120, 0.35);
+
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+
+    .brand-standard {
+        padding-bottom: 35px;
+    }
+
+    .brand-standard::after {
+        bottom: -28px;
+        height: 50px;
+    }
+
+    .brand-standard::before {
+        bottom: -14px;
+        height: 30px;
+        border-width: 1px;
+    }
+}
+
+
+/* ==========================================================
+   CLEAN PROMISE LAYOUT — TABLET / SMALL LAPTOP
+   ========================================================== */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+
+  .brand-standard__promise {
+    grid-template-columns:
+      minmax(0, 0.95fr)
+      minmax(190px, 0.65fr)
+      minmax(0, 1.2fr);
+
+    gap: 1.5rem;
+    padding: 3.5rem 3vw 4rem;
+  }
+
+  .brand-standard__promise-image {
+    height: 360px;
+    min-height: 360px;
+  }
+
+  .brand-standard__promise-card {
+    max-width: 240px;
+    padding: 2rem 1.4rem;
+  }
+
+  .promise-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} 
+
+
+/* ==========================================================
+   CERTIFICATIONS — TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .brand-standard__certifications {
+    width: 94%;
+    overflow-x: auto;
+  }
+
+  .brand-standard__cert {
+    flex: 0 0 100px;
+  }
+}
+
+
+/* ==========================================================
+   CERTIFICATIONS + TRUST — MOBILE
+   ========================================================== */
+
+@media (max-width: 640px) {
+
+  .brand-standard__cert-header {
+    padding: 2.5rem 1rem 1.2rem;
+  }
+
+  .brand-standard__eyebrow {
+    gap: 0.6rem;
+  }
+
+  .brand-standard__eyebrow span {
+    width: 20px;
+    flex-basis: 20px;
+  }
+
+  .brand-standard__eyebrow p {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brand-standard__cert-text {
+    font-size: 0.82rem;
+  }
+
+  .brand-standard__certifications {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 2.5rem;
+    padding-inline: 1rem;
+  }
+
+  .brand-standard__cert {
+    flex: 0 0 90px;
+    min-height: 60px;
+  }
+
+  .brand-standard__cert img {
+    height: 45px;
+    max-width: 80px;
+  }
+
+  .brand-standard__trust {
+    width: 92%;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 18px;
+  }
+
+  .trust-card {
+    padding: 1rem 0.7rem;
+  }
+
+  .trust-card p {
+    max-width: 150px;
+    font-size: 0.72rem;
+  }
+
+  .brand-standard__bottom-wave {
+    height: 70px;
+  }
+}
+
+
+/* ==========================================================
+   VERY SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 400px) {
+
+  .brand-standard__trust {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-card {
+    min-height: 155px;
+  }
+
+  .trust-card:not(:last-child)::after {
+    display: block !important;
+    top: auto;
+    right: 12%;
+    bottom: 0;
+    left: 12%;
+    width: auto;
+    height: 1px;
+  }
+
+  .trust-card:last-child::after {
+    display: none !important;
+  }
+
+  .promise-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================
+   FAR OVERSEAS — PREMIUM TRUST PILLARS
+   ========================================================== */
+
+.brand-standard__trust {
+  width: min(1360px, 92%);
+  padding: 2.2rem 0;
+
+  background: linear-gradient(
+    135deg,
+    #fbfaf5 0%,
+    #f3f1e8 100%
+  );
+
+  border: 1px solid rgba(8, 47, 49, 0.06);
+  border-radius: 22px;
+
+  box-shadow: 0 10px 30px rgba(8, 47, 49, 0.055);
+}
+
+
+/* Trust cards */
+
+.brand-standard__trust .trust-card {
+  min-height: 195px;
+  padding: 1.25rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* Dividers */
+
+.brand-standard__trust .trust-card:not(:last-child)::after {
+  top: 12%;
+  bottom: 12%;
+  right: 0;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #d5d4c8 20%,
+    #d5d4c8 80%,
+    transparent
+  );
+}
+
+
+/* Premium icons */
+
+.brand-standard__trust .trust-card__icon {
+  position: relative;
+
+  width: 72px;
+  height: 72px;
+
+  margin-bottom: 1.05rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(8, 127, 120, 0.18);
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #eef8f4 100%
+    );
+
+  box-shadow:
+    0 7px 20px rgba(8, 47, 49, 0.08),
+    inset 0 0 0 5px rgba(255, 255, 255, 0.65);
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Outer ring */
+
+.brand-standard__trust .trust-card__icon::before {
+  content: "";
+
+  position: absolute;
+  inset: -6px;
+
+  border: 1px solid rgba(8, 127, 120, 0.10);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* Hide decorative dot */
+
+.brand-standard__trust .trust-card__icon::after {
+  display: none !important;
+}
+
+
+/* SVG icons */
+
+.brand-standard__trust .trust-card__icon svg {
+  display: block !important;
+
+  width: 36px !important;
+  height: 36px !important;
+
+  min-width: 36px !important;
+  min-height: 36px !important;
+
+  max-width: 36px !important;
+  max-height: 36px !important;
+
+  fill: none !important;
+
+  stroke: #087f78 !important;
+  stroke-width: 1.8 !important;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  overflow: visible;
+}
+
+
+/* Icon accents */
+
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
+  border-color: rgba(8, 127, 120, 0.24);
+}
+
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon svg {
+  stroke: #087f78 !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
+  border-color: rgba(37, 117, 139, 0.24);
+  background: linear-gradient(145deg, #ffffff, #eef6f9);
+}
+
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon svg {
+  stroke: #25758b !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
+  border-color: rgba(83, 145, 105, 0.24);
+  background: linear-gradient(145deg, #ffffff, #eff7ee);
+}
+
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon svg {
+  stroke: #579267 !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
+  border-color: rgba(170, 139, 72, 0.26);
+  background: linear-gradient(145deg, #ffffff, #faf5e7);
+}
+
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon svg {
+  stroke: #aa8b48 !important;
+}
+
+
+/* Trust headings */
+
+.brand-standard__trust .trust-card h3 {
+  margin: 0;
+
+  color: #073538;
+
+  font-family:
+    var(--font-display),
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1.08rem;
+  font-weight: 700;
+
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+
+/* Trust descriptions */
+
+.brand-standard__trust .trust-card p {
+  max-width: 235px;
+
+  margin: 0.5rem 0 0;
+
+  color: #607072;
+
+  font-family:
+    var(--font-body),
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.84rem;
+  font-weight: 400;
+
+  line-height: 1.65;
+}
+
+
+/* Hover */
+
+.brand-standard__trust .trust-card:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.brand-standard__trust .trust-card:hover .trust-card__icon {
+  transform: translateY(-5px) scale(1.04);
+
+  box-shadow:
+    0 12px 28px rgba(8, 47, 49, 0.12),
+    inset 0 0 0 5px rgba(255, 255, 255, 0.75);
+}
+
+
+/* Trust tablet */
+
+@media (max-width: 900px) {
+
+  .brand-standard__trust {
+    width: 94%;
+    padding: 1.5rem 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-standard__trust .trust-card {
+    min-height: 180px;
+  }
+
+  .brand-standard__trust .trust-card__icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .brand-standard__trust .trust-card__icon svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+
+/* Trust mobile */
+
+@media (max-width: 640px) {
+
+  .brand-standard__trust {
+    width: 92%;
+    padding: 0.8rem 0;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 18px;
+  }
+
+  .brand-standard__trust .trust-card {
+    min-height: 165px;
+    padding: 1rem 0.7rem;
+  }
+
+  .brand-standard__trust .trust-card__icon {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 0.8rem;
+  }
+
+  .brand-standard__trust .trust-card__icon svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .brand-standard__trust .trust-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .brand-standard__trust .trust-card p {
+    max-width: 150px;
+    font-size: 0.72rem;
+  }
+}
+/* ==========================================================
+   FINAL CLEAN TRANSITION OVERRIDE
+   ========================================================== */
+
+.brand-standard__bottom-wave {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.brand-standard::before,
+.brand-standard::after {
+    content: none !important;
+    display: none !important;
+}
+
+.brand-standard {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.brand-standard + .about-preview {
+    margin-top: 0 !important;
+    border-top: none !important;
+}

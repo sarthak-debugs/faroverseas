@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Base / Reset
+   Global resets and default element styling. Component-level styles live
+   in their own files (navbar.css, hero.css, etc).
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-normal);
+  color: var(--color-ink-teal);
+  background-color: var(--color-sand);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+/* Respect reduced motion preference site-wide */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visible keyboard focus state, applied globally */
+:focus-visible {
+  outline: 2px solid var(--color-signal-teal);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Shared layout primitive — every section content area uses this */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* Shared eyebrow label style, used above section/hero headlines */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-harbor-teal);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* Shared button primitives, reused across every section's CTAs */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-body-md);
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-pill);
+  transition: background var(--dur-fast) var(--ease-standard),
+    color var(--dur-fast) var(--ease-standard),
+    border-color var(--dur-fast) var(--ease-standard),
+    transform var(--dur-fast) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-harbor-teal);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-signal-teal);
+  transform: translateY(-1px);
+}
+
+.btn-ghost-light {
+  border: 1px solid var(--color-line-dark);
+  color: var(--color-white);
+}
+
+.btn-ghost-light:hover {
+  border-color: var(--color-white);
+  background: rgba(247, 245, 240, 0.08);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(3px);
+}

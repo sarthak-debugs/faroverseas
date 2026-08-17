@@ -1,0 +1,163 @@
+/* ==========================================================================
+   About Preview
+   Split layout: framed image placeholder + storytelling copy pulled from
+   the client's About page. Decorative blob is the section's quiet accent.
+   ========================================================================== */
+
+.about-preview {
+  position: relative;
+  padding-block: var(--space-3xl);
+  background: var(--color-sand);
+  overflow: hidden;
+}
+
+.about-preview__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* Image frame */
+.about-preview__media {
+  position: relative;
+}
+
+.about-preview__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(10, 46, 47, 0) 55%, rgba(10, 46, 47, 0.55) 100%),
+    url('https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-preview__frame-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-md);
+  color: rgba(247, 245, 240, 0.85);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.about-preview__stat-card {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.about-preview__stat-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-harbor-teal);
+  margin-bottom: 0.2rem;
+}
+
+.about-preview__stat-value--text {
+  font-size: 1.4rem;
+}
+
+.about-preview__stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.9rem;
+  color: var(--color-harbor-teal);
+  line-height: 1;
+}
+
+.about-preview__stat-label {
+  font-size: 0.78rem;
+  color: var(--color-stone);
+}
+
+/* Decorative blob, sits behind the frame */
+.about-preview__blob {
+  position: absolute;
+  top: -8%;
+  left: -14%;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.14), transparent 70%);
+  z-index: -1;
+}
+
+/* Copy column */
+.about-preview__body h2 {
+  font-size: var(--fs-display-lg);
+  margin-top: var(--space-sm);
+  max-width: 16ch;
+}
+
+.about-preview__lead {
+  margin-top: var(--space-md);
+  font-size: var(--fs-body-lg);
+  color: var(--color-stone);
+  max-width: 54ch;
+}
+
+.about-preview__pillars {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md) var(--space-lg);
+}
+
+.about-preview__pillar {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.about-preview__pillar-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--color-harbor-teal);
+  margin-top: 0.15rem;
+}
+
+.about-preview__pillar-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.about-preview__pillar-text {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  margin-top: 0.15rem;
+}
+
+.about-preview__cta {
+  margin-top: var(--space-xl);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-preview__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-preview__media {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+
+  .about-preview__pillars {
+    grid-template-columns: 1fr;
+  }
+}

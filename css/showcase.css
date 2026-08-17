@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Product Showcase
+   Replaces the earlier icon-grid with large photographic cards — the
+   section explicitly called out as needing the most visual weight.
+   Four hero categories get full imagery; the remaining four are listed
+   as a compact strip beneath so all 8 stay represented.
+   ========================================================================== */
+
+.showcase {
+  position: relative;
+  padding-block: var(--space-3xl);
+  background: var(--color-ink-teal);
+  color: var(--color-white);
+}
+
+.showcase__divider {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 48px;
+}
+
+.showcase__header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.showcase__header h2 {
+  font-size: var(--fs-display-lg);
+  max-width: 18ch;
+  margin-top: var(--space-sm);
+  color: var(--color-white);
+}
+
+.showcase__header p {
+  max-width: 42ch;
+  color: rgba(247, 245, 240, 0.7);
+}
+
+/* Bento-style grid — first card spans two rows for visual hierarchy */
+/* Bento grid — named areas make the layout self-documenting and easy
+   to rebalance without touching the HTML. Spices anchors two rows as
+   the signature card; the closing CTA banner fills the space that
+   used to be an empty gap next to the smaller category cards. */
+.showcase__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(240px, auto) minmax(190px, auto) minmax(150px, auto);
+  grid-template-areas:
+    "spices   herbs      pulses     cereals"
+    "spices   oilseeds   dehydrated dryfruits"
+    "sweeteners cta      cta        cta";
+  gap: var(--space-md);
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 260px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  /* The entire <a> is the hit area — image, scrim and text all sit
+     inside it, so hover/focus state can never drop while the pointer
+     is anywhere over the card. */
+}
+
+.product-card:focus-visible {
+  outline: 2px solid var(--color-signal-teal);
+  outline-offset: 3px;
+}
+
+.product-card--tall {
+  grid-row: span 2;
+}
+
+.product-card--sm {
+  min-height: 190px;
+}
+
+.product-card--sm .product-card__title {
+  font-size: var(--fs-product-name);
+}
+
+.product-card__img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s var(--ease-out-expo);
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.08);
+}
+
+.product-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(6, 20, 21, 0.92) 0%,
+    rgba(6, 20, 21, 0.45) 45%,
+    rgba(6, 20, 21, 0.05) 75%
+  );
+  transition: background var(--dur-med) var(--ease-standard);
+}
+
+.product-card:hover .product-card__scrim {
+  background: linear-gradient(
+    to top,
+    rgba(6, 20, 21, 0.96) 0%,
+    rgba(6, 20, 21, 0.55) 50%,
+    rgba(6, 20, 21, 0.1) 80%
+  );
+}
+
+.product-card__body {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-lg);
+  width: 100%;
+}
+
+.product-card__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-signal-teal);
+}
+
+.product-card__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  margin-top: 0.35rem;
+}
+
+.product-card--tall .product-card__title {
+  font-size: 1.75rem;
+}
+
+.product-card__text {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(247, 245, 240, 0.78);
+  max-width: 30ch;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-med) var(--ease-standard),
+    opacity var(--dur-med) var(--ease-standard);
+}
+
+.product-card:hover .product-card__text {
+  max-height: 60px;
+  opacity: 1;
+}
+
+.product-card__link {
+  margin-top: var(--space-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--color-white);
+}
+
+.product-card__link svg {
+  width: 13px;
+  height: 13px;
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.product-card:hover .product-card__link svg {
+  transform: translateX(4px);
+}
+
+/* Closing CTA panel — replaces the empty visual space that used to
+   sit next to the small category cards */
+.product-card__cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(120deg, var(--color-harbor-teal-dark), var(--color-harbor-teal));
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.product-card__cta:hover {
+  transform: translateY(-2px);
+}
+
+.product-card__cta:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 3px;
+}
+
+.product-card__cta-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-white);
+}
+
+.product-card__cta-text {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: rgba(247, 245, 240, 0.75);
+}
+
+.product-card__cta .product-card__link {
+  color: var(--color-white);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1080px) {
+  .showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-template-areas:
+      "spices    spices"
+      "herbs     pulses"
+      "cereals   oilseeds"
+      "dehydrated dryfruits"
+      "sweeteners cta"
+      "sweeteners cta";
+  }
+
+  .product-card--tall {
+    grid-row: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "spices"
+      "herbs"
+      "pulses"
+      "cereals"
+      "oilseeds"
+      "dehydrated"
+      "dryfruits"
+      "sweeteners"
+      "cta";
+  }
+
+  .product-card {
+    min-height: 220px;
+  }
+
+  .product-card--sm {
+    min-height: 170px;
+  }
+
+  .product-card__text {
+    max-height: 60px;
+    opacity: 1;
+  }
+
+  .product-card__cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

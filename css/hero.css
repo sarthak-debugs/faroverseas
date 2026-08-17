@@ -1,0 +1,714 @@
+/* ==========================================================================
+   FAR OVERSEAS — HERO
+   Premium full-bleed hero with floating trust panel
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  overflow: hidden;
+  background: var(--color-ink-teal);
+}
+
+
+/* ==========================================================================
+   BACKGROUND
+   ========================================================================== */
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url('https://images.unsplash.com/photo-1503810473512-f64b56827964?fm=jpg&auto=format&fit=crop&w=2400&q=80');
+
+  background-size: cover;
+  background-position: center 42%;
+
+  transform: scale(1.06);
+
+  animation:
+    hero-bg-zoom 1.8s var(--ease-out-expo) forwards;
+}
+
+
+@keyframes hero-bg-zoom {
+  to {
+    transform: scale(1);
+  }
+}
+
+
+/* Premium dark teal treatment over image */
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 30, 31, 0.94) 0%,
+      rgba(5, 30, 31, 0.78) 38%,
+      rgba(5, 30, 31, 0.46) 72%,
+      rgba(5, 30, 31, 0.64) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* Subtle lower darkening so the stats panel feels anchored */
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 48%;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(4, 28, 29, 0.72),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__bg {
+    animation: none;
+    transform: scale(1);
+  }
+
+}
+
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+
+.hero__inner {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: clamp(6rem, 11vh, 9rem);
+  padding-bottom: clamp(15rem, 22vh, 18rem);
+}
+
+
+.hero__content {
+  max-width: 680px;
+
+  animation:
+    hero-content-in 0.9s var(--ease-out-expo) 0.2s forwards;
+
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+
+@keyframes hero-content-in {
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__content {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+/* ==========================================================================
+   EYEBROW
+   ========================================================================== */
+
+.hero__content .eyebrow {
+  color: var(--color-signal-teal);
+  margin-bottom: var(--space-md);
+}
+
+
+/* ==========================================================================
+   HEADLINE
+   ========================================================================== */
+
+.hero__headline {
+  max-width: 10.5ch;
+
+  font-size: clamp(
+    3.8rem,
+    5.8vw,
+    6.2rem
+  );
+
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+
+  color: var(--color-white);
+}
+
+
+.hero__headline em {
+  font-style: normal;
+  color: var(--color-signal-teal);
+}
+
+
+/* ==========================================================================
+   DESCRIPTION
+   ========================================================================== */
+
+.hero__subline {
+  margin-top: var(--space-lg);
+
+  max-width: 54ch;
+
+  font-size: clamp(
+    1rem,
+    1.25vw,
+    1.18rem
+  );
+
+  line-height: 1.7;
+
+  color: rgba(247, 245, 240, 0.82);
+}
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+
+  margin-top: var(--space-xl);
+
+  flex-wrap: wrap;
+}
+
+
+.hero__actions .btn {
+  min-height: 50px;
+}
+
+
+/* ==========================================================================
+   FLOATING TRUST PANEL
+   ========================================================================== */
+
+/* ==========================================================================
+   FLOATING TRUST PANEL — COMPACT VERSION
+   ========================================================================== */
+
+.hero__trust {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2.5rem;
+
+  transform: translateX(-50%);
+
+  /* Smaller overall box */
+  width: min(
+    750px,
+    calc(100% - 5rem)
+  );
+
+  z-index: 5;
+
+  padding: 0;
+
+  border: 1px solid rgba(113, 221, 210, 0.16);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 39, 41, 0.96),
+      rgba(4, 30, 32, 0.92)
+    );
+
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ==========================================================================
+   TRUST PANEL INNER
+   ========================================================================== */
+
+.hero__trust-inner {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  width: 100%;
+
+  padding: 0.7rem 0.8rem;
+}
+
+
+/* ==========================================================================
+   INDIVIDUAL STAT
+   ========================================================================== */
+
+.hero__stat {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  /* Much shorter than the previous 170px */
+  min-height: 135px;
+
+  padding: 0.7rem 1rem;
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.35s var(--ease-standard),
+    background 0.35s var(--ease-standard);
+}
+
+
+.hero__stat:first-child {
+  border-left: none;
+}
+
+
+.hero__stat:hover {
+  transform: translateY(-2px);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+/* ==========================================================
+   TRUST PANEL ENTRANCE ANIMATION
+   ========================================================== */
+
+.hero__trust {
+    opacity: 0;
+    transform: translate(-50%, 35px);
+    transition:
+        opacity 0.8s var(--ease-out-expo),
+        transform 0.8s var(--ease-out-expo);
+}
+
+.hero__trust.trust-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+
+/* Individual statistics */
+
+.hero__stat {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+        opacity 0.6s var(--ease-out-expo),
+        transform 0.6s var(--ease-out-expo),
+        background 0.35s var(--ease-standard);
+}
+
+.hero__stat.stat-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   ICON ANIMATIONS
+   ========================================================== */
+
+.hero__stat-icon {
+    opacity: 0;
+}
+
+
+/* Normal icons */
+.hero__stat.stat-visible .hero__stat-icon {
+    animation: stat-icon-in 0.7s var(--ease-out-expo) forwards;
+}
+
+
+/* Truck specifically drives in */
+.hero__stat:nth-child(2).stat-visible .hero__stat-icon {
+    animation: truck-drive-in 3s var(--ease-out-expo) forwards;
+}
+
+
+@keyframes stat-icon-in {
+
+    0% {
+        opacity: 0;
+        transform: translateY(12px) scale(0.8);
+    }
+
+    70% {
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+@keyframes truck-drive-in {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-35px) scale(0.85);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(5px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+/* ==========================================================================
+   ICON
+   ========================================================================== */
+
+.hero__stat-icon {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 0.45rem;
+
+  stroke: rgba(247, 245, 240, 0.92);
+
+  stroke-width: 1.35;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition:
+    transform 0.35s var(--ease-standard),
+    stroke 0.35s var(--ease-standard);
+}
+
+
+.hero__stat:hover .hero__stat-icon {
+  transform: translateY(-2px) scale(1.04);
+
+  stroke: var(--color-signal-teal);
+}
+
+
+/* ==========================================================================
+   STAT VALUE
+   ========================================================================== */
+
+.hero__stat-value {
+  display: block;
+
+  font-family: var(--font-display);
+
+  /* Smaller */
+  font-size: clamp(
+    1.8rem,
+    2.35vw,
+    2.45rem
+  );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-white);
+}
+
+
+.hero__stat-value--text {
+  font-size: clamp(
+    1.5rem,
+    2vw,
+    2.1rem
+  );
+
+  letter-spacing: -0.02em;
+}
+
+
+/* ==========================================================================
+   LABEL
+   ========================================================================== */
+
+.hero__stat-label {
+  display: block;
+
+  margin-top: 0.35rem;
+
+  font-size: 0.78rem;
+
+  line-height: 1.3;
+
+  color: rgba(247, 245, 240, 0.68);
+}
+
+
+/* ==========================================================================
+   SMALL TEAL ACCENT
+   ========================================================================== */
+
+.hero__stat-accent {
+  display: block;
+
+  width: 26px;
+  height: 2px;
+
+  margin-top: 0.55rem;
+
+  background: var(--color-signal-teal);
+
+  opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   HERO → CERTIFICATIONS WAVE
+   ========================================================================== */
+
+.hero__bottom-wave {
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: clamp(150px, 16vw, 200px);
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+
+.hero__bottom-wave svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.hero__wave-back {
+  fill: rgba(5, 31, 32, 0.48);
+}
+
+
+.hero__wave-front {
+  fill: var(--color-white);
+}
+
+
+.hero__wave-line {
+  fill: none;
+
+  stroke: var(--color-signal-teal);
+
+  stroke-width: 1;
+
+  opacity: 0.30;
+}
+
+
+.hero__wave-dot {
+  fill: var(--color-signal-teal);
+
+  opacity: 0.55;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+
+  .hero {
+    min-height: 820px;
+  }
+
+  .hero__inner {
+    padding-top: 6rem;
+    padding-bottom: 15rem;
+  }
+
+  .hero__headline {
+    font-size: clamp(3.4rem, 6.5vw, 5.2rem);
+  }
+
+}
+
+
+@media (max-width: 720px) {
+
+  .hero {
+    min-height: auto;
+
+    padding-top:
+      calc(var(--nav-height) + 3rem);
+
+    padding-bottom: 13rem;
+  }
+
+
+  .hero__inner {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
+
+
+  .hero__headline {
+    max-width: 100%;
+
+    font-size:
+      clamp(3rem, 12vw, 4.5rem);
+  }
+
+
+  .hero__subline {
+    max-width: 100%;
+
+    font-size: 0.98rem;
+  }
+
+
+  .hero__trust {
+    width: calc(100% - 1.5rem);
+    left: 50%;
+    bottom: 2rem;
+    border-radius: 16px;
+  }
+
+.hero__trust-inner {
+  grid-template-columns: 1fr;
+
+  padding: 0.4rem;
+}
+
+.hero__stat {
+  min-height: 110px;
+
+  padding: 0.75rem;
+
+  border-left: none;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero__stat:first-child {
+  border-top: none;
+}
+
+.hero__stat-icon {
+  width: 34px;
+  height: 34px;
+
+  margin-bottom: 0.4rem;
+}
+
+.hero__stat-value {
+  font-size: 1.9rem;
+}
+
+.hero__stat-value--text {
+  font-size: 1.6rem;
+}
+
+
+
+  .hero__bottom-wave {
+    height: 65px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding-bottom: 15rem;
+  }
+
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 1.5rem;
+  }
+
+
+  .hero__actions .btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .hero__trust {
+    bottom: 2rem;
+  }
+
+
+  .hero__stat {
+    min-height: 115px;
+  }
+
+}

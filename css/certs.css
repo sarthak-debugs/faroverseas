@@ -1,0 +1,359 @@
+/* ==========================================================================
+   FAR OVERSEAS — CERTIFICATIONS
+   Floating certification marquee between organic section transitions
+   ========================================================================== */
+
+.certs {
+  position: relative;
+
+  background: var(--color-white);
+
+  overflow: hidden;
+
+  padding-bottom: 0;
+}
+
+
+/* ==========================================================================
+   TOP WAVE
+   Hero → Certifications
+   ========================================================================== */
+
+.certs__transition-top {
+  position: relative;
+
+  width: 100%;
+  height: clamp(70px, 8vw, 115px);
+
+  margin-top: -1px;
+
+  overflow: hidden;
+
+  background: var(--color-white);
+}
+
+
+.certs__transition-top svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.certs__wave-back {
+  fill: rgba(5, 31, 32, 0.35);
+}
+
+
+.certs__wave-front {
+  fill: #ffffff;
+}
+
+
+.certs__flow-line {
+  fill: none;
+
+  stroke: var(--color-signal-teal);
+
+  stroke-width: 1;
+
+  opacity: 0.24;
+}
+
+
+.certs__flow-dot {
+  fill: var(--color-signal-teal);
+
+  opacity: 0.45;
+}
+
+
+/* ==========================================================================
+   CERTIFICATION HEADER
+   ========================================================================== */
+
+.certs__intro {
+  position: relative;
+  z-index: 2;
+
+  max-width: 620px;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(1.5rem, 3vw, 2.5rem)
+    var(--container-pad)
+    0;
+
+  text-align: center;
+}
+
+
+.certs__intro .eyebrow {
+  justify-content: center;
+
+  gap: 0.8rem;
+}
+
+
+.certs__intro .eyebrow::after {
+  content: '';
+
+  width: 24px;
+  height: 1px;
+
+  background: currentColor;
+
+  opacity: 0.65;
+}
+
+
+.certs__intro p:last-child {
+  margin-top: 0.7rem;
+
+  color: var(--color-stone);
+
+  font-size: 0.92rem;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   MARQUEE
+   ========================================================================== */
+
+.certs__marquee {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+
+  overflow: hidden;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to right,
+      transparent 0%,
+      black 7%,
+      black 93%,
+      transparent 100%
+    );
+}
+
+
+.certs__track {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(
+    4rem,
+    6vw,
+    6rem
+  );
+
+  width: max-content;
+
+  animation:
+    certs-scroll 32s linear infinite;
+}
+
+
+@keyframes certs-scroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+
+}
+
+
+.certs__marquee:hover .certs__track {
+  animation-play-state: paused;
+}
+
+
+/* ==========================================================================
+   LOGOS
+   ========================================================================== */
+
+.certs__logo {
+  flex: 0 0 auto;
+
+  width: auto;
+  height: clamp(60px, 6vw, 85px);
+
+  max-width: 210px;
+
+  object-fit: contain;
+
+  opacity: 0.92;
+
+  transition:
+    transform 0.3s var(--ease-standard),
+    opacity 0.3s var(--ease-standard),
+    filter 0.3s var(--ease-standard);
+}
+
+
+.certs__logo:hover {
+  transform:
+    translateY(-3px)
+    scale(1.1);
+
+  opacity: 1;
+
+  filter: brightness(1.04);
+}
+
+
+/* ==========================================================================
+   TAGLINE
+   ========================================================================== */
+
+.certs__tagline {
+  position: relative;
+  z-index: 2;
+
+  margin-top: clamp(2rem, 4vw, 3rem);
+
+  padding-inline: var(--container-pad);
+
+  text-align: center;
+
+  color: var(--color-stone);
+
+  font-size: 0.88rem;
+}
+
+
+.certs__tagline strong {
+  display: block;
+
+  margin-bottom: 0.2rem;
+
+  color: var(--color-ink-teal);
+
+  font-family: var(--font-display);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+
+/* ==========================================================================
+   SMALL DECORATIVE LEAF
+   ========================================================================== */
+
+.certs__leaf {
+  display: block;
+
+  width: 22px;
+  height: 22px;
+
+  margin:
+    1.5rem auto
+    0;
+
+  color: var(--color-gold);
+
+  opacity: 0.45;
+}
+
+
+/* ==========================================================================
+   BOTTOM WAVE
+   Certifications → About
+   ========================================================================== */
+
+.certs__transition-bottom {
+  position: relative;
+
+  width: 100%;
+
+  height: clamp(
+    65px,
+    8vw,
+    110px
+  );
+
+  margin-top: 1.5rem;
+
+  overflow: hidden;
+}
+
+
+.certs__transition-bottom svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.certs__wave-sand {
+  fill: var(--color-sand);
+}
+
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .certs__track {
+    animation: none;
+  }
+
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+
+  .certs__transition-top {
+    height: 65px;
+  }
+
+
+  .certs__track {
+    gap: 2.75rem;
+
+    animation-duration: 23s;
+  }
+
+
+  .certs__logo {
+    height: 42px;
+
+    max-width: 125px;
+  }
+
+
+  .certs__transition-bottom {
+    height: 65px;
+  }
+
+}

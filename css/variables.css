@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Design Tokens
+   Single source of truth for color, type, spacing and motion.
+   Every component pulls from these variables — do not hardcode values
+   in component stylesheets.
+   ========================================================================== */
+
+:root {
+  /* Color — derived from the Far Overseas hexagon mark */
+  --color-ink-teal: #0a2e2f;         /* deepest brand tone — nav, footer, dark sections */
+  --color-ink-teal-2: #0f3d3e;       /* one step up, for gradients/hover on dark */
+  --color-harbor-teal: #0e7c7b;      /* primary brand color — buttons, links, icons */
+  --color-harbor-teal-dark: #0b6362; /* hover/active state of primary */
+  --color-signal-teal: #14b8a6;      /* bright accent — used sparingly */
+  --color-sand: #f7f5f0;             /* warm off-white base background */
+  --color-sand-2: #f0ede5;           /* slightly deeper sand, for section separation */
+  --color-white: #ffffff;
+  --color-stone: #5c6664;            /* body copy on light backgrounds */
+  --color-stone-light: #8a938f;      /* muted/secondary text */
+  --color-line: #e2ded3;             /* hairline borders on light bg */
+  --color-line-dark: rgba(247, 245, 240, 0.14); /* hairline borders on dark bg */
+  --color-gold: #c9922e;             /* Harvest Gold — category icons, cert chips, dividers */
+  --color-gold-dim: #f3e6cd;         /* pale gold, for chip backgrounds on light bg */
+
+  /* Typography
+     Manrope = headings, navigation, buttons, stats, product names, eyebrows
+     Inter   = body copy, descriptions, supporting text, captions
+     Type scale below is the single source of truth — every heading in
+     the project should reference one of these tokens rather than a
+     one-off font-size. */
+  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Headings (H1 → H4) */
+  --fs-display-xl: clamp(2.75rem, 2rem + 3.2vw, 4.75rem);   /* H1 — hero only */
+  --fs-display-lg: clamp(2.25rem, 1.7rem + 2.4vw, 3.5rem);  /* H2 — section titles */
+  --fs-display-md: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);  /* H3 — sub-section titles */
+  --fs-display-sm: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);/* H4 — card/component titles */
+
+  /* Body & UI text */
+  --fs-body-lg: clamp(1.05rem, 1rem + 0.2vw, 1.2rem);  /* lead paragraphs */
+  --fs-body-md: 1rem;                                   /* default paragraph */
+  --fs-body-sm: 0.9rem;                                 /* supporting text */
+  --fs-nav: 0.92rem;                                    /* navigation links */
+  --fs-button: 0.92rem;                                 /* button labels */
+  --fs-caption: 0.78rem;                                /* captions, fine print */
+  --fs-eyebrow: 0.8rem;                                 /* eyebrow labels */
+  --fs-mono-stat: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem); /* statistics */
+  --fs-product-name: 1.1rem;                            /* product/card titles */
+
+  --lh-tight: 1.1;   /* headings */
+  --lh-snug: 1.3;     /* sub-headings, card titles */
+  --lh-normal: 1.6;   /* body copy */
+
+  --ls-eyebrow: 0.14em;
+  --ls-tight: -0.02em;
+  --ls-nav: 0.01em;
+
+  /* Spacing scale */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.75rem;
+  --space-xl: 5rem;
+  --space-2xl: 7.5rem;
+  --space-3xl: 11rem;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-pad: clamp(1.5rem, 5vw, 4rem);
+  --nav-height: 84px;
+  --nav-height-scrolled: 68px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 8px rgba(10, 46, 47, 0.06);
+  --shadow-md: 0 12px 32px rgba(10, 46, 47, 0.1);
+  --shadow-lg: 0 24px 64px rgba(10, 46, 47, 0.16);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-med: 320ms;
+  --dur-slow: 600ms;
+
+  /* Z-index scale */
+  --z-nav: 100;
+  --z-dropdown: 110;
+  --z-overlay: 200;
+  --z-progress: 101;
+}
+
+/* Reveal-on-scroll utility — toggled by js/reveal.js.
+   Element starts hidden/offset, animates in once .is-visible is added. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal-group] > * {
+  transition-delay: calc(var(--reveal-index, 0) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,590 @@
+/* ==========================================================================
+   GLOBAL REACH
+   India-origin global export network
+   ========================================================================== */
+
+.reach {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(72px, 8vw, 110px) 0 76px;
+  color: var(--color-white);
+
+  background:
+    radial-gradient(circle at 68% 45%, rgba(19, 91, 88, 0.42), transparent 38%),
+    radial-gradient(circle at 78% 60%, rgba(0, 170, 160, 0.08), transparent 35%),
+    #061f21;
+}
+
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.reach__header {
+  position: relative;
+  z-index: 5;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto 18px;
+}
+
+.reach__header .eyebrow {
+  color: var(--color-signal-teal);
+}
+
+.reach__header h2 {
+  margin: 12px 0 18px;
+  max-width: 600px;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.reach__header h2 span {
+  color: var(--color-signal-teal);
+}
+
+.reach__header p:last-child {
+  max-width: 430px;
+  color: rgba(247, 245, 240, 0.72);
+  line-height: 1.65;
+}
+
+
+/* ==========================================================================
+   MAP STAGE
+   ========================================================================== */
+
+.reach__stage {
+  position: relative;
+  z-index: 2;
+  width: min(1500px, 100%);
+  margin: -95px auto 0;
+  pointer-events: none;
+}
+
+.reach__map-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2048 / 997;
+}
+
+
+/* ==========================================================================
+   WORLD MAP
+   ========================================================================== */
+
+.reach__world-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.78;
+  filter: none;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.reach__map-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 70% 43%,
+      rgba(255, 220, 100, 0.06),
+      transparent 12%
+    ),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 255, 255, 0.025),
+      transparent 28%
+    );
+
+  z-index: 2;
+}
+
+
+/* ==========================================================================
+   ROUTE SVG
+   Coordinates match the 2048 × 997 world map.
+   ========================================================================== */
+
+.reach__routes {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 4;
+}
+
+
+/* ==========================================================================
+   ROUTES
+   ========================================================================== */
+
+.reach__route {
+  fill: none;
+  stroke: #16d6c0;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+
+  filter:
+    drop-shadow(0 0 5px rgba(22, 214, 192, 0.75))
+    drop-shadow(0 0 10px rgba(22, 214, 192, 0.25));
+
+  animation:
+    reach-route 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  animation-play-state: paused;
+}
+
+.reach__stage.is-visible .reach__route {
+  animation-play-state: running;
+}
+
+.reach__route:nth-child(1) { animation-delay: 0s; }
+.reach__route:nth-child(2) { animation-delay: 0.s; }
+.reach__route:nth-child(3) { animation-delay: 0.1s; }
+.reach__route:nth-child(4) { animation-delay: 0.2s; }
+.reach__route:nth-child(5) { animation-delay: 0.3s; }
+.reach__route:nth-child(6) { animation-delay: 0.4s; }
+.reach__route:nth-child(7) { animation-delay: 0.5s; }
+
+@keyframes reach-route {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 0.2;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================================================
+   INDIA ORIGIN
+   ========================================================================== */
+
+.reach__origin {
+  fill: #fff8d6;
+  stroke: #d0a63e;
+  stroke-width: 3;
+
+  filter:
+    drop-shadow(0 0 8px rgba(207, 166, 62, 0.95))
+    drop-shadow(0 0 18px rgba(207, 166, 62, 0.55));
+}
+
+.reach__origin-ring {
+  fill: none;
+  stroke: rgba(207, 166, 62, 0.72);
+  stroke-width: 3;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  animation: reach-pulse 2.2s ease-out infinite;
+}
+
+@keyframes reach-pulse {
+  0% {
+    r: 16;
+    opacity: 0.85;
+  }
+
+  70% {
+    r: 52;
+    opacity: 0;
+  }
+
+  100% {
+    r: 52;
+    opacity: 0;
+  }
+}
+
+
+/* ==========================================================================
+   TRAVELING PARTICLES
+   ========================================================================== */
+
+.reach__particles {
+  position: relative;
+  z-index: 7;
+}
+
+.reach__particle {
+  r: 5;
+  fill: #e2fffa;
+
+  filter:
+    drop-shadow(0 0 5px rgba(22, 214, 192, 1))
+    drop-shadow(0 0 10px rgba(22, 214, 192, 0.55));
+
+  opacity: 0;
+
+  animation:
+    reach-particle-in 0.25s ease 3.3s forwards;
+}
+
+@keyframes reach-particle-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================================================
+   DESTINATION LABELS
+   ========================================================================== */
+
+.reach__label {
+  position: absolute;
+  z-index: 8;
+  color: rgba(247, 245, 240, 0.86);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* India / Madhya Pradesh */
+.reach__label--india {
+  left: 66.8%;
+  top: 51.9%;
+  color: #fff3bd;
+  font-weight: 700;
+}
+
+.reach__label--india span {
+  display: block;
+  margin-top: 2px;
+  color: #d0a63e;
+  font-size: 0.48rem;
+  letter-spacing: 0.08em;
+}
+
+/* North America */
+.reach__label--na {
+  left: 16.0%;
+  top: 35.5%;
+}
+
+/* Europe */
+.reach__label--eu {
+  left: 49.0%;
+  top: 31.0%;
+}
+
+/* Middle East */
+.reach__label--me {
+  left: 55.0%;
+  top: 37.5%;
+}
+
+/* Africa */
+.reach__label--af {
+  left: 50.5%;
+  top: 62.0%;
+}
+
+/* South America */
+.reach__label--sa {
+  left: 27.0%;
+  top: 61.0%;
+}
+
+/* Asia — route ends around Mongolia */
+.reach__label--asia {
+  left: 71.0%;
+  top: 27.0%;
+}
+
+/* Australia */
+.reach__label--australia {
+  left: 80.5%;
+  top: 80.0%;
+}
+
+
+/* ==========================================================================
+   NETWORK CONNECTORS
+   ========================================================================== */
+
+.reach__connector {
+  fill: none;
+  stroke: rgba(22, 214, 192, 0.14);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  opacity: 0;
+
+  animation:
+    reach-connector-in 1s ease 3.3s forwards;
+}
+
+@keyframes reach-connector-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ==========================================================================
+   STATS
+   ========================================================================== */
+
+.reach__stats {
+  position: relative;
+  z-index: 9;
+
+  display: flex;
+  justify-content: center;
+
+  width: min(900px, calc(100% - 40px));
+  margin: -30px auto 0;
+
+  border-top: 1px solid rgba(247, 245, 240, 0.18);
+  border-bottom: 1px solid rgba(247, 245, 240, 0.18);
+}
+
+.reach__stats > div {
+  flex: 1;
+  padding: 18px 28px;
+  text-align: center;
+  border-right: 1px solid rgba(247, 245, 240, 0.18);
+}
+
+.reach__stats > div:last-child {
+  border-right: 0;
+}
+
+.reach__stats strong,
+.reach__stats span {
+  display: block;
+}
+
+.reach__stats strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.15;
+}
+
+.reach__stats span {
+  margin-top: 4px;
+  color: rgba(247, 245, 240, 0.58);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .reach__stage {
+    width: 110%;
+    margin-left: -5%;
+  }
+
+  .reach__header h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+  }
+}
+
+
+/* ==========================================================================
+   TABLET / SMALL DESKTOP
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .reach__stage {
+    margin-top: -60px;
+  }
+
+  .reach__header {
+    margin-bottom: 0;
+  }
+
+  .reach__stats {
+    width: min(850px, calc(100% - 32px));
+  }
+
+  .reach__stats > div {
+    padding: 16px 18px;
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .reach {
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+
+  .reach__header {
+    width: min(100% - 32px, 520px);
+  }
+
+  .reach__header h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+    line-height: 0.94;
+  }
+
+  .reach__header p:last-child {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .reach__stage {
+    margin-top: 20px;
+    width: 145%;
+    margin-left: -22.5%;
+  }
+
+  .reach__map-shell {
+    min-height: 290px;
+  }
+
+  .reach__label {
+    font-size: 0.45rem;
+    letter-spacing: 0.08em;
+  }
+
+  .reach__label--india {
+    left: 71%;
+    top: 45%;
+  }
+
+  .reach__label--na,
+  .reach__label--eu,
+  .reach__label--af,
+  .reach__label--sa {
+    display: none;
+  }
+
+  .reach__label--me {
+    left: 55%;
+    top: 37.5%;
+  }
+
+  .reach__label--asia {
+    left: 71%;
+    top: 27%;
+  }
+
+  .reach__label--australia {
+    left: 77.5%;
+    top: 70%;
+  }
+
+  .reach__route {
+    stroke-width: 2.4;
+  }
+
+  .reach__connector {
+    display: none;
+  }
+
+  .reach__stats {
+    flex-direction: column;
+    width: min(100% - 32px, 520px);
+    margin-top: -8px;
+  }
+
+  .reach__stats > div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(247, 245, 240, 0.14);
+    padding: 16px 20px;
+  }
+
+  .reach__stats > div:last-child {
+    border-bottom: 0;
+  }
+
+  .reach__stats strong {
+    font-size: 1.35rem;
+  }
+
+  .reach__stats span {
+    font-size: 0.76rem;
+  }
+}
+
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 400px) {
+  .reach__stage {
+    width: 165%;
+    margin-left: -32.5%;
+  }
+
+  .reach__map-shell {
+    min-height: 270px;
+  }
+}
+
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reach__route,
+  .reach__origin-ring,
+  .reach__particle,
+  .reach__connector {
+    animation: none !important;
+  }
+
+  .reach__route {
+    stroke-dashoffset: 0;
+  }
+
+  .reach__origin-ring {
+    opacity: 0.45;
+  }
+
+  .reach__particle {
+    opacity: 1;
+  }
+
+  .reach__connector {
+    opacity: 1;
+  }
+}
