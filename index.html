@@ -30,57 +30,6 @@
   <link rel="stylesheet" href="css/contact-preview.css" />
   <link rel="stylesheet" href="css/footer.css" />
 
-<style id="brand-about-clean-transition">
-/* ==========================================================
-   BRAND STANDARD -> ABOUT PREVIEW
-   Clean continuous transition with one soft curve.
-   ========================================================== */
-
-/* Remove the old divider completely */
-.brand-standard__bottom-wave {
-    display: none !important;
-}
-
-/* Let the two sections touch */
-.brand-standard {
-    position: relative;
-    margin-bottom: 0 !important;
-    border-bottom: 0 !important;
-    overflow: visible !important;
-}
-
-/* Make the next section start immediately */
-.about-preview {
-    position: relative;
-    margin-top: 0 !important;
-    border-top: 0 !important;
-    background: var(--color-sand, #f5f4ed);
-}
-
-/* Single elegant curved separator */
-.brand-standard::after {
-    content: "";
-    position: absolute;
-    z-index: 20;
-    left: -5%;
-    bottom: -1px;
-    width: 110%;
-    height: 75px;
-    background: var(--color-sand, #f5f4ed);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    pointer-events: none;
-}
-
-/* Keep the curve responsive */
-@media (max-width: 768px) {
-    .brand-standard::after {
-        height: 50px;
-        left: -10%;
-        width: 120%;
-    }
-}
-</style>
-
 </head>
 <body>
 
@@ -895,7 +844,7 @@
 
           <!-- Middle East -->
           <path id="route-me" pathLength="1"
-            d="M1390 510 C1225 420 1185 395 1250 430" />
+            d="M1390 510 C1345 490 1290 455 1250 430" />
 
           <!-- Africa -->
           <path id="route-af" pathLength="1"
@@ -917,7 +866,7 @@
         <g class="reach__route-layer">
           <path class="reach__route" d="M1390 510 C1110 390 820 300 400 350" pathLength="1" />
           <path class="reach__route" d="M1390 510 C1190 360 1125 285 1050 300" pathLength="1" />
-          <path class="reach__route" d="M1390 510 C1225 420 1185 395 1250 430" pathLength="1" />
+          <path class="reach__route" d="M1390 510 C1345 490 1290 455 1250 430" pathLength="1" />
           <path class="reach__route" d="M1390 510 C1160 505 1050 565 1050 615" pathLength="1" />
           <path class="reach__route" d="M1390 510 C1090 475 800 520 600 610" pathLength="1" />
           <path class="reach__route" d="M1390 510 C1325 380 1400 315 1490 350" pathLength="1" />
@@ -932,37 +881,37 @@
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="4.1s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="4.1s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-eu"></mpath>
             </animateMotion>
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="3.6s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="3.6s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-me"></mpath>
             </animateMotion>
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="4.2s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="4.2s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-af"></mpath>
             </animateMotion>
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="4.0s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="4.0s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-sa"></mpath>
             </animateMotion>
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="4.0s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="4.0s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-asia"></mpath>
             </animateMotion>
           </circle>
 
           <circle class="reach__particle" cx="0" cy="0">
-            <animateMotion dur="4.4s" begin="3.6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="4.4s" begin="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#route-australia"></mpath>
             </animateMotion>
           </circle>

@@ -74,6 +74,7 @@
 
 .about-preview__stat-value {
   font-family: var(--font-mono);
+  font-weight: 800;
   font-size: 1.9rem;
   color: var(--color-harbor-teal);
   line-height: 1;

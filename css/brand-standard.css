@@ -110,7 +110,7 @@
 
 
 /* ==========================================================
-   TRUST PILLARS
+   TRUST PILLARS — FINAL CLEAN VERSION
    ========================================================== */
 
 .brand-standard__trust {
@@ -120,92 +120,345 @@
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  padding: 1.5rem 0;
+  padding: 2.2rem 0;
 
-  background: #f8f7f1;
-  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      #fbfaf5 0%,
+      #f3f1e8 100%
+    );
+
+  border: 1px solid rgba(8, 47, 49, 0.10);
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(8, 47, 49, 0.055);
 
   overflow: hidden;
   box-sizing: border-box;
 }
 
-.trust-card {
+.brand-standard__trust .trust-card {
   position: relative;
+
+  min-width: 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
 
-  padding: 1rem 2rem;
+  padding: 2.4rem 1.8rem 2rem;
 
   text-align: center;
+  background: transparent;
   box-sizing: border-box;
+
+  transition: background 0.3s ease;
 }
 
-.trust-card:not(:last-child)::after {
+.brand-standard__trust .trust-card:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.brand-standard__trust .trust-card:not(:last-child)::after {
   content: "";
 
   position: absolute;
-
+  top: 18%;
+  bottom: 14%;
   right: 0;
-  top: 10%;
-  bottom: 10%;
 
   width: 1px;
 
-  background: #dddccf;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(8, 47, 49, 0.15) 15%,
+      rgba(8, 47, 49, 0.15) 85%,
+      transparent 100%
+    );
 }
 
-.trust-card__icon {
-  width: 48px;
-  height: 48px;
+.brand-standard__trust .trust-card__icon {
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+
+  margin-bottom: 1.35rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 0.7rem;
+  border: 1px solid rgba(8, 80, 76, 0.18);
 
-  border: 1px solid #dddccf;
-  border-radius: 50%;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(247, 247, 241, 0.62)
+    );
 
-  background: #fffdf8;
+  box-shadow: none;
+   
 
   box-sizing: border-box;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.trust-card__icon svg {
-  width: 25px !important;
-  height: 25px !important;
+/* Trusted Quality */
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
+  border-radius: 22px 22px 28px 28px;
+}
 
-  fill: none;
-  stroke: #0b4c4c;
-  stroke-width: 1.6;
+/* Global Compliance */
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
+  border-radius: 50%;
+}
+
+/* Sustainable Promise */
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
+  border-radius: 55% 45% 55% 45%;
+}
+
+/* Customer Confidence */
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
+  border-radius: 26px;
+}
+
+.brand-standard__trust .trust-card__icon svg {
+  display: block;
+
+  width: 36px !important;
+  height: 36px !important;
+
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+
+  fill: none !important;
+
+  stroke: #087f78 !important;
+  stroke-width: 1.8 !important;
+
   stroke-linecap: round;
   stroke-linejoin: round;
+
+  overflow: visible;
 }
 
-.trust-card h3 {
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
+  border-color: rgba(8, 127, 120, 0.24);
+}
+
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon svg {
+  stroke: #087f78 !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
+  border-color: rgba(37, 117, 139, 0.24);
+  background: linear-gradient(145deg, #ffffff, #eef6f9);
+}
+
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon svg {
+  stroke: #25758b !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
+  border-color: rgba(83, 145, 105, 0.24);
+  background: linear-gradient(145deg, #ffffff, #eff7ee);
+}
+
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon svg {
+  stroke: #579267 !important;
+}
+
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
+  border-color: rgba(170, 139, 72, 0.26);
+  background: linear-gradient(145deg, #ffffff, #faf5e7);
+}
+
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon svg {
+  stroke: #aa8b48 !important;
+}
+
+.brand-standard__trust .trust-card h3 {
+  width: 100%;
+  min-height: 2.6rem;
+
   margin: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 
   color: #073538;
 
-  font-family: var(--font-display, sans-serif);
-  font-size: 0.95rem;
+  font-family:
+    var(--font-display),
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 1.08rem;
   font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+
+  text-align: center;
 }
 
-.trust-card p {
-  max-width: 190px;
 
-  margin: 0.45rem 0 0;
+.brand-standard__trust .trust-card p {
+  width: 100%;
+  max-width: 240px;
 
-  color: #617073;
+  min-height: 3.3em;
 
-  font-size: 0.78rem;
-  line-height: 1.7;
+  margin: 1 rem auto 0;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  color: #607072;
+
+  font-family:
+    var(--font-body),
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  text-align: center;
+}
+
+.brand-standard__trust .trust-card:hover .trust-card__icon {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 14px 30px rgba(8, 47, 49, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .brand-standard__trust {
+    width: 94%;
+    padding: 1.5rem 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-standard__trust .trust-card {
+    min-height: 210px;
+    padding: 2rem 1.4rem;
+  }
+
+  .brand-standard__trust .trust-card__icon {
+    width: 68px;
+    height: 68px;
+    flex-basis: 68px;
+  }
+
+  .brand-standard__trust .trust-card__icon svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .brand-standard__trust .trust-card:nth-child(2)::after {
+    display: none;
+  }
+
+  .brand-standard__trust .trust-card:nth-child(-n + 2)::before {
+    content: "";
+
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: 0;
+
+    height: 1px;
+
+    background: rgba(8, 47, 49, 0.12);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .brand-standard__trust {
+    width: 92%;
+    padding: 0.8rem 0;
+    border-radius: 18px;
+  }
+
+  .brand-standard__trust .trust-card {
+    min-height: 185px;
+    padding: 1.5rem 0.8rem;
+  }
+
+  .brand-standard__trust .trust-card__icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    margin-bottom: 1rem;
+  }
+
+  .brand-standard__trust .trust-card__icon svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .brand-standard__trust .trust-card h3 {
+    min-height: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .brand-standard__trust .trust-card p {
+    max-width: 150px;
+    min-height: 4em;
+    margin-top: 1.15rem;
+    font-size: 0.72rem;
+    line-height: 1.55;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 400px) {
+  .brand-standard__trust {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-standard__trust .trust-card {
+    min-height: 155px;
+  }
+
+  .brand-standard__trust .trust-card:not(:last-child)::after {
+    display: block !important;
+    top: auto;
+    right: 12%;
+    bottom: 0;
+    left: 12%;
+    width: auto;
+    height: 1px;
+  }
+
+  .brand-standard__trust .trust-card:last-child::after {
+    display: none !important;
+  }
 }
 
 
@@ -650,18 +903,25 @@
 
 
 /* ==========================================================
-   METRICS
+   METRICS — FOUR BOX ALIGNMENT
    ========================================================== */
 
 .promise-metrics {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 0.85rem;
+
   margin-top: 1.3rem;
+
+  box-sizing: border-box;
 }
+
 .promise-metric {
-  flex: 0 0 auto;
-  width: 150px;
+  width: auto;
+  min-width: 0;
   min-height: 118px;
 
   display: flex;
@@ -670,14 +930,20 @@
   justify-content: center;
 
   padding: 0.9rem 0.6rem;
+
   text-align: center;
 
   border: 1px solid #d5ddd4;
   border-radius: 12px;
+
   background: rgba(255, 255, 255, 0.35);
+
   box-sizing: border-box;
 
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .promise-metric:hover {
@@ -685,12 +951,6 @@
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 10px 25px rgba(8, 47, 49, 0.07);
 }
-
-
-
-/* IMPORTANT:
-   Prevent the metric SVGs from becoming huge.
-*/
 
 .metric-icon {
   width: 42px !important;
@@ -720,7 +980,6 @@
   fill: none !important;
 
   stroke: #0b4c4c !important;
-
   stroke-width: 1.7 !important;
 
   stroke-linecap: round;
@@ -729,7 +988,6 @@
   overflow: visible;
 }
 
-/* Premium metric icon colors */
 .promise-metric:nth-child(1) .metric-icon svg {
   stroke: #188c62 !important;
 }
@@ -758,7 +1016,6 @@
   font-size: clamp(1.35rem, 1.8vw, 1.8rem);
 
   line-height: 1.1;
-
   font-weight: 800;
 }
 
@@ -773,6 +1030,46 @@
 
   line-height: 1.3;
 }
+
+
+/* ==========================================================
+   METRICS — RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+  .promise-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .promise-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promise-metric {
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .promise-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .promise-metric {
+    min-height: 100px;
+    padding: 0.8rem 0.45rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .promise-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ==========================================================
    BRAND STANDARD → ABOUT
@@ -1024,305 +1321,6 @@
 }
 
 
-/* ==========================================================
-   FAR OVERSEAS — PREMIUM TRUST PILLARS
-   ========================================================== */
-
-.brand-standard__trust {
-  width: min(1360px, 92%);
-  padding: 2.2rem 0;
-
-  background: linear-gradient(
-    135deg,
-    #fbfaf5 0%,
-    #f3f1e8 100%
-  );
-
-  border: 1px solid rgba(8, 47, 49, 0.06);
-  border-radius: 22px;
-
-  box-shadow: 0 10px 30px rgba(8, 47, 49, 0.055);
-}
-
-
-/* Trust cards */
-
-.brand-standard__trust .trust-card {
-  min-height: 195px;
-  padding: 1.25rem 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
-}
-
-
-/* Dividers */
-
-.brand-standard__trust .trust-card:not(:last-child)::after {
-  top: 12%;
-  bottom: 12%;
-  right: 0;
-
-  width: 1px;
-
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    #d5d4c8 20%,
-    #d5d4c8 80%,
-    transparent
-  );
-}
-
-
-/* Premium icons */
-
-.brand-standard__trust .trust-card__icon {
-  position: relative;
-
-  width: 72px;
-  height: 72px;
-
-  margin-bottom: 1.05rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid rgba(8, 127, 120, 0.18);
-  border-radius: 50%;
-
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff 0%,
-      #eef8f4 100%
-    );
-
-  box-shadow:
-    0 7px 20px rgba(8, 47, 49, 0.08),
-    inset 0 0 0 5px rgba(255, 255, 255, 0.65);
-
-  box-sizing: border-box;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-/* Outer ring */
-
-.brand-standard__trust .trust-card__icon::before {
-  content: "";
-
-  position: absolute;
-  inset: -6px;
-
-  border: 1px solid rgba(8, 127, 120, 0.10);
-  border-radius: 50%;
-
-  pointer-events: none;
-}
-
-
-/* Hide decorative dot */
-
-.brand-standard__trust .trust-card__icon::after {
-  display: none !important;
-}
-
-
-/* SVG icons */
-
-.brand-standard__trust .trust-card__icon svg {
-  display: block !important;
-
-  width: 36px !important;
-  height: 36px !important;
-
-  min-width: 36px !important;
-  min-height: 36px !important;
-
-  max-width: 36px !important;
-  max-height: 36px !important;
-
-  fill: none !important;
-
-  stroke: #087f78 !important;
-  stroke-width: 1.8 !important;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  overflow: visible;
-}
-
-
-/* Icon accents */
-
-.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
-  border-color: rgba(8, 127, 120, 0.24);
-}
-
-.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon svg {
-  stroke: #087f78 !important;
-}
-
-.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
-  border-color: rgba(37, 117, 139, 0.24);
-  background: linear-gradient(145deg, #ffffff, #eef6f9);
-}
-
-.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon svg {
-  stroke: #25758b !important;
-}
-
-.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
-  border-color: rgba(83, 145, 105, 0.24);
-  background: linear-gradient(145deg, #ffffff, #eff7ee);
-}
-
-.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon svg {
-  stroke: #579267 !important;
-}
-
-.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
-  border-color: rgba(170, 139, 72, 0.26);
-  background: linear-gradient(145deg, #ffffff, #faf5e7);
-}
-
-.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon svg {
-  stroke: #aa8b48 !important;
-}
-
-
-/* Trust headings */
-
-.brand-standard__trust .trust-card h3 {
-  margin: 0;
-
-  color: #073538;
-
-  font-family:
-    var(--font-display),
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 1.08rem;
-  font-weight: 700;
-
-  line-height: 1.3;
-  letter-spacing: -0.015em;
-}
-
-
-/* Trust descriptions */
-
-.brand-standard__trust .trust-card p {
-  max-width: 235px;
-
-  margin: 0.5rem 0 0;
-
-  color: #607072;
-
-  font-family:
-    var(--font-body),
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 0.84rem;
-  font-weight: 400;
-
-  line-height: 1.65;
-}
-
-
-/* Hover */
-
-.brand-standard__trust .trust-card:hover {
-  background: rgba(255, 255, 255, 0.32);
-}
-
-.brand-standard__trust .trust-card:hover .trust-card__icon {
-  transform: translateY(-5px) scale(1.04);
-
-  box-shadow:
-    0 12px 28px rgba(8, 47, 49, 0.12),
-    inset 0 0 0 5px rgba(255, 255, 255, 0.75);
-}
-
-
-/* Trust tablet */
-
-@media (max-width: 900px) {
-
-  .brand-standard__trust {
-    width: 94%;
-    padding: 1.5rem 0;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .brand-standard__trust .trust-card {
-    min-height: 180px;
-  }
-
-  .brand-standard__trust .trust-card__icon {
-    width: 64px;
-    height: 64px;
-  }
-
-  .brand-standard__trust .trust-card__icon svg {
-    width: 32px !important;
-    height: 32px !important;
-  }
-}
-
-
-/* Trust mobile */
-
-@media (max-width: 640px) {
-
-  .brand-standard__trust {
-    width: 92%;
-    padding: 0.8rem 0;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 18px;
-  }
-
-  .brand-standard__trust .trust-card {
-    min-height: 165px;
-    padding: 1rem 0.7rem;
-  }
-
-  .brand-standard__trust .trust-card__icon {
-    width: 58px;
-    height: 58px;
-    margin-bottom: 0.8rem;
-  }
-
-  .brand-standard__trust .trust-card__icon svg {
-    width: 29px !important;
-    height: 29px !important;
-  }
-
-  .brand-standard__trust .trust-card h3 {
-    font-size: 0.95rem;
-  }
-
-  .brand-standard__trust .trust-card p {
-    max-width: 150px;
-    font-size: 0.72rem;
-  }
-}
 /* ==========================================================
    FINAL CLEAN TRANSITION OVERRIDE
    ========================================================== */
