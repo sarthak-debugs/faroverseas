@@ -96,6 +96,9 @@
   object-position: center;
 
   max-width: none;
+  filter:
+    drop-shadow(0 0 4px rgba(252, 253, 253, 0.08))
+    drop-shadow(0 0 10px rgba(249, 251, 251, 0.08));
 }
 
 
@@ -451,9 +454,7 @@
 
 @media (max-width: 960px) {
 
-  /* --------------------------------------------------------------------------
-     Full-screen mobile menu
-     -------------------------------------------------------------------------- */
+  
 
   .navbar__links {
     position: fixed;
@@ -509,6 +510,9 @@
   .navbar__dropdown {
     position: static;
 
+    left: auto;
+    top: auto;
+
     transform: none;
 
     opacity: 1;
@@ -534,6 +538,28 @@
   }
 
 
+  /* IMPORTANT:
+     Override the desktop hover/focus transform.
+     Without this, the desktop translateX(-50%)
+     can shift the product links off-screen on mobile.
+  */
+
+  .navbar__item--dropdown:hover .navbar__dropdown,
+  .navbar__item--dropdown:focus-within .navbar__dropdown,
+  .navbar__item--dropdown.is-expanded .navbar__dropdown {
+    position: static;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
   .navbar__dropdown::before {
     display: none;
   }
@@ -541,6 +567,8 @@
 
   .navbar__dropdown-card {
     grid-template-columns: 1fr;
+
+    width: 100%;
 
     background: transparent;
 
@@ -553,7 +581,12 @@
 
 
   .navbar__item--dropdown.is-expanded .navbar__dropdown {
-    max-height: 520px;
+    max-height: 600px;
+  }
+
+
+  .navbar__item--dropdown.is-expanded .navbar__chevron {
+    transform: rotate(180deg);
   }
 
 
@@ -606,6 +639,7 @@
     width: 190px;
     height: 52px;
   }
+
 
   .navbar__logo {
     width: 190px;
