@@ -1189,3 +1189,34 @@
     font-size: 1.8rem;
   }
 }
+/* ==========================================================
+   FIX: Prevent trust panel from overlapping hero on
+   tablet and mobile devices
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  .spices-trust__panel {
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .spices-trust {
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .spices-trust {
+    margin-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .spices-trust__panel {
+    transform: none;
+    margin-bottom: 0;
+  }
+
+}
