@@ -1,6 +1,11 @@
 /* ==========================================================
-   FAR OVERSEAS
-   BRAND STANDARD / TRUST SECTION
+   FAR OVERSEAS — BRAND STANDARD / TRUST SECTION
+   Clean rewrite. Organized into numbered sections.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. BASE SECTION
    ========================================================== */
 
 .brand-standard {
@@ -13,7 +18,7 @@
 
 
 /* ==========================================================
-   CERTIFICATION HEADER
+   2. CERTIFICATION HEADER
    ========================================================== */
 
 .brand-standard__cert-header {
@@ -54,30 +59,21 @@
   line-height: 1.6;
 }
 
-
-/* ==========================================================
-   CERTIFICATION LOGOS
-   ========================================================== */
-
 .brand-standard__certifications {
   width: min(1280px, 92%);
   margin: 1.3rem auto 3rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   box-sizing: border-box;
 }
 
 .brand-standard__cert {
   width: 10%;
   min-height: 70px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-right: 1px solid #e7e8df;
   box-sizing: border-box;
 }
@@ -92,16 +88,11 @@
 
 .brand-standard__cert img {
   display: block;
-
   width: auto;
   height: 55px;
   max-width: 100px;
-
   object-fit: contain;
-
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .brand-standard__cert:hover img {
@@ -110,53 +101,35 @@
 
 
 /* ==========================================================
-   TRUST PILLARS — FINAL CLEAN VERSION
+   3. TRUST CARDS
    ========================================================== */
 
 .brand-standard__trust {
   position: relative;
-
   width: min(1360px, 90%);
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   padding: 2.2rem 0;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fbfaf5 0%,
-      #f3f1e8 100%
-    );
-
+  background: linear-gradient(135deg, #fbfaf5 0%, #f3f1e8 100%);
   border: 1px solid rgba(8, 47, 49, 0.10);
   border-radius: 22px;
-
-  box-shadow:
-    0 10px 30px rgba(8, 47, 49, 0.055);
-
+  box-shadow: 0 10px 30px rgba(8, 47, 49, 0.055);
   overflow: hidden;
   box-sizing: border-box;
 }
 
 .brand-standard__trust .trust-card {
   position: relative;
-
   min-width: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   padding: 2.4rem 1.8rem 2rem;
-
   text-align: center;
   background: transparent;
   box-sizing: border-box;
-
   transition: background 0.3s ease;
 }
 
@@ -166,197 +139,448 @@
 
 .brand-standard__trust .trust-card:not(:last-child)::after {
   content: "";
-
   position: absolute;
   top: 18%;
   bottom: 14%;
   right: 0;
-
   width: 1px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(8, 47, 49, 0.15) 15%,
-      rgba(8, 47, 49, 0.15) 85%,
-      transparent 100%
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(8, 47, 49, 0.15) 15%,
+    rgba(8, 47, 49, 0.15) 85%,
+    transparent 100%
+  );
 }
 
 .brand-standard__trust .trust-card__icon {
   position: relative;
-
   width: 76px;
   height: 76px;
   flex: 0 0 76px;
-
   margin-bottom: 1.35rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid rgba(8, 80, 76, 0.18);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.92),
-      rgba(247, 247, 241, 0.62)
-    );
-
-  box-shadow: none;
-   
-
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(247, 247, 241, 0.62));
   box-sizing: border-box;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Trusted Quality */
 .brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
   border-radius: 22px 22px 28px 28px;
-}
-
-/* Global Compliance */
-.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
-  border-radius: 50%;
-}
-
-/* Sustainable Promise */
-.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
-  border-radius: 55% 45% 55% 45%;
-}
-
-/* Customer Confidence */
-.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
-  border-radius: 26px;
-}
-
-.brand-standard__trust .trust-card__icon svg {
-  display: block;
-
-  width: 36px !important;
-  height: 36px !important;
-
-  min-width: 36px;
-  min-height: 36px;
-  max-width: 36px;
-  max-height: 36px;
-
-  fill: none !important;
-
-  stroke: #087f78 !important;
-  stroke-width: 1.8 !important;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  overflow: visible;
-}
-
-.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon {
   border-color: rgba(8, 127, 120, 0.24);
 }
 
-.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon svg {
-  stroke: #087f78 !important;
-}
-
 .brand-standard__trust .trust-card:nth-child(2) .trust-card__icon {
+  border-radius: 50%;
   border-color: rgba(37, 117, 139, 0.24);
   background: linear-gradient(145deg, #ffffff, #eef6f9);
 }
 
-.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon svg {
-  stroke: #25758b !important;
-}
-
 .brand-standard__trust .trust-card:nth-child(3) .trust-card__icon {
+  border-radius: 55% 45% 55% 45%;
   border-color: rgba(83, 145, 105, 0.24);
   background: linear-gradient(145deg, #ffffff, #eff7ee);
 }
 
-.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon svg {
-  stroke: #579267 !important;
-}
-
 .brand-standard__trust .trust-card:nth-child(4) .trust-card__icon {
+  border-radius: 26px;
   border-color: rgba(170, 139, 72, 0.26);
   background: linear-gradient(145deg, #ffffff, #faf5e7);
 }
 
-.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon svg {
-  stroke: #aa8b48 !important;
+.brand-standard__trust .trust-card__icon svg {
+  display: block;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  fill: none !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
 }
+
+.brand-standard__trust .trust-card:nth-child(1) .trust-card__icon svg { stroke: #087f78 !important; }
+.brand-standard__trust .trust-card:nth-child(2) .trust-card__icon svg { stroke: #25758b !important; }
+.brand-standard__trust .trust-card:nth-child(3) .trust-card__icon svg { stroke: #579267 !important; }
+.brand-standard__trust .trust-card:nth-child(4) .trust-card__icon svg { stroke: #aa8b48 !important; }
 
 .brand-standard__trust .trust-card h3 {
   width: 100%;
   min-height: 2.6rem;
-
   margin: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: relative;
-
   color: #073538;
-
-  font-family:
-    var(--font-display),
-    "Segoe UI",
-    sans-serif;
-
+  font-family: var(--font-display), "Segoe UI", sans-serif;
   font-size: 1.08rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.015em;
-
   text-align: center;
 }
-
 
 .brand-standard__trust .trust-card p {
   width: 100%;
   max-width: 240px;
-
   min-height: 3.3em;
-
-  margin: 1 rem auto 0;
-
+  margin: 1rem auto 0;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
   color: #607072;
-
-  font-family:
-    var(--font-body),
-    "Segoe UI",
-    sans-serif;
-
+  font-family: var(--font-body), "Segoe UI", sans-serif;
   font-size: 0.84rem;
   font-weight: 400;
   line-height: 1.65;
-
   text-align: center;
 }
 
 .brand-standard__trust .trust-card:hover .trust-card__icon {
   transform: translateY(-5px);
-
-  box-shadow:
-    0 14px 30px rgba(8, 47, 49, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 30px rgba(8, 47, 49, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
-/* Tablet */
+
+/* ==========================================================
+   4. PROMISE LAYOUT (grid shell)
+   ========================================================== */
+
+.brand-standard__promise {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(220px, 0.65fr)
+    minmax(0, 1.35fr);
+  align-items: center;
+  gap: 2.5rem;
+  min-height: 520px;
+  margin-top: 1.5rem;
+  padding: 4rem 5vw 5rem;
+  background: linear-gradient(90deg, #f5f6ee 0%, #fbfaf4 50%, #f7f7ef 100%);
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   5. PROMISE IMAGE — sizing rule kept exactly as specified
+   ========================================================== */
+
+.brand-standard__promise-image {
+  position: relative;
+  width: calc(100% + 5vw);
+  height: calc(100% + 130px);
+  min-height: 0;
+  align-self: center;
+  margin-left: -5vw;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.brand-standard__promise-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center center;
+  box-sizing: border-box;
+}
+
+.brand-standard__promise-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(245, 246, 238, 0) 50%, #f5f6ee 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   6. PROMISE CARD — natural internal spacing, no forced stretch
+   ========================================================== */
+
+.brand-standard__promise-card {
+  position: relative;
+  z-index: 4;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 270px;
+  padding: 2rem 1.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(8, 47, 49, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(8, 47, 49, 0.08);
+  box-sizing: border-box;
+}
+
+.promise-label {
+  margin: 0 0 0.9rem;
+  color: #087f78;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.promise-label span {
+  margin-left: 0.3rem;
+}
+
+.brand-standard__promise-card h2 {
+  margin: 0;
+  color: #073538;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.promise-line {
+  width: 32px;
+  height: 2px;
+  margin: 1rem 0;
+  background: #15947e;
+}
+
+.brand-standard__promise-card > p:last-child {
+  margin: 0;
+  color: #617073;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   7. RIGHT CONTENT — natural grouping, not stretched
+   ========================================================== */
+
+.brand-standard__promise-content {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.promise-eyebrow {
+  margin: 0 0 0.7rem;
+  color: #087f78;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.brand-standard__promise-content h2 {
+  max-width: 620px;
+  margin: 0;
+  color: #073538;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.9rem, 2.6vw, 2.6rem);
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.promise-description {
+  max-width: 560px;
+  margin: 1rem 0 1.75rem;
+  color: #607072;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+
+/* ==========================================================
+   8. METRICS — substantial cards, one row on desktop
+   ========================================================== */
+
+.promise-metrics {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.promise-metric {
+  min-width: 0;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.15rem 0.8rem;
+  text-align: center;
+  border: 1px solid #d5ddd4;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promise-metric:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 25px rgba(8, 47, 49, 0.07);
+}
+
+.metric-icon {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 0.6rem;
+  box-sizing: border-box;
+}
+
+.metric-icon svg {
+  display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  fill: none !important;
+  stroke-width: 1.7 !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+.promise-metric:nth-child(1) .metric-icon svg { stroke: #188c62 !important; }
+.promise-metric:nth-child(2) .metric-icon svg { stroke: #0f6f68 !important; }
+.promise-metric:nth-child(3) .metric-icon svg { stroke: #17805f !important; }
+.promise-metric:nth-child(4) .metric-icon svg { stroke: #8b6f2f !important; }
+
+.promise-metric strong {
+  display: block;
+  margin: 0;
+  color: #073538;
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.4rem, 1.8vw, 1.85rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.promise-metric span {
+  display: block;
+  margin-top: 0.4rem;
+  color: #516365;
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+
+/* ==========================================================
+   9. DESKTOP (default rules above already target desktop;
+      this section only refines edge widths where needed)
+   ========================================================== */
+
+@media (min-width: 1400px) {
+  .promise-description {
+    max-width: 600px;
+  }
+}
+
+
+/* ==========================================================
+   10. TABLET
+   ========================================================== */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+
+  .brand-standard__promise {
+    grid-template-columns:
+      minmax(0, 0.95fr)
+      minmax(190px, 0.65fr)
+      minmax(0, 1.2fr);
+    gap: 1.5rem;
+    padding: 3.5rem 3vw 4rem;
+  }
+
+  .brand-standard__promise-card {
+    max-width: 240px;
+    padding: 1.75rem 1.4rem;
+  }
+
+  .promise-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
+
+  .brand-standard__promise {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "image"
+      "card"
+      "content";
+    min-height: 0;
+    padding: 3.5rem 4vw 4rem;
+    gap: 2rem;
+  }
+
+  .brand-standard__promise-image {
+    grid-area: image;
+    width: 100%;
+    height: 420px;
+    min-height: 420px;
+    margin-left: 0;
+    align-self: auto;
+  }
+
+  .brand-standard__promise-card {
+    grid-area: card;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem 1.75rem;
+  }
+
+  .brand-standard__promise-content {
+    grid-area: content;
+  }
+
+  .promise-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .promise-metric {
+    min-height: 110px;
+  }
+
+  .brand-standard__certifications {
+    width: 94%;
+    overflow-x: auto;
+  }
+
+  .brand-standard__cert {
+    flex: 0 0 100px;
+  }
+
   .brand-standard__trust {
     width: 94%;
     padding: 1.5rem 0;
@@ -385,844 +609,18 @@
 
   .brand-standard__trust .trust-card:nth-child(-n + 2)::before {
     content: "";
-
     position: absolute;
     left: 12%;
     right: 12%;
     bottom: 0;
-
     height: 1px;
-
     background: rgba(8, 47, 49, 0.12);
   }
 }
 
-/* Mobile */
-@media (max-width: 640px) {
-  .brand-standard__trust {
-    width: 92%;
-    padding: 0.8rem 0;
-    border-radius: 18px;
-  }
-
-  .brand-standard__trust .trust-card {
-    min-height: 185px;
-    padding: 1.5rem 0.8rem;
-  }
-
-  .brand-standard__trust .trust-card__icon {
-    width: 58px;
-    height: 58px;
-    flex-basis: 58px;
-    margin-bottom: 1rem;
-  }
-
-  .brand-standard__trust .trust-card__icon svg {
-    width: 29px !important;
-    height: 29px !important;
-  }
-
-  .brand-standard__trust .trust-card h3 {
-    min-height: 2.5rem;
-    font-size: 0.95rem;
-  }
-
-  .brand-standard__trust .trust-card p {
-    max-width: 150px;
-    min-height: 4em;
-    margin-top: 1.15rem;
-    font-size: 0.72rem;
-    line-height: 1.55;
-  }
-}
-
-/* Very small mobile */
-@media (max-width: 400px) {
-  .brand-standard__trust {
-    grid-template-columns: 1fr;
-  }
-
-  .brand-standard__trust .trust-card {
-    min-height: 155px;
-  }
-
-  .brand-standard__trust .trust-card:not(:last-child)::after {
-    display: block !important;
-    top: auto;
-    right: 12%;
-    bottom: 0;
-    left: 12%;
-    width: auto;
-    height: 1px;
-  }
-
-  .brand-standard__trust .trust-card:last-child::after {
-    display: none !important;
-  }
-}
-
 
 /* ==========================================================
-   BRAND PROMISE AREA
-   ========================================================== */
-
-.brand-standard__promise {
-  position: relative;
-  width: 100%;
-
-  display: grid;
-
-  /* IMAGE | PROMISE CARD | CONTENT */
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(220px, 0.65fr)
-    minmax(0, 1.35fr);
-
-  align-items: center;
-  gap: 2.5rem;
-
-  min-height: 520px;
-  margin-top: 1.5rem;
-  padding: 4rem 5vw 5rem;
-
-  background:
-    linear-gradient(
-      90deg,
-      #f5f6ee 0%,
-      #fbfaf4 50%,
-      #f7f7ef 100%
-    );
-
-  box-sizing: border-box;
-}
-
-
-/* ==========================================================
-   BLACK PEPPER IMAGE
-   ========================================================== */
-
-/* ==========================================================
-   BLACK PEPPER IMAGE
-   ========================================================== */
-
-.brand-standard__promise-image {
-  position: relative;
-
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-
-  align-self: stretch;
-
-  overflow: hidden;
-
-  display: flex;
-  align-items: stretch;
-
-  border-radius: 0;
-
-  box-sizing: border-box;
-
-  /* Pull image toward the left edge */
-  margin-left: -5vw;
-
-  width: calc(100% + 5vw);
-}
-
-
-/* Image itself */
-
-.brand-standard__promise-image img {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  min-height: 0;
-
-  object-fit: cover;
-
-  object-position: center center;
-
-  box-sizing: border-box;
-}
-
-
-/* Keep the soft fade on the right */
-
-.brand-standard__promise-image::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(245, 246, 238, 0) 50%,
-      #f5f6ee 100%
-    );
-
-  z-index: 2;
-
-  pointer-events: none;
-}
-
-
-/* ==========================================================
-   DESKTOP
-   ========================================================== */
-
-@media (min-width: 901px) {
-
-  .brand-standard__promise-image {
-    align-self: stretch;
-
-    height: 100%;
-    min-height: 0;
-
-    margin-left: -5vw;
-    width: calc(100% + 5vw);
-  }
-
-  .brand-standard__promise-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-  }
-
-}
-
-
-/* ==========================================================
-   TABLET
-   ========================================================== */
-
-@media (max-width: 900px) {
-
-  .brand-standard__promise-image {
-    width: 100%;
-    height: 420px;
-    min-height: 420px;
-
-    margin-left: 0;
-  }
-
-  .brand-standard__promise-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-  }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media (max-width: 640px) {
-
-  .brand-standard__promise-image {
-    width: 100%;
-    height: 280px;
-    min-height: 280px;
-
-    margin-left: 0;
-  }
-
-  .brand-standard__promise-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center center;
-  }
-
-}
-/* ==========================================================
-   PROMISE CARD
-   ========================================================== */
-
-.brand-standard__promise-card {
-  position: relative;
-  z-index: 4;
-
-  width: 100%;
-  max-width: 270px;
-
-  padding: 2.4rem 2rem;
-
-  background: rgba(255, 255, 255, 0.96);
-
-  border: 1px solid rgba(8, 47, 49, 0.07);
-  border-radius: 16px;
-
-  box-shadow:
-    0 12px 35px rgba(8, 47, 49, 0.08);
-
-  box-sizing: border-box;
-}
-
-
-/* Small label */
-
-.promise-label {
-  margin: 0 0 1.15rem;
-
-  color: #087f78;
-
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-
-/* Main heading */
-
-.brand-standard__promise-card h2 {
-  margin: 0;
-
-  color: #073538;
-
-  font-family:
-    var(--font-display),
-    Georgia,
-    serif;
-
-  font-size: clamp(2rem, 2.5vw, 2.65rem);
-
-  line-height: 1.08;
-  font-weight: 700;
-
-  letter-spacing: -0.025em;
-}
-
-
-/* Green divider */
-
-.promise-line {
-  width: 32px;
-  height: 2px;
-
-  margin: 1.15rem 0;
-
-  background: #15947e;
-}
-
-
-/* Description */
-
-.brand-standard__promise-card > p:last-child {
-  margin: 0;
-
-  color: #617073;
-
-  font-family:
-    var(--font-body),
-    "Segoe UI",
-    sans-serif;
-
-  font-size: 0.82rem;
-  line-height: 1.75;
-}
-
-
-/* ==========================================================
-   DESKTOP
-   ========================================================== */
-
-@media (min-width: 901px) {
-
-  .brand-standard__promise-card {
-    max-width: 270px;
-    justify-self: center;
-  }
-
-}
-
-
-/* ==========================================================
-   TABLET
-   ========================================================== */
-
-@media (max-width: 1100px) and (min-width: 901px) {
-
-  .brand-standard__promise-card {
-    max-width: 245px;
-
-    padding: 2rem 1.5rem;
-  }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media (max-width: 900px) {
-
-  .brand-standard__promise-card {
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    padding: 2.2rem 1.8rem;
-  }
-
-}
-
-
-@media (max-width: 640px) {
-
-  .brand-standard__promise-card {
-    width: 92%;
-    max-width: none;
-
-    padding: 2rem 1.5rem;
-  }
-
-  .brand-standard__promise-card h2 {
-    font-size: 2rem;
-  }
-
-}
-.promise-label {
-  margin: 0 0 1.2rem;
-
-  color: #087f78;
-
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.promise-label span {
-  margin-left: 0.3rem;
-}
-
-.brand-standard__promise-card h2 {
-  margin: 0;
-
-  color: #073538;
-
-  font-family: var(--font-display, Georgia, serif);
-
-  font-size: clamp(2rem, 2.7vw, 2.8rem);
-
-  line-height: 1.05;
-
-  font-weight: 700;
-}
-
-.promise-line {
-  width: 32px;
-  height: 2px;
-
-  margin: 1.2rem 0;
-
-  background: #15947e;
-}
-
-.brand-standard__promise-card > p:last-child {
-  margin: 0;
-
-  color: #617073;
-
-  font-size: 0.82rem;
-  line-height: 1.8;
-}
-
-
-/* ==========================================================
-   RIGHT SIDE CONTENT
-   ========================================================== */
-
-.brand-standard__promise-content {
-  position: relative;
-  z-index: 3;
-
-  width: 100%;
-
-  box-sizing: border-box;
-}
-
-.promise-eyebrow {
-  margin: 0 0 0.8rem;
-
-  color: #087f78;
-
-  font-family: var(--font-mono, monospace);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.brand-standard__promise-content h2 {
-  max-width: 620px;
-
-  margin: 0;
-
-  color: #073538;
-
-  font-family: var(--font-display, Georgia, serif);
-
-  font-size: clamp(2rem, 3.2vw, 3.2rem);
-
-  line-height: 1.08;
-
-  font-weight: 700;
-}
-
-.promise-description {
-  max-width: 620px;
-
-  margin: 1.2rem 0 1.5rem;
-
-  color: #607072;
-
-  font-size: 0.9rem;
-
-  line-height: 1.7;
-}
-
-
-/* ==========================================================
-   METRICS — FOUR BOX ALIGNMENT
-   ========================================================== */
-
-.promise-metrics {
-  width: 100%;
-
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  gap: 0.85rem;
-
-  margin-top: 1.3rem;
-
-  box-sizing: border-box;
-}
-
-.promise-metric {
-  width: auto;
-  min-width: 0;
-  min-height: 118px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.9rem 0.6rem;
-
-  text-align: center;
-
-  border: 1px solid #d5ddd4;
-  border-radius: 12px;
-
-  background: rgba(255, 255, 255, 0.35);
-
-  box-sizing: border-box;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.promise-metric:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 25px rgba(8, 47, 49, 0.07);
-}
-
-.metric-icon {
-  width: 42px !important;
-  height: 42px !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  margin-bottom: 0.5rem;
-
-  box-sizing: border-box;
-}
-
-.metric-icon svg {
-  display: block !important;
-
-  width: 32px !important;
-  height: 32px !important;
-
-  min-width: 32px !important;
-  min-height: 32px !important;
-
-  max-width: 32px !important;
-  max-height: 32px !important;
-
-  fill: none !important;
-
-  stroke: #0b4c4c !important;
-  stroke-width: 1.7 !important;
-
-  stroke-linecap: round;
-  stroke-linejoin: round;
-
-  overflow: visible;
-}
-
-.promise-metric:nth-child(1) .metric-icon svg {
-  stroke: #188c62 !important;
-}
-
-.promise-metric:nth-child(2) .metric-icon svg {
-  stroke: #0f6f68 !important;
-}
-
-.promise-metric:nth-child(3) .metric-icon svg {
-  stroke: #17805f !important;
-}
-
-.promise-metric:nth-child(4) .metric-icon svg {
-  stroke: #8b6f2f !important;
-}
-
-.promise-metric strong {
-  display: block;
-
-  margin: 0;
-
-  color: #073538;
-
-  font-family: var(--font-display, sans-serif);
-
-  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
-
-  line-height: 1.1;
-  font-weight: 800;
-}
-
-.promise-metric span {
-  display: block;
-
-  margin-top: 0.35rem;
-
-  color: #516365;
-
-  font-size: 0.67rem;
-
-  line-height: 1.3;
-}
-
-
-/* ==========================================================
-   METRICS — RESPONSIVE
-   ========================================================== */
-
-@media (max-width: 1100px) and (min-width: 901px) {
-  .promise-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 900px) {
-  .promise-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .promise-metric {
-    min-height: 110px;
-  }
-}
-
-@media (max-width: 640px) {
-  .promise-metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.65rem;
-  }
-
-  .promise-metric {
-    min-height: 100px;
-    padding: 0.8rem 0.45rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .promise-metrics {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* ==========================================================
-   BRAND STANDARD → ABOUT
-   CLEAN ORGANIC TRANSITION
-   ========================================================== */
-
-.brand-standard__bottom-wave {
-    display: none !important;
-}
-
-.brand-standard {
-    position: relative;
-    margin-bottom: 0;
-    padding-bottom: 55px;
-    overflow: visible;
-    z-index: 2;
-}
-
-/* Remove any old section border */
-.brand-standard + section {
-    margin-top: 0 !important;
-    border-top: none !important;
-    position: relative;
-    z-index: 1;
-}
-
-
-/* ==========================================================
-   SOFT CURVED SEPARATOR
-   ========================================================== */
-
-.brand-standard::after {
-    content: "";
-    position: absolute;
-
-    left: -5%;
-    bottom: -45px;
-
-    width: 110%;
-    height: 75px;
-
-    background: #f8f7f1;
-
-    border-radius: 0 0 50% 50% / 0 0 100% 100%;
-
-    box-shadow:
-        0 8px 20px rgba(8, 47, 49, 0.025);
-
-    z-index: 4;
-
-    pointer-events: none;
-}
-
-
-/* ==========================================================
-   SUBTLE TEAL CURVE
-   ========================================================== */
-
-.brand-standard::before {
-    content: "";
-
-    position: absolute;
-
-    left: -5%;
-    bottom: -22px;
-
-    width: 110%;
-    height: 45px;
-
-    border-top: 2px solid rgba(8, 127, 120, 0.35);
-
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-
-    z-index: 6;
-
-    pointer-events: none;
-}
-
-
-/* ==========================================================
-   MOBILE
-   ========================================================== */
-
-@media (max-width: 640px) {
-
-    .brand-standard {
-        padding-bottom: 35px;
-    }
-
-    .brand-standard::after {
-        bottom: -28px;
-        height: 50px;
-    }
-
-    .brand-standard::before {
-        bottom: -14px;
-        height: 30px;
-        border-width: 1px;
-    }
-}
-
-
-/* ==========================================================
-   CLEAN PROMISE LAYOUT — TABLET / SMALL LAPTOP
-   ========================================================== */
-
-@media (max-width: 1100px) and (min-width: 901px) {
-
-  .brand-standard__promise {
-    grid-template-columns:
-      minmax(0, 0.95fr)
-      minmax(190px, 0.65fr)
-      minmax(0, 1.2fr);
-
-    gap: 1.5rem;
-    padding: 3.5rem 3vw 4rem;
-  }
-
-  .brand-standard__promise-image {
-    height: 360px;
-    min-height: 360px;
-  }
-
-  .brand-standard__promise-card {
-    max-width: 240px;
-    padding: 2rem 1.4rem;
-  }
-
-  .promise-metrics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} 
-
-
-/* ==========================================================
-   CERTIFICATIONS — TABLET
-   ========================================================== */
-
-@media (max-width: 900px) {
-
-  .brand-standard__certifications {
-    width: 94%;
-    overflow-x: auto;
-  }
-
-  .brand-standard__cert {
-    flex: 0 0 100px;
-  }
-}
-
-
-/* ==========================================================
-   CERTIFICATIONS + TRUST — MOBILE
+   11. MOBILE
    ========================================================== */
 
 @media (max-width: 640px) {
@@ -1270,26 +668,73 @@
     width: 92%;
     grid-template-columns: 1fr 1fr;
     border-radius: 18px;
+    padding: 0.8rem 0;
   }
 
-  .trust-card {
-    padding: 1rem 0.7rem;
+  .brand-standard__trust .trust-card {
+    min-height: 185px;
+    padding: 1.5rem 0.8rem;
   }
 
-  .trust-card p {
+  .brand-standard__trust .trust-card__icon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    margin-bottom: 1rem;
+  }
+
+  .brand-standard__trust .trust-card__icon svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .brand-standard__trust .trust-card h3 {
+    min-height: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  .brand-standard__trust .trust-card p {
     max-width: 150px;
+    min-height: 4em;
+    margin-top: 1.15rem;
     font-size: 0.72rem;
+    line-height: 1.55;
   }
 
-  .brand-standard__bottom-wave {
-    height: 70px;
+  .brand-standard__promise {
+    padding: 2.5rem 5vw 3rem;
+    gap: 1.5rem;
+  }
+
+  .brand-standard__promise-image {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .brand-standard__promise-card {
+    width: 92%;
+    max-width: none;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .brand-standard__promise-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .brand-standard__promise-content h2 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .promise-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .promise-metric {
+    min-height: 100px;
+    padding: 0.8rem 0.5rem;
   }
 }
-
-
-/* ==========================================================
-   VERY SMALL MOBILE
-   ========================================================== */
 
 @media (max-width: 400px) {
 
@@ -1297,11 +742,11 @@
     grid-template-columns: 1fr;
   }
 
-  .trust-card {
+  .brand-standard__trust .trust-card {
     min-height: 155px;
   }
 
-  .trust-card:not(:last-child)::after {
+  .brand-standard__trust .trust-card:not(:last-child)::after {
     display: block !important;
     top: auto;
     right: 12%;
@@ -1311,7 +756,7 @@
     height: 1px;
   }
 
-  .trust-card:last-child::after {
+  .brand-standard__trust .trust-card:last-child::after {
     display: none !important;
   }
 
@@ -1320,33 +765,44 @@
   }
 }
 
-
 /* ==========================================================
-   FINAL CLEAN TRANSITION OVERRIDE
+   PROMISE SECTION — DECORATIVE MARGIN LINES
+   Keep the original grid and image sizing.
    ========================================================== */
 
-.brand-standard__bottom-wave {
-    display: none !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
+@media (min-width: 901px) {
+
+  /* Keep the original three-column layout */
+  .brand-standard__promise {
+    position: relative;
+  }
+
+  /* Right-side content is the anchor for the decoration */
+  .brand-standard__promise-content {
+    position: relative;
+  }
+
+  /* TOP LINE */
+.brand-standard__promise-content::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  left: -200px;
+  width: calc(100% + 50px);
+  height: 2px;
+  background: #15947e;
+  opacity: 0.8;
 }
 
-.brand-standard::before,
-.brand-standard::after {
-    content: none !important;
-    display: none !important;
+/* BOTTOM LINE */
+.brand-standard__promise-content::after {
+  content: "";
+  position: absolute;
+  bottom: -45px;
+  left: -200px;
+  width: calc(100% + 50px);
+  height: 2px;
+  background: #15947e;
+  opacity: 0.8;
 }
-
-.brand-standard {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-.brand-standard + .about-preview {
-    margin-top: 0 !important;
-    border-top: none !important;
 }

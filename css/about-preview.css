@@ -6,7 +6,7 @@
 
 .about-preview {
   position: relative;
-  padding-block: var(--space-3xl);
+  padding-block: 1rem;
   background: var(--color-sand);
   overflow: hidden;
 }
