@@ -8,7 +8,8 @@
 
 .showcase {
   position: relative;
-  padding-block: var(--space-3xl);
+  padding-top: var(--space-3xl);
+padding-bottom: 2.5rem;
   background: var(--color-ink-teal);
   color: var(--color-white);
 }
@@ -29,10 +30,11 @@
   justify-content: space-between;
   gap: var(--space-lg);
   flex-wrap: wrap;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: 3;
 }
-
 .showcase__header h2 {
+  position: relative;
+  top: -50px;
   font-size: var(--fs-display-lg);
   max-width: 18ch;
   margin-top: var(--space-sm);
@@ -40,6 +42,8 @@
 }
 
 .showcase__header p {
+  position: relative;
+  top: -50px;
   max-width: 42ch;
   color: rgba(247, 245, 240, 0.7);
 }
@@ -54,7 +58,7 @@
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: minmax(240px, auto) minmax(190px, auto) minmax(150px, auto);
+  grid-template-rows: minmax(248px, auto) minmax(230px, auto) minmax(180px, auto);
   grid-template-areas:
     "spices   herbs      pulses     cereals"
     "spices   oilseeds   dehydrated dryfruits"
@@ -68,7 +72,7 @@
   align-items: flex-end;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 260px;
+  min-height: 0;
   box-shadow: var(--shadow-md);
   cursor: pointer;
   /* The entire <a> is the hit area — image, scrim and text all sit
@@ -86,7 +90,7 @@
 }
 
 .product-card--sm {
-  min-height: 190px;
+  min-height: 0;
 }
 
 .product-card--sm .product-card__title {
