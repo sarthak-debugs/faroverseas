@@ -390,18 +390,84 @@
     box-shadow var(--dur-med) var(--ease-standard),
     border-color var(--dur-med) var(--ease-standard);
 }
+/* ==========================================================
+   CREATIVE PRODUCT CARD HOVER + TEAL GLOW
+   ========================================================== */
 
-.spice-card:hover {
-  transform: translateY(-6px);
+.spice-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 
-  box-shadow:
-    0 0 0 1px rgba(14, 124, 123, 0.35),
-    0 0 24px rgba(14, 124, 123, 0.35),
-    0 12px 30px rgba(14, 124, 123, 0.18);
-
-  border-color: rgba(14, 124, 123, 0.55);
+  transition:
+    transform 0.45s var(--ease-out-expo),
+    box-shadow 0.45s var(--ease-standard);
 }
 
+/* Moving light sweep */
+.spice-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(201, 146, 46, 0.08) 42%,
+    rgba(14, 124, 123, 0.16) 50%,
+    transparent 68%
+  );
+
+  transform: translateX(-120%);
+  transition: transform 0.7s var(--ease-out-expo);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Lift + ORIGINAL GLOW */
+.spice-card:hover {
+  transform: translateY(-8px) scale(1.012);
+
+  box-shadow:
+    0 0 0 1px rgba(14, 124, 122, 0.4),
+    0 0 24px rgba(14, 124, 123, 0.38),
+    0 0 45px rgba(14, 124, 123, 0.18),
+    0 14px 32px rgba(14, 124, 123, 0.18);
+}
+
+/* Light sweep */
+.spice-card:hover::after {
+  transform: translateX(120%);
+}
+
+/* Image animation */
+.spice-card__media img {
+  transition:
+    transform 0.7s var(--ease-out-expo),
+    filter 0.45s ease;
+}
+
+.spice-card:hover .spice-card__media img {
+  transform: scale(1.1) rotate(1.5deg);
+  filter: saturate(1.08);
+}
+
+/* Arrow animation */
+.spice-card__link {
+  transition:
+    transform 0.35s var(--ease-standard),
+    background 0.35s var(--ease-standard),
+    border-color 0.35s var(--ease-standard),
+    color 0.35s var(--ease-standard);
+}
+
+.spice-card:hover .spice-card__link {
+  transform: translateX(4px);
+  background: var(--color-ink-teal);
+  border-color: var(--color-ink-teal);
+  color: var(--color-white);
+}
 
 
 .spice-card__media {
@@ -1219,4 +1285,129 @@
     margin-bottom: 0;
   }
 
+}
+
+/* ==========================================================
+   PRODUCT CARD — FULL CARD TOP-RIGHT REVEAL
+   ========================================================== */
+
+.spice-card {
+  isolation: isolate;
+}
+
+/* Expanding dark treatment starts at the top-right corner. */
+.spice-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(53, 130, 158, 0.5) 0%,
+      rgba(37, 150, 190, 0.5) 56%,
+      rgba(37, 150, 190, 0.5) 100%
+    );
+  clip-path: circle(0% at 100% 0%);
+  opacity: 0;
+  transition:
+    clip-path 0.72s var(--ease-out-expo),
+    opacity 0.42s ease;
+  pointer-events: none;
+}
+
+.spice-card:hover::before {
+  clip-path: circle(155% at 100% 0%);
+  opacity: 1;
+}
+
+.spice-card__hover-content {
+  position: absolute;
+  left: 1.2rem;
+  right: 1.2rem;
+  top: 2.25rem;
+  z-index: 3;
+  max-width: 82%;
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s ease 0.16s,
+    transform 0.5s var(--ease-out-expo) 0.16s;
+  pointer-events: none;
+}
+
+.spice-card:hover .spice-card__hover-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spice-card__hover-line {
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin-bottom: 1rem;
+  background: var(--color-gold);
+}
+
+.spice-card__hover-content p {
+  margin: 0;
+  color: rgba(247, 245, 240, 0.92);
+  font-size: clamp(0.82rem, 0.9vw, 0.94rem);
+  line-height: 1.62;
+}
+
+/* Bring the existing product details above the reveal overlay. */
+.spice-card__body {
+  position: relative;
+  z-index: 4;
+  transition:
+    color 0.35s ease,
+    transform 0.45s var(--ease-out-expo);
+}
+
+.spice-card:hover .spice-card__name,
+.spice-card:hover .spice-card__forms {
+  color: var(--color-white);
+}
+
+.spice-card:hover .spice-card__body {
+  transform: translateY(-2px);
+}
+
+.spice-card:hover .spice-card__link {
+  position: relative;
+  z-index: 5;
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-ink-teal);
+}
+
+/* Keep the image visible beneath the reveal; use only a very subtle motion. */
+.spice-card:hover .spice-card__media img {
+  transform: scale(1.01);
+  filter: saturate(1.02);
+}
+
+/* Hide hover-only copy on touch layouts and keep cards compact. */
+@media (max-width: 640px) {
+  .spice-card::before,
+  .spice-card__hover-content {
+    display: none;
+  }
+
+  .spice-card:hover .spice-card__name,
+  .spice-card:hover .spice-card__forms {
+    color: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spice-card::before,
+  .spice-card__hover-content,
+  .spice-card__media img,
+  .spice-card__body,
+  .spice-card__link {
+    transition: none !important;
+  }
 }

@@ -1,15 +1,13 @@
-/* ==========================================================================
-   Product Showcase
+/* Product Showcase
    Replaces the earlier icon-grid with large photographic cards — the
    section explicitly called out as needing the most visual weight.
    Four hero categories get full imagery; the remaining four are listed
-   as a compact strip beneath so all 8 stay represented.
-   ========================================================================== */
+   as a compact strip beneath so all 8 stay represented. */
 
 .showcase {
   position: relative;
   padding-top: var(--space-3xl);
-padding-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
   background: var(--color-ink-teal);
   color: var(--color-white);
 }
