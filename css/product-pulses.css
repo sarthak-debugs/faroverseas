@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FarOverseas — Product Category / Herbs
+   FarOverseas — Product Category / Pulses, Lentils & Beans
 
    Page-specific styling.
    Reuses variables and shared .container / .btn primitives.
@@ -10,7 +10,7 @@
    PAGE
    ========================================================================== */
 
-.herbs-page {
+.pulses-page {
   background: var(--color-sand);
   color: var(--color-ink-teal);
   overflow: hidden;
@@ -21,7 +21,7 @@
    HERO
    ========================================================================== */
 
-.herbs-hero {
+.pulses-hero {
   position: relative;
   min-height: 430px;
 
@@ -34,10 +34,10 @@
       rgba(4, 31, 32, 0.08) 76%,
       rgba(4, 31, 32, 0.12) 100%
     ),
-    url("../assets/images/herbs-hero.png");
+    url("../assets/images/pulses-hero.png");
 
   background-size: cover;
-  background-position: center 48%;
+  background-position: center 6%;
   background-repeat: no-repeat;
 
   color: var(--color-sand);
@@ -51,7 +51,7 @@
 }
 
 
-.herbs-hero__glow {
+.pulses-hero__glow {
   position: absolute;
 
   width: 34rem;
@@ -70,7 +70,7 @@
 }
 
 
-.herbs-hero__inner {
+.pulses-hero__inner {
   position: relative;
   z-index: 1;
 
@@ -78,22 +78,22 @@
 }
 
 
-.herbs-hero__copy {
+.pulses-hero__copy {
   max-width: 570px;
 }
 
 
-.herbs-eyebrow {
+.pulses-eyebrow {
   color: var(--color-gold) !important;
   margin-bottom: 0.9rem;
 }
 
 
-.herbs-hero h1 {
+.pulses-hero h1 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
 
-  font-size: clamp(4rem, 6vw, 6.2rem);
+  font-size: clamp(3rem, 4.5vw, 4.8rem);
   line-height: 0.9;
   letter-spacing: -0.055em;
 
@@ -103,7 +103,7 @@
 }
 
 
-.herbs-hero__rule {
+.pulses-hero__rule {
   width: 72px;
   height: 2px;
 
@@ -113,7 +113,7 @@
 }
 
 
-.herbs-hero__tagline {
+.pulses-hero__tagline {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 1.8vw, 1.45rem);
   font-weight: 700;
@@ -124,7 +124,7 @@
 }
 
 
-.herbs-hero__desc {
+.pulses-hero__desc {
   max-width: 520px;
 
   color: rgba(247, 245, 240, 0.86);
@@ -136,14 +136,14 @@
 }
 
 
-.herbs-hero__visual,
-.herbs-hero__image,
-.herbs-hero__stamp {
+.pulses-hero__visual,
+.pulses-hero__image,
+.pulses-hero__stamp {
   display: none;
 }
 
 
-.herbs-arrow {
+.pulses-arrow {
   font-size: 1.1em;
 
   transition:
@@ -156,7 +156,7 @@
    ========================================================================== */
 
 
-.herbs-trust {
+.pulses-trust {
   position: relative;
   z-index: 3;
 
@@ -166,7 +166,7 @@
 }
 
 
-.herbs-trust__panel {
+.pulses-trust__panel {
   transform: translateY(-2.25rem);
   margin-bottom: -2.25rem;
 
@@ -184,7 +184,7 @@
 }
 
 
-.herbs-trust__panel > div {
+.pulses-trust__panel > div {
   display: grid;
 
   grid-template-columns: 52px minmax(0, 1fr);
@@ -200,14 +200,14 @@
 }
 
 
-.herbs-trust__panel > div:last-child {
+.pulses-trust__panel > div:last-child {
   border-right: 0;
 }
 
 
 /* ICON */
 
-.herbs-trust__icon {
+.pulses-trust__icon {
   width: 44px;
   height: 44px;
 
@@ -221,7 +221,7 @@
 }
 
 
-.herbs-trust__icon svg {
+.pulses-trust__icon svg {
   width: 100%;
   height: 100%;
 
@@ -231,7 +231,7 @@
 
 /* TITLE */
 
-.herbs-trust strong {
+.pulses-trust strong {
   display: block;
 
   grid-column: 2;
@@ -245,7 +245,7 @@
 
 /* DESCRIPTION */
 
-.herbs-trust p {
+.pulses-trust p {
   grid-column: 2;
   grid-row: 2;
 
@@ -259,30 +259,30 @@
 }
 
 /* ==========================================================================
-   SPICES RANGE
+   PULSES, LENTILS & BEANS RANGE
    ========================================================================== */
-.herbs-range {
+.pulses-range {
     padding: 1.2rem 0 7rem;
     background: var(--color-sand);
 }
 
-.herbs-range__header {
+.pulses-range__header {
     display: block;
     text-align: center;
     margin: 0 auto 1.2rem;
 }
 
-.herbs-range__header .container {
+.pulses-range__header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.herbs-range__header .eyebrow {
+.pulses-range__header .eyebrow {
     display: none;
 }
 
-.herbs-range__header h2 {
+.pulses-range__header h2 {
    position: relative;
   top: 25px;
     margin: 0;
@@ -295,11 +295,11 @@
     color: var(--color-ink-teal);
 }
 
-.herbs-range__header h2 em {
+.pulses-range__header h2 em {
     display: none;
 }
 
-.herbs-range__decor {
+.pulses-range__decor {
      position: relative;
      top: 12px;
     display: flex;
@@ -309,24 +309,24 @@
     margin: 0.45rem 0 0.35rem;
 }
 
-.herbs-range__decor span {
+.pulses-range__decor span {
     display: block;
 }
 
-.herbs-range__decor span:first-child,
-.herbs-range__decor span:last-child {
+.pulses-range__decor span:first-child,
+.pulses-range__decor span:last-child {
     width: 42px;
     height: 1px;
     background: var(--color-gold);
 }
 
-.herbs-range__decor span:nth-child(2) {
+.pulses-range__decor span:nth-child(2) {
     color: var(--color-gold);
     font-size: 0.9rem;
     line-height: 1;
 }
 
-.herbs-range__header > .container > p:last-child {
+.pulses-range__header > .container > p:last-child {
     position: relative;
     top: 6px;
     margin: 0;
@@ -337,7 +337,7 @@
 
 /* Continuous product grid */
 
-.herbs-group {
+.pulses-group {
     padding: 0;
 }
 
@@ -345,7 +345,7 @@
    PRODUCT GROUPS
    ========================================================================== */
 
-.herbs-group {
+.pulses-group {
   padding:  0;
 }
 
@@ -354,13 +354,13 @@
 
 
 
-.herbs-group > .container {
+.pulses-group > .container {
   max-width: none;
   width: 100%;
   padding-inline: clamp(1.25rem, 3vw, 3rem);
 }
 
-.herbs-group__grid {
+.pulses-group__grid {
   display: grid;
 
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -374,7 +374,7 @@
    PRODUCT CARDS
    ========================================================================== */
 
-.herbs-group__grid {
+.pulses-group__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   column-gap: 1.25rem;
@@ -388,7 +388,7 @@
    Hover: expands to reveal the description
    -------------------------------------------------------------------------- */
 
-.herb-card {
+.pulse-card {
   position: relative;
   isolation: isolate;
   min-width: 0;
@@ -404,7 +404,7 @@
 
 /* Image */
 
-.herb-card__media {
+.pulse-card__media {
   position: relative;
   z-index: 1;
   height: 200px;
@@ -425,7 +425,7 @@
     background 0.45s var(--ease-out-expo);
 }
 
-.herb-card__media img {
+.pulse-card__media img {
   position: relative;
   z-index: 2;
 
@@ -444,7 +444,7 @@
 
 /* Normal product body */
 
-.herb-card__body {
+.pulse-card__body {
   position: relative;
   z-index: 4;
 
@@ -465,7 +465,7 @@
     transform 0.45s var(--ease-out-expo);
 }
 
-.herb-card__name {
+.pulse-card__name {
   margin: 0 0 0.35rem;
 
   font-size: 1.2rem;
@@ -475,7 +475,7 @@
   color: var(--color-ink-teal);
 }
 
-.herb-card__forms {
+.pulse-card__forms {
   font-size: 1rem;
   line-height: 1.45;
   max-width: 190px;
@@ -484,7 +484,7 @@
 
 /* Arrow */
 
-.herb-card__link {
+.pulse-card__link {
   width: 34px;
   height: 34px;
   flex: 0 0 34px;
@@ -504,7 +504,7 @@
     color 0.35s var(--ease-standard);
 }
 
-.herb-card__link svg {
+.pulse-card__link svg {
   width: 12px;
 }
 
@@ -514,13 +514,13 @@
 
 @media (min-width: 641px) {
 
-  .herb-card {
+  .pulse-card {
     height: 335px;
     min-height: 335px;
     transform: translateY(0);
   }
 
-  .herb-card:hover {
+  .pulse-card:hover {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 42px;
     grid-template-rows: 200px auto auto;
@@ -549,7 +549,7 @@
     transform: translateY(-8px);
   }
 
-  .herb-card:hover .herb-card__media {
+  .pulse-card:hover .pulse-card__media {
     grid-column: 1 / -1;
     grid-row: 1;
     width: 100%;
@@ -569,18 +569,19 @@
       );
   }
 
-  .herb-card:hover .herb-card__media img {
+  .pulse-card:hover .pulse-card__media img {
     transform: scale(1.035);
     filter: saturate(1.06) brightness(1.02);
   }
 
-  .herb-card:hover .herb-card__body {
+  .pulse-card:hover .pulse-card__body {
     display: contents;
   }
 
-  /* The bottom padding is the spacing control between
-     description and product name. */
-  .herb-card__hover-content {
+  /* Hover description.
+     The bottom padding is the ONLY spacing control between the
+     description and the product name. Reduce/increase this value to tune the gap. */
+  .pulse-card__hover-content {
     grid-column: 1 / -1;
     grid-row: 2;
 
@@ -613,7 +614,7 @@
       visibility 0s linear 0.4s;
   }
 
-  .herb-card:hover .herb-card__hover-content {
+  .pulse-card:hover .pulse-card__hover-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -623,7 +624,7 @@
       transform 0.4s var(--ease-out-expo) 0.08s;
   }
 
-  .herb-card__hover-line {
+  .pulse-card__hover-line {
     display: block;
     width: 42px;
     height: 2px;
@@ -631,7 +632,7 @@
     background: var(--color-gold);
   }
 
-  .herb-card__hover-content p {
+  .pulse-card__hover-content p {
     margin: 0;
     color: rgba(247, 245, 240, 0.94);
     font-size: clamp(0.7rem, 0.78vw, 0.82rem);
@@ -639,7 +640,8 @@
     overflow-wrap: anywhere;
   }
 
-  .herb-card:hover .herb-card__body > div:first-child {
+  /* Product info sits directly after the description gap. */
+  .pulse-card:hover .pulse-card__body > div:first-child {
     grid-column: 1;
     grid-row: 3;
 
@@ -657,16 +659,16 @@
     margin: 0 !important;
   }
 
-  .herb-card:hover .herb-card__name,
-  .herb-card:hover .herb-card__forms {
+  .pulse-card:hover .pulse-card__name,
+  .pulse-card:hover .pulse-card__forms {
     color: var(--color-white);
   }
 
-  .herb-card:hover .herb-card__name {
+  .pulse-card:hover .pulse-card__name {
     margin-bottom: 0.25rem;
   }
 
-  .herb-card:hover .herb-card__link {
+  .pulse-card:hover .pulse-card__link {
     grid-column: 2;
     grid-row: 3;
 
@@ -691,7 +693,7 @@
     transform: none;
   }
 
-  .herb-card:hover .herb-card__link:hover {
+  .pulse-card:hover .pulse-card__link:hover {
     transform: translateX(3px) scale(1.04);
   }
 }
@@ -702,31 +704,31 @@
 
 @media (max-width: 640px) {
 
-  .herb-card {
+  .pulse-card {
     display: block;
     height: auto;
     min-height: 0;
   }
 
-  .herb-card__hover-content {
+  .pulse-card__hover-content {
     display: none !important;
   }
 
-  .herb-card__body {
+  .pulse-card__body {
     display: flex;
     min-height: 0;
     padding: 1rem 1rem 1.1rem;
     overflow: visible;
   }
 
-  .herb-card:hover {
+  .pulse-card:hover {
     display: block;
     background: var(--color-white);
     box-shadow: none;
     transform: none;
   }
 
-  .herb-card:hover .herb-card__media {
+  .pulse-card:hover .pulse-card__media {
     background:
       linear-gradient(
         145deg,
@@ -735,18 +737,18 @@
       );
   }
 
-  .herb-card:hover .herb-card__media img {
+  .pulse-card:hover .pulse-card__media img {
     transform: none;
     filter: none;
   }
 
-  .herb-card:hover .herb-card__body {
+  .pulse-card:hover .pulse-card__body {
     display: flex;
     background: var(--color-white);
     transform: none;
   }
 
-  .herb-card:hover .herb-card__body > div:first-child {
+  .pulse-card:hover .pulse-card__body > div:first-child {
     position: relative;
     left: auto;
     right: auto;
@@ -756,12 +758,12 @@
     margin: 0 !important;
   }
 
-  .herb-card:hover .herb-card__name,
-  .herb-card:hover .herb-card__forms {
+  .pulse-card:hover .pulse-card__name,
+  .pulse-card:hover .pulse-card__forms {
     color: inherit;
   }
 
-  .herb-card:hover .herb-card__link {
+  .pulse-card:hover .pulse-card__link {
     position: static;
     margin: 0;
     width: 32px;
@@ -777,7 +779,7 @@
    QUALITY + CTA — single compact band
    ========================================================================== */
 
-.herbs-band {
+.pulses-band {
   position: relative;
   overflow: hidden;
   background: var(--color-ink-teal);
@@ -786,14 +788,12 @@
 }
 
 /* Keep the decorative image subtle so content remains dominant. */
-.herbs-band::after {
+.pulses-band::after {
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-
-  z-index: 0;
 
   width: min(42rem, 48vw);
 
@@ -806,7 +806,7 @@
       rgba(4, 31, 32, 0.08) 78%,
       rgba(4, 31, 32, 0.02) 100%
     ),
-    url("../assets/images/herbs-footer.png");
+    url("../assets/images/pulses-footer.png");
 
   background-size: cover;
   background-position: center right;
@@ -816,9 +816,9 @@
   pointer-events: none;
 }
 
-.herbs-band__inner {
+.pulses-band__inner {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   display: grid;
   grid-template-columns: minmax(0, 1fr) 1px minmax(240px, 300px);
@@ -826,7 +826,7 @@
   align-items: center;
 }
 
-.herbs-band__inner::before {
+.pulses-band__inner::before {
   content: "";
   grid-column: 2;
   grid-row: 1;
@@ -834,18 +834,16 @@
   background: var(--color-line-dark);
 }
 
-.herbs-band__quality {
-  position: relative;
-  z-index: 2;
+.pulses-band__quality {
   min-width: 0;
 }
 
-.herbs-band__eyebrow {
+.pulses-band__eyebrow {
   margin: 0 0 0.5rem;
   color: var(--color-gold);
 }
 
-.herbs-band__heading {
+.pulses-band__heading {
   margin: 0;
   max-width: 620px;
   font-family: Georgia, "Times New Roman", serif;
@@ -857,7 +855,7 @@
   text-transform: uppercase;
 }
 
-.herbs-band__decor {
+.pulses-band__decor {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -865,40 +863,40 @@
   margin: 0.85rem 0 1.8rem;
 }
 
-.herbs-band__decor span {
+.pulses-band__decor span {
   display: block;
 }
 
-.herbs-band__decor span:first-child,
-.herbs-band__decor span:last-child {
+.pulses-band__decor span:first-child,
+.pulses-band__decor span:last-child {
   width: 38px;
   height: 1px;
   background: var(--color-gold);
 }
 
-.herbs-band__decor span:nth-child(2) {
+.pulses-band__decor span:nth-child(2) {
   color: var(--color-gold);
   font-size: 0.8rem;
   line-height: 1;
 }
 
-.herbs-band__steps {
+.pulses-band__steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.herbs-band__step {
+.pulses-band__step {
   min-width: 0;
   padding: 0 1.15rem;
   border-left: 1px solid var(--color-line-dark);
 }
 
-.herbs-band__step:first-child {
+.pulses-band__step:first-child {
   padding-left: 0;
   border-left: 0;
 }
 
-.herbs-band__icon {
+.pulses-band__icon {
   width: 52px;
   height: 52px;
   margin-bottom: 0.9rem;
@@ -908,17 +906,17 @@
   color: var(--color-gold);
 }
 
-.herbs-band__icon svg {
+.pulses-band__icon svg {
   width: 48px;
   height: 48px;
   display: block;
 }
 
-.herbs-band__step > span {
+.pulses-band__step > span {
   display: none;
 }
 
-.herbs-band__step strong {
+.pulses-band__step strong {
   display: block;
   margin-bottom: 0.3rem;
   color: var(--color-sand);
@@ -926,7 +924,7 @@
   line-height: 1.25;
 }
 
-.herbs-band__step p {
+.pulses-band__step p {
   margin: 0;
   max-width: 180px;
   color: rgba(247, 245, 240, 0.66);
@@ -934,13 +932,13 @@
   line-height: 1.5;
 }
 
-.herbs-band__cta {
+.pulses-band__cta {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   min-width: 0;
 }
 
-.herbs-band__cta-eyebrow {
+.pulses-band__cta-eyebrow {
   margin: 0 0 0.7rem;
   color: rgba(247, 245, 240, 0.78);
   font: 500 0.78rem var(--font-mono);
@@ -949,7 +947,7 @@
   letter-spacing: 0.05em;
 }
 
-.herbs-band__cta-heading {
+.pulses-band__cta-heading {
   margin: 0 0 1.35rem;
   max-width: 300px;
   color: var(--color-sand);
@@ -959,7 +957,7 @@
   line-height: 1.06;
 }
 
-.herbs-band__cta-btn {
+.pulses-band__cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -972,63 +970,63 @@
 
 @media (max-width: 1199px) {
 
-  .herbs-hero {
+  .pulses-hero {
     min-height: 420px;
   }
 
-  .herbs-hero__copy {
+  .pulses-hero__copy {
     max-width: 560px;
   }
 
-  .herbs-trust__panel > div {
+  .pulses-trust__panel > div {
     padding-inline: 1.15rem;
   }
 
-  .herbs-trust__panel {
+  .pulses-trust__panel {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .herbs-trust__panel > div {
+  .pulses-trust__panel > div {
     grid-template-columns: 44px minmax(0, 1fr);
     column-gap: 0.8rem;
   }
 
-  .herbs-group__grid {
+  .pulses-group__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .herbs-band__inner {
+  .pulses-band__inner {
     grid-template-columns: minmax(0, 1fr) 1px minmax(220px, 280px);
     gap: 1.8rem;
   }
 
-  .herbs-band__steps {
+  .pulses-band__steps {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .herbs-band__step {
+  .pulses-band__step {
     padding-inline: 0.9rem;
   }
 
-  .herbs-band__icon {
+  .pulses-band__icon {
     width: 46px;
     height: 46px;
   }
 
-  .herbs-band__icon svg {
+  .pulses-band__icon svg {
     width: 42px;
     height: 42px;
   }
 
-  .herbs-band__step strong {
+  .pulses-band__step strong {
     font-size: 0.84rem;
   }
 
-  .herbs-band__step p {
+  .pulses-band__step p {
     font-size: 0.72rem;
   }
 
-  .herbs-band::after {
+  .pulses-band::after {
     width: min(36rem, 42vw);
   }
 }
@@ -1040,111 +1038,111 @@
 
 @media (max-width: 900px) {
 
-  .herbs-hero {
+  .pulses-hero {
     min-height: 400px;
     padding: 7rem 0 4rem;
     background-position: 62% center;
   }
 
-  .herbs-hero__copy {
+  .pulses-hero__copy {
     max-width: 620px;
   }
 
-  .herbs-hero h1 {
+  .pulses-hero h1 {
     font-size: clamp(4rem, 8vw, 5.5rem);
   }
 
-  .herbs-trust__panel {
+  .pulses-trust__panel {
     grid-template-columns: 1fr 1fr;
   }
 
-  .herbs-trust__panel > div {
+  .pulses-trust__panel > div {
     grid-template-columns: 52px minmax(0, 1fr);
     padding: 1.2rem 1.35rem;
   }
 
-  .herbs-trust__panel > div:nth-child(2n) {
+  .pulses-trust__panel > div:nth-child(2n) {
     border-right: 0;
   }
 
-  .herbs-trust__panel > div:nth-child(-n + 2) {
+  .pulses-trust__panel > div:nth-child(-n + 2) {
     border-bottom: 1px solid var(--color-line);
   }
 
-  .herbs-trust__panel > div:nth-child(3),
-  .herbs-trust__panel > div:nth-child(4) {
+  .pulses-trust__panel > div:nth-child(3),
+  .pulses-trust__panel > div:nth-child(4) {
     border-bottom: 0;
   }
 
-  .herbs-range {
+  .pulses-range {
     padding-bottom: 5rem;
   }
 
-  .herbs-range__header {
+  .pulses-range__header {
     margin-bottom: 1.5rem;
   }
 
-  .herbs-range__header h2 {
+  .pulses-range__header h2 {
     top: 18px;
     font-size: clamp(2rem, 5vw, 2.65rem);
   }
 
-  .herbs-range__decor {
+  .pulses-range__decor {
     top: 8px;
   }
 
-  .herbs-group__grid {
+  .pulses-group__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .herbs-band {
+  .pulses-band {
     padding: 3.25rem 0;
   }
 
-  .herbs-band__inner {
+  .pulses-band__inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .herbs-band__inner::before {
+  .pulses-band__inner::before {
     display: none;
   }
 
-  .herbs-band__quality {
+  .pulses-band__quality {
     min-width: 0;
   }
 
-  .herbs-band__steps {
+  .pulses-band__steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 1.6rem;
   }
 
-  .herbs-band__step {
+  .pulses-band__step {
     padding: 0 1rem;
   }
 
-  .herbs-band__step:nth-child(3) {
+  .pulses-band__step:nth-child(3) {
     border-left: 0;
     padding-left: 0;
   }
 
-  .herbs-band__step:nth-child(3),
-  .herbs-band__step:nth-child(4) {
+  .pulses-band__step:nth-child(3),
+  .pulses-band__step:nth-child(4) {
     padding-top: 1.2rem;
     border-top: 1px solid var(--color-line-dark);
   }
 
-  .herbs-band__cta {
+  .pulses-band__cta {
     padding-top: 2rem;
     border-top: 1px solid var(--color-line-dark);
     max-width: 460px;
   }
 
-  .herbs-band__cta-heading {
+  .pulses-band__cta-heading {
     max-width: 420px;
   }
 
-  .herbs-band::after {
+  .pulses-band::after {
     width: 24rem;
     opacity: 0.32;
   }
@@ -1157,209 +1155,209 @@
 
 @media (max-width: 640px) {
 
-  .herbs-trust {
+  .pulses-trust {
     margin-top: -1.25rem;
     padding-bottom: 2.5rem;
   }
 
-  .herbs-trust__panel {
+  .pulses-trust__panel {
     grid-template-columns: 1fr;
     border-radius: 14px;
   }
 
-  .herbs-trust__panel > div,
-  .herbs-trust__panel > div:nth-child(2),
-  .herbs-trust__panel > div:nth-child(3),
-  .herbs-trust__panel > div:nth-child(4) {
+  .pulses-trust__panel > div,
+  .pulses-trust__panel > div:nth-child(2),
+  .pulses-trust__panel > div:nth-child(3),
+  .pulses-trust__panel > div:nth-child(4) {
     grid-template-columns: 48px minmax(0, 1fr);
     padding: 1rem 1.05rem;
     border-right: 0;
     border-bottom: 1px solid var(--color-line);
   }
 
-  .herbs-trust__panel > div:last-child {
+  .pulses-trust__panel > div:last-child {
     border-bottom: 0;
   }
 
-  .herbs-trust__icon {
+  .pulses-trust__icon {
     width: 40px;
     height: 40px;
   }
 
-  .herbs-trust strong {
+  .pulses-trust strong {
     font-size: 0.94rem;
   }
 
-  .herbs-trust p {
+  .pulses-trust p {
     font-size: 0.74rem;
   }
 
-  .herbs-hero {
+  .pulses-hero {
     min-height: 390px;
     padding: 7rem 0 3.5rem;
     background-position: 67% center;
   }
 
-  .herbs-hero__copy {
+  .pulses-hero__copy {
     max-width: 100%;
   }
 
-  .herbs-hero h1 {
+  .pulses-hero h1 {
     font-size: clamp(3.4rem, 18vw, 5.2rem);
     line-height: 0.88;
   }
 
-  .herbs-hero__tagline {
+  .pulses-hero__tagline {
     font-size: 1.05rem;
   }
 
-  .herbs-hero__desc {
+  .pulses-hero__desc {
     max-width: 100%;
     font-size: 0.84rem;
     line-height: 1.6;
   }
 
-  .herbs-range {
+  .pulses-range {
     padding: 3.25rem 0 4rem;
   }
 
-  .herbs-range__header {
+  .pulses-range__header {
     display: block;
     margin-bottom: 1.6rem;
     padding-inline: 0.5rem;
   }
 
-  .herbs-range__header h2 {
+  .pulses-range__header h2 {
     top: 10px;
     font-size: clamp(1.8rem, 8vw, 2.35rem);
     line-height: 1.08;
   }
 
-  .herbs-range__decor {
+  .pulses-range__decor {
     top: 5px;
     gap: 0.55rem;
     margin-top: 0.3rem;
   }
 
-  .herbs-range__decor span:first-child,
-  .herbs-range__decor span:last-child {
+  .pulses-range__decor span:first-child,
+  .pulses-range__decor span:last-child {
     width: 32px;
   }
 
-  .herbs-range__header > .container > p:last-child {
+  .pulses-range__header > .container > p:last-child {
     top: 2px;
     font-size: 0.82rem;
   }
 
-  .herbs-group > .container {
+  .pulses-group > .container {
     padding-inline: 1rem;
   }
 
-  .herbs-group__grid {
+  .pulses-group__grid {
     grid-template-columns: 1fr;
     gap: 0.85rem;
   }
 
-  .herb-card__media {
+  .pulse-card__media {
     height: 200px;
   }
 
-  .herb-card__body {
+  .pulse-card__body {
     padding: 1rem 1rem 1.1rem;
     gap: 0.75rem;
   }
 
-  .herb-card__name {
+  .pulse-card__name {
     font-size: 1.08rem;
   }
 
-  .herb-card__forms {
+  .pulse-card__forms {
     font-size: 0.9rem;
     max-width: 210px;
   }
 
-  .herb-card__link {
+  .pulse-card__link {
     width: 32px;
     height: 32px;
     flex-basis: 32px;
   }
 
-  .herbs-band {
+  .pulses-band {
     padding: 3rem 0 3.25rem;
   }
 
-  .herbs-band__inner {
+  .pulses-band__inner {
     gap: 2rem;
   }
 
-  .herbs-band__heading {
+  .pulses-band__heading {
     max-width: 100%;
     font-size: clamp(2rem, 11vw, 3.1rem);
     line-height: 0.98;
   }
 
-  .herbs-band__decor {
+  .pulses-band__decor {
     margin-bottom: 1.5rem;
   }
 
-  .herbs-band__steps {
+  .pulses-band__steps {
     grid-template-columns: 1fr;
     row-gap: 0;
   }
 
-  .herbs-band__step,
-  .herbs-band__step:nth-child(3),
-  .herbs-band__step:nth-child(4) {
+  .pulses-band__step,
+  .pulses-band__step:nth-child(3),
+  .pulses-band__step:nth-child(4) {
     padding: 1.1rem 0 0;
     border-left: 0;
     border-top: 1px solid var(--color-line-dark);
   }
 
-  .herbs-band__step:first-child {
+  .pulses-band__step:first-child {
     padding-top: 0;
     border-top: 0;
   }
 
-  .herbs-band__icon {
+  .pulses-band__icon {
     width: 44px;
     height: 44px;
     margin-bottom: 0.7rem;
   }
 
-  .herbs-band__icon svg {
+  .pulses-band__icon svg {
     width: 42px;
     height: 42px;
   }
 
-  .herbs-band__step strong {
+  .pulses-band__step strong {
     font-size: 0.9rem;
   }
 
-  .herbs-band__step p {
+  .pulses-band__step p {
     max-width: 280px;
     font-size: 0.76rem;
   }
 
-  .herbs-band__cta {
+  .pulses-band__cta {
     padding-top: 1.75rem;
     max-width: none;
   }
 
-  .herbs-band__cta-eyebrow {
+  .pulses-band__cta-eyebrow {
     font-size: 0.72rem;
   }
 
-  .herbs-band__cta-heading {
+  .pulses-band__cta-heading {
     max-width: none;
     font-size: 2rem;
   }
 
-  .herbs-band__cta-btn {
+  .pulses-band__cta-btn {
     width: 100%;
     justify-content: center;
   }
 
-  .herbs-band::after {
+  .pulses-band::after {
     display: none;
   }
 }
@@ -1371,72 +1369,72 @@
 
 @media (max-width: 400px) {
 
-  .herbs-hero {
+  .pulses-hero {
     min-height: 375px;
     padding-top: 6.5rem;
     padding-bottom: 3rem;
     background-position: 72% center;
   }
 
-  .herbs-hero h1 {
+  .pulses-hero h1 {
     font-size: clamp(3rem, 18vw, 4.5rem);
   }
 
-  .herbs-hero__tagline {
+  .pulses-hero__tagline {
     font-size: 1rem;
   }
 
-  .herbs-hero__desc {
+  .pulses-hero__desc {
     font-size: 0.8rem;
   }
 
-  .herbs-trust__panel > div {
+  .pulses-trust__panel > div {
     grid-template-columns: 42px minmax(0, 1fr);
     padding-inline: 0.9rem;
   }
 
-  .herbs-trust__icon {
+  .pulses-trust__icon {
     width: 36px;
     height: 36px;
   }
 
-  .herbs-range {
+  .pulses-range {
     padding-top: 2.75rem;
   }
 
-  .herbs-range__header h2 {
+  .pulses-range__header h2 {
     font-size: 1.75rem;
   }
 
-  .herbs-range__header > .container > p:last-child {
+  .pulses-range__header > .container > p:last-child {
     font-size: 0.78rem;
   }
 
-  .herb-card__media {
+  .pulse-card__media {
     height: 185px;
   }
 
-  .herb-card__body {
+  .pulse-card__body {
     padding-inline: 0.9rem;
   }
 
-  .herb-card__name {
+  .pulse-card__name {
     font-size: 1rem;
   }
 
-  .herb-card__forms {
+  .pulse-card__forms {
     font-size: 0.84rem;
   }
 
-  .herbs-band {
+  .pulses-band {
     padding: 2.75rem 0 3rem;
   }
 
-  .herbs-band__heading {
+  .pulses-band__heading {
     font-size: clamp(1.9rem, 11vw, 2.6rem);
   }
 
-  .herbs-band__cta-heading {
+  .pulses-band__cta-heading {
     font-size: 1.8rem;
   }
 }
@@ -1447,12 +1445,12 @@
 
 @media (max-width: 900px) {
 
-  .herbs-trust__panel {
+  .pulses-trust__panel {
     transform: none;
     margin-bottom: 0;
   }
 
-  .herbs-trust {
+  .pulses-trust {
     margin-top: 0;
   }
 
@@ -1460,29 +1458,35 @@
 
 @media (max-width: 640px) {
 
-  .herbs-trust {
+  .pulses-trust {
     margin-top: 0;
     padding-bottom: 2rem;
   }
 
-  .herbs-trust__panel {
+  .pulses-trust__panel {
     transform: none;
     margin-bottom: 0;
   }
 
 }
 
+
+
+
+
+
 /* ==========================================================
    REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .herb-card,
-  .herb-card__media,
-  .herb-card__media img,
-  .herb-card__body,
-  .herb-card__hover-content,
-  .herb-card__link {
+
+  .pulse-card,
+  .pulse-card__media,
+  .pulse-card__media img,
+  .pulse-card__body,
+  .pulse-card__hover-content,
+  .pulse-card__link {
     transition: none !important;
   }
 }

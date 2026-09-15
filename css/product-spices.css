@@ -374,107 +374,45 @@
    PRODUCT CARDS
    ========================================================================== */
 
-.spice-card {
-  position: relative;
-
-  background: var(--color-white);
-
-  border: 0;
-
-  min-width: 0;
-
-  overflow: hidden;
-
-  transition:
-    transform var(--dur-med) var(--ease-out-expo),
-    box-shadow var(--dur-med) var(--ease-standard),
-    border-color var(--dur-med) var(--ease-standard);
+.spices-group__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1.25rem;
+  row-gap: 1.25rem;
+  align-items: start;
 }
-/* ==========================================================
-   CREATIVE PRODUCT CARD HOVER + TEAL GLOW
-   ========================================================== */
+
+/* --------------------------------------------------------------------------
+   CARD — single canonical definition
+   Normal: compact
+   Hover: expands to reveal the description
+   -------------------------------------------------------------------------- */
 
 .spice-card {
   position: relative;
   isolation: isolate;
+  min-width: 0;
+  height: auto;
+  align-self: start;
   overflow: hidden;
+  background: var(--color-white);
 
   transition:
     transform 0.45s var(--ease-out-expo),
     box-shadow 0.45s var(--ease-standard);
 }
 
-/* Moving light sweep */
-.spice-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    115deg,
-    transparent 20%,
-    rgba(201, 146, 46, 0.08) 42%,
-    rgba(14, 124, 123, 0.16) 50%,
-    transparent 68%
-  );
-
-  transform: translateX(-120%);
-  transition: transform 0.7s var(--ease-out-expo);
-
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Lift + ORIGINAL GLOW */
-.spice-card:hover {
-  transform: translateY(-8px) scale(1.012);
-
-  box-shadow:
-    0 0 0 1px rgba(14, 124, 123, 0.40),
-    0 0 24px rgba(14, 124, 123, 0.38),
-    0 0 45px rgba(14, 124, 123, 0.18),
-    0 14px 32px rgba(14, 124, 123, 0.18);
-}
-
-/* Light sweep */
-.spice-card:hover::after {
-  transform: translateX(120%);
-}
-
-/* Image animation */
-.spice-card__media img {
-  transition:
-    transform 0.7s var(--ease-out-expo),
-    filter 0.45s ease;
-}
-
-.spice-card:hover .spice-card__media img {
-  transform: scale(1.1) rotate(1.5deg);
-  filter: saturate(1.08);
-}
-
-/* Arrow animation */
-.spice-card__link {
-  transition:
-    transform 0.35s var(--ease-standard),
-    background 0.35s var(--ease-standard),
-    border-color 0.35s var(--ease-standard),
-    color 0.35s var(--ease-standard);
-}
-
-.spice-card:hover .spice-card__link {
-  transform: translateX(4px);
-  background: var(--color-ink-teal);
-  border-color: var(--color-ink-teal);
-  color: var(--color-white);
-}
-
+/* Image */
 
 .spice-card__media {
+  position: relative;
+  z-index: 1;
   height: 200px;
 
   display: grid;
   place-items: center;
+
+  overflow: hidden;
 
   background:
     linear-gradient(
@@ -483,89 +421,75 @@
       var(--color-white)
     );
 
-  overflow: hidden;
-
-  position: relative;
+  transition:
+    background 0.45s var(--ease-out-expo);
 }
 
-
 .spice-card__media img {
+  position: relative;
+  z-index: 2;
+
   width: 76%;
   height: 76%;
 
   object-fit: contain;
 
+  opacity: 1;
+  filter: none;
+
   transition:
-    transform 0.6s var(--ease-out-expo);
+    transform 0.5s var(--ease-out-expo),
+    filter 0.4s ease;
 }
 
-
-.spice-card:hover .spice-card__media img {
-  transform: scale(1.06);
-}
-
-
-.spice-card__placeholder {
-  width: 44%;
-  height: 44%;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at 38% 35%,
-      rgba(201, 146, 46, 0.75),
-      rgba(14, 124, 123, 0.18) 42%,
-      transparent 43%
-    );
-
-  opacity: 0.8;
-}
-
+/* Normal product body */
 
 .spice-card__body {
+  position: relative;
+  z-index: 4;
+
+  min-height: 135px;
+
   display: flex;
-
   justify-content: space-between;
-
+  align-items: end;
   gap: 1rem;
 
-  align-items: end;
-
   padding: 1.2rem 1.2rem 1.3rem;
-}
 
+  background: var(--color-white);
+
+  transition:
+    background 0.4s var(--ease-standard),
+    color 0.3s ease,
+    transform 0.45s var(--ease-out-expo);
+}
 
 .spice-card__name {
+  margin: 0 0 0.35rem;
+
   font-size: 1.2rem;
-
   line-height: 1.25;
+  font-weight: 700;
 
-  margin-bottom: 0.35rem;
-  font-weight: 2000;
-   color: var(--color-ink-teal);
+  color: var(--color-ink-teal);
 }
-
 
 .spice-card__forms {
   font-size: 1rem;
-
-  color: #000000;
-
   line-height: 1.45;
-
   max-width: 190px;
+  color: #000000;
 }
 
+/* Arrow */
 
 .spice-card__link {
   width: 34px;
   height: 34px;
-
   flex: 0 0 34px;
 
   border: 1px solid var(--color-line);
-
   border-radius: 50%;
 
   display: grid;
@@ -574,23 +498,283 @@
   color: var(--color-harbor-teal);
 
   transition:
-    all var(--dur-fast) var(--ease-standard);
+    transform 0.35s var(--ease-standard),
+    background 0.35s var(--ease-standard),
+    border-color 0.35s var(--ease-standard),
+    color 0.35s var(--ease-standard);
 }
-
 
 .spice-card__link svg {
   width: 12px;
 }
 
+/* --------------------------------------------------------------------------
+   HOVER — content-driven expansion
+   -------------------------------------------------------------------------- */
 
-.spice-card:hover .spice-card__link {
-  background: var(--color-ink-teal);
+@media (min-width: 641px) {
 
-  border-color: var(--color-ink-teal);
+  .spice-card {
+    height: 335px;
+    min-height: 335px;
+    transform: translateY(0);
+  }
 
-  color: var(--color-white);
+  .spice-card:hover {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px;
+    
+    grid-template-rows: 200px auto auto;
+
+    height: max-content;
+    min-height: 0;
+
+    row-gap: 0;
+    align-items: end;
+    align-content: start;
+
+    background:
+      linear-gradient(
+        180deg,
+        transparent 0,
+        transparent 200px,
+        #0e7c7b 200px,
+        #075c5c 100%
+      );
+
+    box-shadow:
+      0 0 0 1px rgba(14, 124, 123, 0.35),
+      0 0 28px rgba(14, 124, 123, 0.22),
+      0 14px 32px rgba(14, 124, 123, 0.16);
+
+    transform: translateY(-8px);
+  }
+
+  .spice-card:hover .spice-card__media {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+
+    background:
+      radial-gradient(
+        circle at 50% 45%,
+        rgba(95, 164, 153, 0.55) 0%,
+        rgba(95, 164, 153, 0.32) 45%,
+        rgba(95, 164, 153, 0.16) 72%,
+        rgba(247, 245, 240, 0.95) 100%
+      ),
+      linear-gradient(
+        145deg,
+        #dcebe6,
+        #edf4f1
+      );
+  }
+
+  .spice-card:hover .spice-card__media img {
+    transform: scale(1.035);
+    filter: saturate(1.06) brightness(1.02);
+  }
+
+  .spice-card:hover .spice-card__body {
+    display: contents;
+  }
+
+  /* Hover description.
+     The bottom padding is the ONLY spacing control between the
+     description and the product name. Reduce/increase this value to tune the gap. */
+  .spice-card__hover-content {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    position: static;
+
+    min-width: 0;
+    width: auto;
+    max-width: none;
+
+    padding:
+      0.9rem
+      4.7rem
+      0.9rem
+      1.2rem;
+
+    margin: 0;
+    box-sizing: border-box;
+
+    color: var(--color-white);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease 0.08s,
+      transform 0.4s var(--ease-out-expo) 0.08s,
+      visibility 0s linear 0.4s;
+  }
+
+  .spice-card:hover .spice-card__hover-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+
+    transition:
+      opacity 0.3s ease 0.08s,
+      transform 0.4s var(--ease-out-expo) 0.08s;
+  }
+
+  .spice-card__hover-line {
+    display: block;
+    width: 42px;
+    height: 2px;
+    margin-bottom: 0.5rem;
+    background: var(--color-gold);
+  }
+
+  .spice-card__hover-content p {
+    margin: 0;
+    color: rgba(247, 245, 240, 0.94);
+    font-size: clamp(0.7rem, 0.78vw, 0.82rem);
+    line-height: 1.38;
+    overflow-wrap: anywhere;
+  }
+
+  /* Product info sits directly after the description gap. */
+  .spice-card:hover .spice-card__body > div:first-child {
+    grid-column: 1;
+    grid-row: 3;
+
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+
+    z-index: 7;
+    min-width: 0;
+    align-self: end;
+
+    padding: 0 0 0.35rem 1.2rem;
+    margin: 0 !important;
+  }
+
+  .spice-card:hover .spice-card__name,
+  .spice-card:hover .spice-card__forms {
+    color: var(--color-white);
+  }
+
+  .spice-card:hover .spice-card__name {
+    margin-bottom: 0.25rem;
+  }
+
+  .spice-card:hover .spice-card__link {
+    grid-column: 2;
+    grid-row: 3;
+
+    position: relative;
+    right: auto;
+    bottom: auto;
+
+    align-self: end;
+    justify-self: end;
+
+    margin: 0 1.2rem 0.35rem 0;
+
+    z-index: 8;
+
+    width: 36px;
+    height: 36px;
+
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-ink-teal);
+
+    transform: none;
+  }
+
+  .spice-card:hover .spice-card__link:hover {
+    transform: translateX(3px) scale(1.04);
+  }
 }
 
+/* --------------------------------------------------------------------------
+   Mobile — no hover expansion
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+
+  .spice-card {
+    display: block;
+    height: auto;
+    min-height: 0;
+  }
+
+  .spice-card__hover-content {
+    display: none !important;
+  }
+
+  .spice-card__body {
+    display: flex;
+    min-height: 0;
+    padding: 1rem 1rem 1.1rem;
+    overflow: visible;
+  }
+
+  .spice-card:hover {
+    display: block;
+    background: var(--color-white);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .spice-card:hover .spice-card__media {
+    background:
+      linear-gradient(
+        145deg,
+        var(--color-sand-2),
+        var(--color-white)
+      );
+  }
+
+  .spice-card:hover .spice-card__media img {
+    transform: none;
+    filter: none;
+  }
+
+  .spice-card:hover .spice-card__body {
+    display: flex;
+    background: var(--color-white);
+    transform: none;
+  }
+
+  .spice-card:hover .spice-card__body > div:first-child {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    padding: 0;
+    margin: 0 !important;
+  }
+
+  .spice-card:hover .spice-card__name,
+  .spice-card:hover .spice-card__forms {
+    color: inherit;
+  }
+
+  .spice-card:hover .spice-card__link {
+    position: static;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border-color: var(--color-line);
+    color: var(--color-harbor-teal);
+    transform: none;
+  }
+}
 
 /* ==========================================================================
    QUALITY + CTA — single compact band
@@ -1287,126 +1471,22 @@
 
 }
 
+
+
+
+
+
 /* ==========================================================
-   PRODUCT CARD — FULL CARD TOP-RIGHT REVEAL
+   REDUCED MOTION
    ========================================================== */
 
-.spice-card {
-  isolation: isolate;
-}
-
-/* Expanding dark treatment starts at the top-right corner. */
-.spice-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(1, 89, 88, 0.5) 0%,
-      rgba(1, 89, 88, 0.35) 56%,
-      rgba(1, 89, 88, 0.44) 100%
-    );
-  clip-path: circle(0% at 100% 0%);
-  opacity: 0;
-  transition:
-    clip-path 0.72s var(--ease-out-expo),
-    opacity 0.42s ease;
-  pointer-events: none;
-}
-
-.spice-card:hover::before {
-  clip-path: circle(155% at 100% 0%);
-  opacity: 1;
-}
-
-.spice-card__hover-content {
-  position: absolute;
-  left: 1.2rem;
-  right: 1.2rem;
-  top: 2.25rem;
-  z-index: 3;
-  max-width: 82%;
-  color: var(--color-white);
-  opacity: 0;
-  transform: translateY(10px);
-  transition:
-    opacity 0.4s ease 0.16s,
-    transform 0.5s var(--ease-out-expo) 0.16s;
-  pointer-events: none;
-}
-
-.spice-card:hover .spice-card__hover-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.spice-card__hover-line {
-  display: block;
-  width: 44px;
-  height: 2px;
-  margin-bottom: 1rem;
-  background: var(--color-gold);
-}
-
-.spice-card__hover-content p {
-  margin: 0;
-  color: rgba(247, 245, 240, 0.92);
-  font-size: clamp(0.82rem, 0.9vw, 0.94rem);
-  line-height: 1.62;
-}
-
-/* Bring the existing product details above the reveal overlay. */
-.spice-card__body {
-  position: relative;
-  z-index: 4;
-  transition:
-    color 0.35s ease,
-    transform 0.45s var(--ease-out-expo);
-}
-
-.spice-card:hover .spice-card__name,
-.spice-card:hover .spice-card__forms {
-  color: var(--color-white);
-}
-
-.spice-card:hover .spice-card__body {
-  transform: translateY(-2px);
-}
-
-.spice-card:hover .spice-card__link {
-  position: relative;
-  z-index: 5;
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-ink-teal);
-}
-
-/* Keep the image visible beneath the reveal; use only a very subtle motion. */
-.spice-card:hover .spice-card__media img {
-  transform: scale(1.01);
-  filter: saturate(1.02);
-}
-
-/* Hide hover-only copy on touch layouts and keep cards compact. */
-@media (max-width: 640px) {
-  .spice-card::before,
-  .spice-card__hover-content {
-    display: none;
-  }
-
-  .spice-card:hover .spice-card__name,
-  .spice-card:hover .spice-card__forms {
-    color: inherit;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .spice-card::before,
-  .spice-card__hover-content,
+
+  .spice-card,
+  .spice-card__media,
   .spice-card__media img,
   .spice-card__body,
+  .spice-card__hover-content,
   .spice-card__link {
     transition: none !important;
   }
