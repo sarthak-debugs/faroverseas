@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Process | FarOverseas</title>
+  <meta name="description" content="Discover the FarOverseas process from responsible sourcing and quality testing to hygienic packaging and global dispatch." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Process | FarOverseas" />
+  <meta property="og:description" content="Discover the FarOverseas process from responsible sourcing and quality testing to hygienic packaging and global dispatch." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (existing site fonts, unchanged) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!--
+    Two additional font families for this page only, both loaded from the same
+    Google Fonts host already used by the site:
+    - Playfair Display: editorial serif for the large display headlines shown
+      in the reference screenshot. The rest of the site's headings use
+      Manrope, but Manrope has no serif cut, so a serif was required to match
+      the reference's headline character.
+    - Caveat: lightweight handwritten script for the decorative annotations
+      ("Goodness Travels Further", etc). Loaded at a single weight to keep
+      the request small.
+    No other new fonts are introduced; Manrope / Inter / IBM Plex Mono remain
+    the typefaces for navigation, body copy and eyebrow labels respectively.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles: shared site foundation + this page's own stylesheet -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/whatsapp-widget.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/process.css" />
+
+</head>
+<body>
+
+  <!-- ==========================================================
+       Navigation — reused verbatim from index.html.
+       Only change: aria-current="page" added to the "Our Process"
+       link below so it reads as the active item; nothing else about
+       the shared navbar markup, classes or scripts was touched.
+       ========================================================== -->
+  <header class="navbar" data-navbar>
+    <div class="navbar__progress" data-scroll-progress></div>
+    <div class="container navbar__inner">
+
+      <a href="index.html" class="navbar__brand" aria-label="Far Overseas home">
+        <img
+          src="assets/images/logo-mark.png"
+          alt="Far Overseas"
+          class="navbar__logo"
+        />
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="navbar__links" data-navbar-links>
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About Us</a></li>
+
+          <li class="navbar__item--dropdown" data-navbar-dropdown-item>
+            <a href="products.html" class="navbar__link" data-navbar-dropdown-trigger>
+              Products
+              <svg class="navbar__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="navbar__dropdown">
+              <div class="navbar__dropdown-card">
+                <a href="products-spices.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Spices</a>
+                <a href="products-herbs.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Herbs</a>
+                <a href="products-pulses.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Pulses, Lentils &amp; Beans</a>
+                <a href="products-oil-seeds.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Oil Seeds</a>
+                <a href="products-cereals-millets.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Cereals &amp; Millets</a>
+                <a href="products-dehydrated.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dehydrated Products</a>
+                <a href="products-dry-fruits.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dry Fruits</a>
+                <a href="products-sweeteners.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Sweeteners</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="process.html" class="navbar__link" aria-current="page">Our Process</a></li>
+          <li><a href="global-presence.html" class="navbar__link">Global Presence</a></li>
+          <li><a href="resources.html" class="navbar__link">Resources</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+
+          <!-- Shown only inside the mobile slide-in menu -->
+          <li><a href="quote.html" class="btn btn-primary navbar__cta--mobile">Request a Quote</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="quote.html" class="btn btn-primary navbar__cta">Request a Quote</a>
+        <button class="navbar__toggle" data-navbar-toggle aria-label="Toggle menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================
+         PROCESS HERO
+         ========================================================== -->
+    <section class="process-hero" aria-labelledby="process-hero-title" data-reveal-group>
+
+      <svg class="process-hero__leaf process-hero__leaf--left" viewBox="0 0 160 260" aria-hidden="true">
+        <path d="M80 10C120 60 140 120 110 200C90 240 60 250 30 240C10 190 20 120 50 70C60 50 70 25 80 10Z"/>
+        <path d="M80 10C60 90 55 160 70 230"/>
+      </svg>
+
+      <div class="container process-hero__inner">
+
+        <div class="process-hero__content" data-reveal>
+
+          <p class="eyebrow">Our Process</p>
+
+          <h1 class="process-hero__headline" id="process-hero-title">
+            From Nature<br />
+            <span>to the World.</span>
+          </h1>
+
+          <p class="process-hero__subline">
+            A Carefully Managed Journey From Farms To Global Markets,
+            Ensuring Purity, Quality And Trust At Every Step.
+          </p>
+
+          <a href="#process-timeline" class="btn btn-primary process-hero__cta">
+            Explore Our Process
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          
+        </div>
+
+        <div class="process-hero__media" data-reveal>
+          <div class="process-hero__frame">
+            <img
+              src="assets/images/process/process-hero.png"
+              alt="Hand pouring freshly harvested organic produce over a jute sack for export"
+              class="process-hero__image"
+              loading="eager"
+            />
+          
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         OUR COMMITMENT
+         ========================================================== -->
+    <section class="process-commitment" aria-label="Our commitment">
+      <div class="container">
+
+        <div class="process-commitment__top" data-reveal>
+          <div class="process-commitment__heading">
+            <p class="eyebrow">Our Commitment</p>
+            <h2>A Process Built on<br />Purity &amp; Trust.</h2>
+          </div>
+
+          <span class="process-commitment__divider" aria-hidden="true"></span>
+
+          <p class="process-commitment__text">
+            From sourcing in the finest growing regions to delivering at global
+            destinations, every stage of our process is guided by strict quality
+            standards, advanced infrastructure and a team that cares.
+          </p>
+        </div>
+          <div class="process-commitment__grid" data-reveal-group>
+
+  <!-- 01 — Responsibly Sourced -->
+<div class="process-value" data-reveal>
+  <div class="process-value__icon process-value__icon--green">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M16 27V14"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+      />
+      <path
+        d="M16 16C11.1 16 8 13 8 8C13 8 16 11 16 16Z"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16 20C20.9 20 24 17 24 12C19 12 16 15 16 20Z"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+  <h3>&nbsp;&nbsp;&nbsp;Responsibly<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sourced</h3>
+</div>
+
+
+<!-- 02 — Quality Assured -->
+<div class="process-value" data-reveal>
+  <div class="process-value__icon process-value__icon--teal">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M16 4.5L24 7.8V14.5C24 19.6 20.7 24 16 26.5C11.3 24 8 19.6 8 14.5V7.8L16 4.5Z"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.8 15.3L14.8 18.2L20.5 12.5"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+  <h3>Quality Assured<br />&nbsp;&nbsp;&nbsp;At Every Step</h3>
+</div>
+
+
+<!-- 03 — Modern Processing -->
+<div class="process-value" data-reveal>
+  <div class="process-value__icon process-value__icon--blue">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M7 26V12L13 15V10L19 13V6H25V26H7Z"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11 19H13M11 22.5H13M16 18H18M16 22.5H18M21 14H23M21 18H23M21 22H23"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+  <h3>&nbsp;&nbsp;Hygienic &amp; Modern<br />&nbsp;Processing Facilities</h3>
+</div>
+
+
+<!-- 04 — Worldwide -->
+<div class="process-value" data-reveal>
+  <div class="process-value__icon process-value__icon--gold">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle
+        cx="16"
+        cy="16"
+        r="10.5"
+        stroke="currentColor"
+        stroke-width="1.6"
+      />
+      <path
+        d="M5.5 16H26.5"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linecap="round"
+      />
+      <path
+        d="M16 5.5C19 8.2 20.3 11.5 20.3 16C20.3 20.5 19 23.8 16 26.5C13 23.8 11.7 20.5 11.7 16C11.7 11.5 13 8.2 16 5.5Z"
+        stroke="currentColor"
+        stroke-width="1.3"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+  <h3>Delivering Goodness<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worldwide</h3>
+</div>
+</div>
+    </section>
+
+    <!-- ==========================================================
+         THE FAROVERSEAS PROCESS — eight-step alternating timeline
+         ========================================================== -->
+    <section class="process-timeline" id="process-timeline" aria-labelledby="process-timeline-title">
+
+      <svg class="process-timeline__leaf process-timeline__leaf--left" viewBox="0 0 160 260" aria-hidden="true">
+        <path d="M80 10C120 60 140 120 110 200C90 240 60 250 30 240C10 190 20 120 50 70C60 50 70 25 80 10Z"/>
+      </svg>
+
+      <div class="container process-timeline__header" data-reveal>
+        <p class="eyebrow">The FarOverseas Process</p>
+        <h2 id="process-timeline-title">Eight Steps. A Healthier Tomorrow.</h2>
+        <span class="process-timeline__flourish" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 24 24"><path d="M4 20C4 12 10 6 20 5C19 13 14 19 4 20Z"/></svg>
+          <span></span>
+        </span>
+      </div>
+
+      <div class="container">
+        <ol class="process-timeline__list" data-reveal-group>
+
+          <!--
+            Organic connector: one continuous hand-drawn-feeling path that
+            threads through the center of all 8 nodes. The viewBox models
+            8 equal-height segments (0–800, one per step) with the curve
+            resting exactly on x=50 at every node's vertical center and
+            drifting to either side between nodes. preserveAspectRatio
+            ="none" lets it stretch to whatever the list's real height
+            is, and vector-effect="non-scaling-stroke" keeps the line an
+            even, un-distorted thickness despite that non-uniform stretch.
+          -->
+          <svg class="process-timeline__path" preserveAspectRatio="none" aria-hidden="true">
+            <path></path>
+          </svg>
+
+          <!-- 01 -->
+          <li class="process-step" data-reveal>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-01.png" alt="Hands cupping a young seedling in fresh soil" loading="lazy" />
+              <span class="process-step__scribble">Growing<br />At the Source</span>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__content">
+              <span class="process-step__number">01</span>
+              <h3>Raw Material Procurement</h3>
+              <p>Direct crop procurement from selective organic growing regions for each product.</p>
+            </div>
+          </li>
+
+          <!-- 02 -->
+          <li class="process-step process-step--reverse" data-reveal>
+            <div class="process-step__content">
+              <span class="process-step__number">02</span>
+              <h3>Dedicated Handling</h3>
+              <p>Handled under controlled conditions — temperature, packaging, and transport — to ensure products arrive in their pristine raw state.</p>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-02.png" alt="Farmer harvesting crops by hand in the field" loading="lazy" />
+              <span class="process-step__scribble">Care<br />in Every<br />Harvest</span>
+            </div>
+          </li>
+
+          <!-- 03 -->
+          <li class="process-step" data-reveal>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-03.png" alt="Rows of sacks inside a large organized storage warehouse" loading="lazy" />
+              <span class="process-step__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 10L12 4L21 10V20H3V10Z" stroke="currentColor" stroke-width="1.3"/><path d="M9 20V14H15V20" stroke="currentColor" stroke-width="1.3"/></svg>
+              </span>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__content">
+              <span class="process-step__number">03</span>
+              <h3>Storage</h3>
+              <p>Our state-of-the-art storage facilities are designed to maintain the natural quality of products while preserving their aroma, taste and nutritional value.</p>
+            </div>
+          </li>
+
+          <!-- 04 -->
+          <li class="process-step process-step--reverse" data-reveal>
+            <div class="process-step__content">
+              <span class="process-step__number">04</span>
+              <h3>Sorting, Cleaning &amp; Processing</h3>
+              <p>Advanced machines and manual checks ensure a uniform grade, removing impurities while retaining the natural goodness of the product.</p>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-04.png" alt="Assorted grains and pulses being sorted on a processing line" loading="lazy" />
+              <span class="process-step__scribble">Purity<br />Through<br />Precision</span>
+            </div>
+          </li>
+
+          <!-- 05 -->
+          <li class="process-step" data-reveal>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-05.png" alt="Technician examining a sample under a microscope in a lab" loading="lazy" />
+              <span class="process-step__scribble process-step__scribble--top">Tested<br />for a Safer<br />Tomorrow</span>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__content">
+              <span class="process-step__number">05</span>
+              <h3>Testing &amp; Analysis</h3>
+              <p>Every batch is tested for pesticides, heavy metals, microbiological parameters and other international food safety standards.</p>
+            </div>
+          </li>
+
+          <!-- 06 -->
+          <li class="process-step process-step--reverse" data-reveal>
+            <div class="process-step__content">
+              <span class="process-step__number">06</span>
+              <h3>Packaging</h3>
+              <p>Hygienic, food-grade and customized packaging solutions as per customer requirements, with complete labeling and documentation.</p>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-06.png" alt="Rows of sealed FarOverseas branded product pouches on a packing line" loading="lazy" />
+              <span class="process-step__scribble">Packed<br />with Care</span>
+            </div>
+          </li>
+
+          <!-- 07 -->
+          <li class="process-step" data-reveal>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-07.png" alt="Quality inspector examining product samples in a lab coat" loading="lazy" />
+              <span class="process-step__badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3L19 6V11C19 15.5 16.2 19.2 12 21C7.8 19.2 5 15.5 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.3"/><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__content">
+              <span class="process-step__number">07</span>
+              <h3>Quality Inspection &amp; Final Approval</h3>
+              <p>Our expert team conducts rigorous quality checks at multiple levels before the product is approved for dispatch.</p>
+            </div>
+          </li>
+
+          <!-- 08 -->
+          <li class="process-step process-step--reverse" data-reveal>
+            <div class="process-step__content">
+              <span class="process-step__number">08</span>
+              <h3>Global Dispatch</h3>
+              <p>Once approved, the product is carefully loaded, documented and dispatched to destinations across the globe.</p>
+            </div>
+            <span class="process-step__node" aria-hidden="true"></span>
+            <div class="process-step__media">
+              <img src="assets/images/process/process-08.png" alt="Shipping containers being loaded at a port during sunset" loading="lazy" />
+              <span class="process-step__scribble">From<br />Our Hands<br />to the World</span>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CERTIFICATIONS
+         ========================================================== -->
+    <section class="process-certifications" aria-labelledby="process-certs-title">
+      <div class="container">
+
+        <div class="process-certifications__header" data-reveal>
+          <p class="eyebrow">Our Certifications</p>
+          <h2 id="process-certs-title">Globally Recognized. Always Trusted.</h2>
+        </div>
+
+        <ul class="process-certifications__grid" data-reveal-group>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/usda-organic.png" alt="USDA Organic" loading="lazy" />
+            
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/india-organic.png" alt="India Organic (NPOP)" loading="lazy" />
+           
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/fssai.png" alt="Fssai" loading="lazy" />
+            
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/fda.png" alt="Fda" loading="lazy" />
+            
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/kosher.png" alt="Kosher" loading="lazy" />
+            
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/brcgs.png" alt="BRCGS" loading="lazy" />
+            
+          </li>
+
+
+          <li data-reveal>
+            <img src="assets/images/certificates/fairtrade.png" alt="Fair Trade" loading="lazy" />
+            
+          </li>
+
+          <li data-reveal>
+            <img src="assets/images/certificates/gmp+.png" alt="GMP Certified" loading="lazy" />
+            
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         GLOBAL CTA
+         ========================================================== -->
+    <section class="process-cta" aria-labelledby="process-cta-title" data-reveal>
+
+      <div class="process-cta__bg">
+        <img src="assets/images/process/process-footer.png" alt="" role="presentation" />
+      </div>
+      <div class="process-cta__overlay"></div>
+
+      <div class="container process-cta__inner">
+        <p class="eyebrow">Bringing Goodness Globally</p>
+        <h2 id="process-cta-title">Partner with a Healthier,<br />Brighter Tomorrow.</h2>
+        <p class="process-cta__text">
+          Let's create a better, healthier world together.
+          Connect with us for global opportunities.
+        </p>
+        <a href="quote.html" class="btn btn-primary">
+          Request a Quote
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+   
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       Footer — reused verbatim from index.html, unmodified.
+       ========================================================== -->
+ <footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="./assets/images/logo-mark.png" alt="Far Overseas">
+                <div>
+                    <h3>FAR OVERSEAS</h3>
+                    <span>WHERE BORDERS ARE BRIDGES</span>
+                </div>
+            </div>
+
+            <p>
+                An international trade and sourcing company connecting
+                Indian producers with global markets — organic, non-GMO
+                ingredients, exported worldwide with full traceability.
+            </p>
+
+            <div class="footer-socials">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Instagram">◎</a>
+            </div>
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+            <h4>QUICK LINKS</h4>
+
+            <a href="about.html">About Us</a>
+            <a href="process.html">Our Process</a>
+            <a href="global-presence.html">Global Presence</a>
+            <a href="resources.html">Resources</a>
+            <a href="contact.html">Contact</a>
+            <a href="quote.html">Request a Quote</a>
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="footer-column">
+            <h4>PRODUCTS</h4>
+
+            <a href="#">Spices</a>
+            <a href="#">Herbs</a>
+            <a href="#">Pulses, Lentils & Beans</a>
+            <a href="#">Oil Seeds</a>
+            <a href="#">Cereals & Millets</a>
+            <a href="#">Dry Fruits</a>
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT + NEWSLETTER -->
+    <div class="footer-contact-box">
+
+        <div class="footer-contact">
+
+            <h4>CONTACT</h4>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌖</span>
+                <p>
+                    411, Sapna Sangeeta Road,<br>
+                    Indore, Madhya Pradesh, India
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌕</span>
+                <p>+91 91317 73122</p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <p>faroverseas11@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-newsletter">
+
+            <h4>STAY CONNECTED</h4>
+
+            <p>
+                Subscribe to get the latest updates on our products,
+                certifications and global presence.
+            </p>
+
+            <form class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe <span>→</span>
+                </button>
+
+            </form>
+
+
+            <div class="footer-highlights">
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>100%</strong>
+                    <small>Quality Assured</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">◎</span>
+                    <strong>Global</strong>
+                    <small>Export Network</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♧</span>
+                    <strong>Sustainable</strong>
+                    <small>Sourcing</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>Long-Term</strong>
+                    <small>Partnerships</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Far Overseas. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms & Conditions</a>
+            <span>|</span>
+            <a href="#">Sitemap</a>
+        </div>
+
+    </div>
+
+</footer>
+
+  <!-- ==========================================================
+       WhatsApp Widget (fixed, site-wide) — reused verbatim.
+       ========================================================== -->
+  <div class="whatsapp-widget">
+    <span class="whatsapp-widget__tooltip">Chat with our Export Team</span>
+    <a href="#" class="whatsapp-widget__button" aria-label="Chat with us on WhatsApp">
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.84 19.01L7.54 18.83L4.42 19.65L5.26 16.61L5.06 16.29C4.23 14.98 3.79 13.46 3.79 11.91C3.79 7.37 7.5 3.66 12.05 3.66C14.25 3.66 16.32 4.52 17.87 6.08C19.42 7.64 20.29 9.71 20.28 11.92C20.28 16.46 16.57 20.15 12.04 20.15ZM16.56 13.97C16.31 13.85 15.11 13.25 14.89 13.17C14.66 13.09 14.5 13.05 14.34 13.29C14.17 13.54 13.71 14.09 13.56 14.26C13.42 14.42 13.28 14.44 13.03 14.32C12.79 14.19 12 13.93 11.06 13.09C10.33 12.44 9.84 11.63 9.7 11.39C9.56 11.14 9.68 11.01 9.81 10.89C9.92 10.77 10.06 10.59 10.19 10.44C10.32 10.29 10.36 10.19 10.45 10.02C10.53 9.86 10.49 9.71 10.43 9.59C10.36 9.46 9.87 8.27 9.67 7.78C9.47 7.3 9.27 7.37 9.12 7.36C8.98 7.35 8.82 7.35 8.65 7.35C8.49 7.35 8.23 7.41 8 7.65C7.78 7.9 7.15 8.49 7.15 9.68C7.15 10.87 8.02 12.02 8.14 12.18C8.27 12.34 9.86 14.79 12.3 15.83C12.88 16.08 13.33 16.23 13.68 16.34C14.26 16.53 14.79 16.5 15.21 16.44C15.68 16.37 16.65 15.85 16.85 15.28C17.05 14.7 17.05 14.21 16.99 14.11C16.93 14 16.77 13.94 16.53 13.83L16.56 13.97Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Existing site scripts only — no new JS dependency added for this page. -->
+  <script src="js/navbar.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const timeline = document.querySelector(".process-timeline__list");
+  const svg = document.querySelector(".process-timeline__path");
+  const path = svg?.querySelector("path");
+
+  if (!timeline || !svg || !path) return;
+
+  const drawProcessCurve = () => {
+    const nodes = [...timeline.querySelectorAll(".process-step__node")];
+    if (nodes.length < 2) return;
+
+    const timelineRect = timeline.getBoundingClientRect();
+    const points = nodes.map((node) => {
+      const rect = node.getBoundingClientRect();
+      return {
+        x: rect.left + rect.width / 2 - timelineRect.left,
+        y: rect.top + rect.height / 2 - timelineRect.top
+      };
+    });
+
+    svg.setAttribute("viewBox", `0 0 ${timelineRect.width} ${timelineRect.height}`);
+
+    let d = `M ${points[0].x} ${points[0].y}`;
+    for (let i = 0; i < points.length - 1; i++) {
+      const a = points[i];
+      const b = points[i + 1];
+      const distance = Math.max(30, Math.abs(b.y - a.y));
+      const vertical = Math.min(distance * 0.42, 70);
+      const bend = i % 2 === 0 ? 56 : -56;
+      d += ` C ${a.x + bend} ${a.y + vertical}, ${b.x + bend} ${b.y - vertical}, ${b.x} ${b.y}`;
+    }
+
+    path.setAttribute("d", d);
+  };
+
+  const redraw = () => requestAnimationFrame(drawProcessCurve);
+  redraw();
+  window.addEventListener("load", redraw);
+  window.addEventListener("resize", redraw);
+
+  const resizeObserver = new ResizeObserver(redraw);
+  resizeObserver.observe(timeline);
+
+  timeline.querySelectorAll("img").forEach((img) => {
+    if (img.complete) redraw();
+    else img.addEventListener("load", redraw, { once: true });
+  });
+
+  const mutationObserver = new MutationObserver(redraw);
+  timeline.querySelectorAll(".process-step").forEach((step) => {
+    mutationObserver.observe(step, { attributes: true, attributeFilter: ["class", "style"] });
+  });
+});
+</script>
+</body>
+</html>
