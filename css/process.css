@@ -234,10 +234,6 @@
   color: #000000;
   transform: translateY(-50px);
 }
-/* ============================================================================
-   DESCRIPTION
-   ============================================================================ */
-
 
 
 /* ============================================================================
@@ -516,8 +512,22 @@ display: none !important;
   position: relative;
   overflow: hidden;
   padding: 1.5rem 0 2rem;
-  background: var(--pp-sand);
+
+  background-color: var(--pp-sand);
+
+  background-image:
+    linear-gradient(
+      rgba(247, 245, 240, 0.35),
+      rgba(247, 245, 240, 0.35)
+    ),
+    url("../assets/images/process/process-background2.png");
+
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% auto;
 }
+
+
 .process-timeline__leaf {
   position: absolute;
   bottom: -30px;
@@ -528,6 +538,158 @@ display: none !important;
   stroke-width: 1;
   opacity: 0.1;
   pointer-events: none;
+}
+
+/* ============================================================================
+   TIMELINE ATMOSPHERE — subtle animated background
+   Purely decorative and inert: one wrapper, absolutely positioned to fill
+   the section, sitting at the very start of the section's markup so it
+   paints behind every in-flow child (the same stacking approach already
+   used by .process-timeline__leaf / .process-timeline__path above). It
+   never changes the section's height, never scrolls horizontally, and
+   never sits above the step images, text or the existing central curve.
+   All colors reuse the palette tokens defined at the top of this file.
+   Kept deliberately faint — this is atmosphere, not a graphic.
+   ============================================================================ */
+
+.process-timeline__atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Soft organic waves + a whisper of a longitude/grid texture, combined into
+   one layer so only a single element needs to animate. */
+.process-timeline__waves {
+  position: absolute;
+  inset: -10%;
+  background-image:
+    radial-gradient(ellipse 55% 40% at 18% 22%, rgba(14, 124, 123, 0.05), transparent 70%),
+    radial-gradient(ellipse 50% 38% at 82% 70%, rgba(201, 146, 46, 0.035), transparent 70%),
+    radial-gradient(ellipse 60% 45% at 55% 95%, rgba(10, 46, 47, 0.04), transparent 70%),
+    repeating-linear-gradient(100deg, rgba(10, 46, 47, 0.012) 0px, rgba(10, 46, 47, 0.012) 1px, transparent 1px, transparent 120px);
+  animation: pp-atmosphere-drift 100s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes pp-atmosphere-drift {
+  0%   { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  100% { transform: translate3d(1.5%, 1%, 0) scale(1.02); }
+}
+
+/* Faint topographic / contour linework, echoing the existing central path */
+.process-timeline__contours {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+  animation: pp-contour-breathe 46s ease-in-out infinite;
+}
+
+.process-timeline__contours path {
+  fill: none;
+  stroke: var(--pp-harbor);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+@keyframes pp-contour-breathe {
+  0%, 100% { opacity: 0.24; }
+  50%      { opacity: 0.4; }
+}
+
+/* Two additional botanical silhouettes — the existing bottom-left leaf
+   above is untouched. These drift and rotate almost imperceptibly and
+   are pinned to the outer edges, well clear of the step content. */
+.process-timeline__leaf-drift {
+  position: absolute;
+  fill: none;
+  stroke: var(--pp-harbor);
+  stroke-width: 1;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.process-timeline__leaf-drift--a {
+  top: -20px;
+  right: -50px;
+  width: 190px;
+  animation: pp-leaf-drift-a 85s ease-in-out infinite alternate;
+}
+
+.process-timeline__leaf-drift--b {
+  bottom: 8%;
+  right: 4%;
+  width: 130px;
+  opacity: 0.045;
+  animation: pp-leaf-drift-b 95s ease-in-out infinite alternate;
+}
+
+@keyframes pp-leaf-drift-a {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-10px, 8px) rotate(2deg); }
+}
+
+@keyframes pp-leaf-drift-b {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(6px, -10px) rotate(-2deg); }
+}
+
+/* A sparse handful of drifting seed-like particles */
+.process-timeline__seed {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--pp-gold);
+  opacity: 0;
+  animation: pp-seed-float 22s ease-in-out infinite;
+}
+
+.process-timeline__seed:nth-child(6)  { top: 12%; left: 8%;  animation-delay: 0s;   animation-duration: 24s; }
+.process-timeline__seed:nth-child(7)  { top: 30%; left: 92%; animation-delay: -6s;  animation-duration: 27s; background: var(--pp-harbor); }
+.process-timeline__seed:nth-child(8)  { top: 55%; left: 6%;  animation-delay: -12s; animation-duration: 21s; }
+.process-timeline__seed:nth-child(9)  { top: 70%; left: 88%; animation-delay: -3s;  animation-duration: 25s; background: var(--pp-harbor); }
+.process-timeline__seed:nth-child(10) { top: 90%; left: 14%; animation-delay: -9s;  animation-duration: 23s; }
+
+@keyframes pp-seed-float {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 0.12; }
+  50%  { transform: translate(4px, -16px); opacity: 0.14; }
+  85%  { opacity: 0.05; }
+  100% { transform: translate(-4px, -30px); opacity: 0; }
+}
+
+/* Extremely subtle radial glow, breathing behind the timeline */
+.process-timeline__aura {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(20, 184, 166, 0.04), transparent 45%),
+    radial-gradient(circle at 75% 65%, rgba(247, 245, 240, 0.5), transparent 55%);
+  animation: pp-aura-breathe 50s ease-in-out infinite;
+}
+
+@keyframes pp-aura-breathe {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.75; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-timeline__waves,
+  .process-timeline__contours,
+  .process-timeline__leaf-drift,
+  .process-timeline__seed,
+  .process-timeline__aura {
+    animation: none;
+  }
+
+  .process-timeline__seed {
+    opacity: 0.08;
+  }
 }
 
 .process-timeline__header {
@@ -1147,5 +1309,38 @@ display: none !important;
     max-width: 78px;
   }
 
+  /* On small screens the drifting leaves and seed particles add nothing
+     visible at this scale and aren't worth the extra paint work, so they
+     are simply switched off; the waves/contours/aura layers stay since
+     they're single low-cost gradient elements. */
+  .process-timeline__leaf-drift,
+  .process-timeline__seed {
+    display: none;
+  }
+
 }
 
+/* ==========================================================
+   PROCESS BACKGROUND — RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1080px) {
+  .process-timeline {
+    background-size: 110% auto;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-timeline {
+    background-size: 150% auto;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-timeline {
+    background-size: 190% auto;
+    background-position: center top;
+  }
+}
