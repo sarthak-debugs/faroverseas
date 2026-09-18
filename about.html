@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Far Overseas</title>
+  <meta name="description" content="Far Overseas is a globally trusted international trade and sourcing company based in India, connecting 45,000+ farmers with global markets through organic, non-GMO, fully traceable agricultural exports." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Us | Far Overseas" />
+  <meta property="og:description" content="Bridging Indian roots to a healthier world — learn how Far Overseas sources, processes and exports organic agricultural ingredients with full farm-to-port traceability." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (existing site fonts, unchanged) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!--
+    Two additional font families for this page only, loaded from the same
+    Google Fonts host already used by the site (same pattern as process.html):
+    - Playfair Display: editorial serif for the large display headlines shown
+      in the approved design. Manrope has no serif cut, so a serif face was
+      needed to match the reference's headline character.
+    - Caveat: lightweight handwritten script for the decorative hero note
+      ("Good Food, Brighter Tomorrow").
+    Manrope / Inter / IBM Plex Mono remain the typefaces for navigation,
+    body copy and eyebrow labels respectively — nothing else changes.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles: shared site foundation + this page's own stylesheet -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/whatsapp-widget.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/about.css" />
+
+</head>
+<body>
+
+  <!-- ==========================================================
+       Navigation — reused verbatim from index.html. Only change:
+       aria-current="page" added to "About Us" so it reads as the
+       active item (same convention process.html uses). Nothing
+       else about the shared navbar markup, classes or scripts
+       is touched.
+       ========================================================== -->
+  <header class="navbar" data-navbar>
+    <div class="navbar__progress" data-scroll-progress></div>
+    <div class="container navbar__inner">
+
+      <a href="index.html" class="navbar__brand" aria-label="Far Overseas home">
+        <img
+          src="assets/images/logo-mark.png"
+          alt="Far Overseas"
+          class="navbar__logo"
+        />
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="navbar__links" data-navbar-links>
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item--dropdown" data-navbar-dropdown-item>
+            <a href="#" class="navbar__link" data-navbar-dropdown-trigger>
+              Products
+              <svg class="navbar__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="navbar__dropdown">
+              <div class="navbar__dropdown-card">
+                <a href="products-spices.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Spices</a>
+                <a href="products-herbs.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Herbs</a>
+                <a href="products-pulses.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Pulses, Lentils &amp; Beans</a>
+                <a href="products-oil-seeds.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Oil Seeds</a>
+                <a href="products-cereals-millets.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Cereals &amp; Millets</a>
+                <a href="products-dehydrated.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dehydrated Products</a>
+                <a href="products-dry-fruits.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dry Fruits</a>
+                <a href="products-sweeteners.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Sweeteners</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="process.html" class="navbar__link">Our Process</a></li>
+          <li><a href="about.html" class="navbar__link" aria-current="page">About Us</a></li>
+          <li><a href="blogs.html" class="navbar__link">Blogs</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact Us</a></li>
+
+          <!-- Shown only inside the mobile slide-in menu -->
+          <li><a href="quote.html" class="btn btn-primary navbar__cta--mobile">Request a Quote</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="quote.html" class="btn btn-primary navbar__cta">Request a Quote</a>
+        <button class="navbar__toggle" data-navbar-toggle aria-label="Toggle menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================
+         SECTION 1 — HERO
+         ========================================================== -->
+    <section class="about-hero" aria-labelledby="about-hero-title" data-reveal-group>
+
+      <div class="about-hero__media">
+        <img
+          src="assets/images/about/about-hero.png"
+          alt="A farmer looking out over an organic field at sunrise"
+          class="about-hero__image"
+          loading="eager"
+        />
+        <div class="about-hero__overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="container about-hero__inner">
+
+        <div class="about-hero__content" data-reveal>
+
+          <p class="eyebrow">About Far Overseas</p>
+
+          <h1 class="about-hero__headline" id="about-hero-title">
+            Bridging<br />
+            Indian Roots to a<br />
+            <em>Healthier World.</em>
+          </h1>
+
+          <p class="about-hero__subline">
+            We are an India-based international trade and sourcing company
+            delivering natural, high-quality and sustainably sourced
+            agricultural ingredients to global markets.
+          </p>
+
+          <div class="about-hero__stats">
+            <div class="about-hero__stat">
+              <span class="about-hero__stat-value" data-counter="45000" data-counter-suffix="+">0</span>
+              <span class="about-hero__stat-label">Partner Farmers</span>
+            </div>
+            <span class="about-hero__stat-divider" aria-hidden="true"></span>
+            <div class="about-hero__stat">
+              <span class="about-hero__stat-value" data-counter="12" data-counter-suffix="+">0</span>
+              <span class="about-hero__stat-label">Countries</span>
+            </div>
+            <span class="about-hero__stat-divider" aria-hidden="true"></span>
+            <div class="about-hero__stat">
+              <span class="about-hero__stat-value" data-counter="100" data-counter-suffix="%">0</span>
+              <span class="about-hero__stat-label">Commitment to Quality</span>
+            </div>
+          </div>
+
+        </div>
+
+    </section>
+
+   <!-- ========================================================== 
+     SECTION 2 — WHO WE ARE 
+     ========================================================== --> 
+<div class="about-who-presentation">
+
+  <section class="about-who" aria-label="Who we are"> 
+    <div class="container about-who__inner"> 
+ 
+      <div class="about-who__body" data-reveal> 
+ 
+        <p class="eyebrow">Who We Are</p> 
+ 
+        <h2>More Than a Business,<br />A Shared Belief.</h2> 
+ 
+        <p class="about-who__lead"> 
+          Far Overseas is a leading sourcing and export partner for 
+          agricultural commodities and food products. We work closely 
+          with farmers, processors and global buyers to deliver 
+          authentic, high-quality products with full traceability, 
+          ethical practices and reliable supply. 
+        </p> 
+ 
+        <p> 
+          With deep knowledge of international trade regulations, 
+          logistics and quality standards, we ensure a seamless 
+          farm-to-port journey — bringing the best of India to the world. 
+        </p> 
+ 
+        <a href="process.html" class="btn btn-primary about-who__cta"> 
+          Our Journey 
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"> 
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/> 
+          </svg> 
+        </a> 
+ 
+      </div> 
+ 
+      <div class="about-who__media" data-reveal> 
+ 
+        <div class="about-who__frame about-who__frame--primary"> 
+          <img 
+            src="assets/images/about/who-we-are.png" 
+            alt="Hands cupping fresh soil and a young seedling" 
+            loading="lazy" 
+          /> 
+          <p class="about-who__frame-caption"> 
+            Pure Origins.<br />Global Possibilities. 
+          </p> 
+        </div> 
+ 
+        <div class="about-who__frame about-who__frame--secondary"> 
+          <img 
+            src="assets/images/about/origins.png" 
+            alt="Rolling organic farmland in India" 
+            loading="lazy" 
+          /> 
+          <span class="about-who__frame-tag"> 
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"> 
+              <path d="M12 3L19 6V11C19 15.5 16.2 19.2 12 21C7.8 19.2 5 15.5 5 11V6L12 3Z" stroke="currentColor" stroke-width="1.4"/> 
+            </svg> 
+          </span> 
+          <p class="about-who__frame-caption about-who__frame-caption--sm"> 
+            Sourced with Care 
+            <br /> 
+            <strong>From India's fertile lands to the world's tables.</strong> 
+          </p> 
+        </div> 
+ 
+      </div> 
+ 
+    </div> 
+  </section> 
+  
+
+  <!-- ========================================================== 
+       SECTION 3 — VISION / MISSION / PHILOSOPHY 
+       ========================================================== --> 
+  <section class="about-pillars" aria-label="Our vision, mission and philosophy"> 
+    <div class="container about-pillars__grid" data-reveal-group> 
+ 
+      <!-- OUR VISION --> 
+      <div class="about-pillar" data-reveal> 
+        <div class="about-pillar__icon"> 
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"> 
+            <path 
+              d="M3 16C3 16 7.5 8 16 8C24.5 8 29 16 29 16C29 16 24.5 24 16 24C7.5 24 3 16 3 16Z" 
+              stroke="currentColor" 
+              stroke-width="2.4" 
+              stroke-linejoin="round" 
+            /> 
+            <circle 
+              cx="16" 
+              cy="16" 
+              r="4.5" 
+              stroke="currentColor" 
+              stroke-width="2.4" 
+            /> 
+            <circle 
+              cx="16" 
+              cy="16" 
+              r="1.8" 
+              fill="currentColor" 
+            /> 
+          </svg> 
+        </div> 
+ 
+        <h3>Our Vision</h3> 
+ 
+        <p> 
+          To build a trade-first organization based on ownership, trust 
+          and responsibility — staying close to the source and customer, 
+          while creating a transparent, resilient and long-term global 
+          trade ecosystem. 
+        </p> 
+      </div> 
+ 
+ 
+      <!-- OUR MISSION --> 
+      <div class="about-pillar" data-reveal> 
+        <div class="about-pillar__icon"> 
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"> 
+            <circle 
+              cx="15" 
+              cy="17" 
+              r="9" 
+              stroke="currentColor" 
+              stroke-width="2.4" 
+            /> 
+            <circle 
+              cx="15" 
+              cy="17" 
+              r="4.5" 
+              stroke="currentColor" 
+              stroke-width="2.4" 
+            /> 
+            <circle 
+              cx="15" 
+              cy="17" 
+              r="1.8" 
+              fill="currentColor" 
+            /> 
+            <path 
+              d="M18.5 13.5L27 5M22 5H27V10" 
+              stroke="currentColor" 
+              stroke-width="2.4" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+            /> 
+          </svg> 
+        </div> 
+ 
+        <h3>Our Mission</h3> 
+ 
+        <p> 
+          To responsibly source, supply and deliver high-quality 
+          agricultural products with complete control over quality, 
+          compliance, and execution, while building transparent and 
+          reliable relationships with our producers and customers. 
+        </p> 
+      </div> 
+ 
+ 
+      <!-- OUR PHILOSOPHY --> 
+      <div class="about-pillar" data-reveal> 
+        <div class="about-pillar__icon"> 
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"> 
+            <path 
+              d="M8 25C11 19 14 12 24 7C25 16 21 23 14 26C12 27 10 26 8 25Z" 
+              fill="currentColor" 
+            /> 
+            <path 
+              d="M9 25C13 20 17 16 23 11" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+            /> 
+          </svg> 
+        </div> 
+ 
+        <h3>Our Philosophy</h3> 
+ 
+        <p> 
+          Customer satisfaction is at the heart of everything we do. We 
+          focus on delivering quality products, on time, with strict 
+          quality checks before they reach our customers. 
+        </p> 
+      </div> 
+ 
+    </div> 
+  </section>
+
+</div>
+
+    <!-- ==========================================================
+         SECTION 4 — WHY CHOOSE FAR OVERSEAS
+         ========================================================== -->
+    <section class="about-why" aria-label="Why choose Far Overseas">
+      <svg class="about-why__leaf about-why__leaf--left" viewBox="0 0 160 260" aria-hidden="true">
+        <path d="M80 10C120 60 140 120 110 200C90 240 60 250 30 240C10 190 20 120 50 70C60 50 70 25 80 10Z"/>
+        <path d="M80 10C60 90 55 160 70 230"/>
+      </svg>
+      <svg class="about-why__leaf about-why__leaf--right" viewBox="0 0 160 260" aria-hidden="true">
+        <path d="M80 10C120 60 140 120 110 200C90 240 60 250 30 240C10 190 20 120 50 70C60 50 70 25 80 10Z"/>
+        <path d="M80 10C60 90 55 160 70 230"/>
+      </svg>
+
+      <div class="container about-why__inner">
+
+        <div class="about-why__content" data-reveal>
+          <p class="eyebrow">Why Choose Far Overseas</p>
+          <h2>Built on Trust.<br />Backed by Experience.</h2>
+          <p>
+            With over a decade of experience, we have continuously raised
+            our operating standards through well-defined SOPs aligned with
+            global food-safety practices, ensuring better efficiency and
+            superior product quality.
+          </p>
+         
+        </div>
+
+        <div class="about-why__grid" data-reveal-group>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M12 3.8L19.2 7.9V16.1L12 20.2L4.8 16.1V7.9L12 3.8Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path d="M4.8 7.9L12 12.1L19.2 7.9"
+                      stroke="currentColor" stroke-width="1.5"
+                      stroke-linejoin="round"/>
+                <path d="M12 12.1V20.2"
+                      stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <p>Organic &amp;<br />Sustainable</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="9" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="17" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3.5 19C3.5 15.4 6 13 9 13C12 13 14.5 15.4 14.5 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M14 14.3C15 13.8 16.2 13.6 17.3 13.6C19.6 13.6 21 15.6 21 18.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p>Qualified Professionals<br />&amp; Experts</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 3V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M15 3V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M6 8H18L17 21H7L6 8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M9.5 12C9.5 12 8.5 13 8.5 14.2C8.5 15.2 9.2 16 10 16C10.8 16 11.5 15.2 11.5 14.2C11.5 13 10.5 12 10.5 12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Steam Sterilization<br />Unit</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3.5 12H20.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 3.5C14.5 5.8 15.5 8.7 15.5 12C15.5 15.3 14.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M12 3.5C9.5 5.8 8.5 8.7 8.5 12C8.5 15.3 9.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <p>Global<br />Presence</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3L14.5 8.5L20.5 9.2L16 13.3L17.2 19.2L12 16.2L6.8 19.2L8 13.3L3.5 9.2L9.5 8.5L12 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Purity and Superior<br />Quality</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M4 12L9 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 12L9 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12L15 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12L15 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Farm to Fork<br />Traceability</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M13 8H31L36 13V39H13Z" stroke="currentColor" stroke-width="0" />
+                <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 12H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12 8V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M17.5 17.5L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p>State of Art Processing<br />Technology</p>
+          </div>
+
+          <div class="about-why__item" data-reveal>
+            <div class="about-why__icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M9 11.5L11 13.5L15.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Quality<br />Exports</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 5 — SUSTAINABILITY
+         ========================================================== -->
+    <section class="about-sustainability" id="sustainability" aria-label="Sustainability">
+      <div class="container">
+
+        <div class="about-sustainability__top" data-reveal>
+          <div class="about-sustainability__heading">
+            <p class="eyebrow">Our Commitment</p>
+            <h2>Building a Future with<br />Sustainable Organic Farming.</h2>
+          </div>
+          <p class="about-sustainability__intro">
+            We believe in responsible growth — supporting farmers,
+            protecting biodiversity and promoting environmentally conscious
+            food systems for generations to come.
+          </p>
+        </div>
+
+        <div class="about-sustainability__grid" data-reveal-group>
+
+          <div class="about-sustainability__card" data-reveal>
+            <div class="about-sustainability__media">
+              <img src="assets/images/about/organic-production.png" alt="Hands holding fresh soil with a young seedling" loading="lazy" />
+              <span class="about-sustainability__icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 20V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M12 13C8 13 5.5 10.5 5.5 6.5C9.5 6.5 12 9 12 13Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Organic Production</h3>
+            <p>
+              We promote non-GMO seeds, avoid synthetic chemicals, and
+              support organic produce while ensuring fair pricing and
+              better livelihoods for farmers.
+            </p>
+          </div>
+
+          <div class="about-sustainability__card" data-reveal>
+            <div class="about-sustainability__media">
+              <img src="assets/images/about/biodiversity.png" alt="Rolling green farmland used for organic cultivation" loading="lazy" />
+              <span class="about-sustainability__icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.5 12H20.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 3.5C14.5 5.8 15.5 8.7 15.5 12C15.5 15.3 14.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 3.5C9.5 5.8 8.5 8.7 8.5 12C8.5 15.3 9.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Local Sourcing &amp; Biodiversity</h3>
+            <p>
+              We source ingredients from their regions of origin, work with
+              farming groups and cooperatives, and encourage biodiversity
+              and sustainable agricultural systems.
+            </p>
+          </div>
+
+          <div class="about-sustainability__card" data-reveal>
+            <div class="about-sustainability__media">
+              <img src="assets/images/about/farmer-training.png" alt="Farmers being trained in the field on organic methods" loading="lazy" />
+              <span class="about-sustainability__icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="8" cy="8" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="16" cy="8" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.5 18C3.5 14.8 5.4 13 8 13C10.6 13 12.5 14.8 12.5 18" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M11.5 14.2C12.6 13.4 14 13 16 13C18.8 13 20.5 15 20.5 18" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+            </div>
+            <h3>Training &amp; Support</h3>
+            <p>
+              We train and support farmers in organic farming methods,
+              natural fertilizers, soil health, biodiversity and long-term
+              good agricultural practices.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 6 — RELIABLE SUPPLY CHAIN
+         ========================================================== -->
+    <section class="about-supply-chain" id="supply-chain" aria-label="Reliable supply chain">
+      <div class="container about-supply-chain__inner">
+
+        <div class="about-supply-chain__body" data-reveal>
+
+          <p class="eyebrow">Our Supply Chain</p>
+          <h2>From Indian Farms to<br />Global Tables.</h2>
+
+          <p>
+            We work with 45,000+ organic farmers, cultivating non-GMO
+            crops without pesticides across 40,000 hectares. Our supply
+            chain is built on strong relationships, transparent processes
+            and collaborative partnerships — ensuring quality, consistency
+            and responsible trade from source to destination.
+          </p>
+
+          <a href="process.html" class="btn btn-primary about-supply-chain__cta">
+            Our Process
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <div class="about-supply-chain__stats">
+
+            <div class="about-supply-chain__stat">
+              <span class="about-supply-chain__stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="8" r="2.6" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="17" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.5 19C3.5 15.4 6 13 9 13C12 13 14.5 15.4 14.5 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M14 14.3C15 13.8 16.2 13.6 17.3 13.6C19.6 13.6 21 15.6 21 18.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="about-supply-chain__stat-text">
+                <strong data-counter="45000" data-counter-suffix="+">0</strong>
+                <span>Partner Farmers</span>
+              </span>
+            </div>
+
+            <div class="about-supply-chain__stat">
+              <span class="about-supply-chain__stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3L20 7V17L12 21L4 17V7L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M4 7L12 11L20 7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M12 11V21" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="about-supply-chain__stat-text">
+                <strong data-counter="40000" data-counter-suffix="+">0</strong>
+                <span>Hectares Under Cultivation</span>
+              </span>
+            </div>
+
+            <div class="about-supply-chain__stat">
+              <span class="about-supply-chain__stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 21C12 21 19 15.6 19 10.2C19 6.2 15.9 3 12 3C8.1 3 5 6.2 5 10.2C5 15.6 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  <circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="about-supply-chain__stat-text">
+                <strong>Sourced</strong>
+                <span>from Regions of Origin</span>
+              </span>
+            </div>
+
+            <div class="about-supply-chain__stat">
+              <span class="about-supply-chain__stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M3.5 12H20.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 3.5C14.5 5.8 15.5 8.7 15.5 12C15.5 15.3 14.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M12 3.5C9.5 5.8 8.5 8.7 8.5 12C8.5 15.3 9.5 18.2 12 20.5" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+              </span>
+              <span class="about-supply-chain__stat-text">
+                <strong>Reliable</strong>
+                <span>Global Supply Chain</span>
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="about-supply-chain__media" data-reveal>
+          <img
+            src="assets/images/about/supply-chain.png"
+            alt="Cargo ships loaded for export at an Indian port"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </section>
+
+ 
+    <!-- ==========================================================
+         SECTION 8 — FINAL CTA
+         ========================================================== -->
+    <section class="about-cta" aria-label="Partner with Far Overseas">
+
+      <div class="about-cta__media" aria-hidden="true">
+        <img src="assets/images/about/footer.png" alt="" loading="lazy" />
+      </div>
+
+      <div class="container about-cta__inner" data-reveal>
+
+        <div class="about-cta__text">
+          <p class="eyebrow">Let's Grow Together</p>
+          <h2>Partner for a Healthier,<br />More Sustainable Tomorrow.</h2>
+          <p>
+            Get in touch with us for product inquiries, partnerships or
+            custom requirements.
+          </p>
+        </div>
+
+        <div class="about-cta__actions">
+          <a href="quote.html" class="btn btn-primary">
+            Request a Quote
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="contact.html" class="btn btn-ghost-light">
+            Contact Us
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       Footer — reused verbatim from index.html.
+       ========================================================== -->
+  <footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="./assets/images/logo-mark.png" alt="Far Overseas">
+                <div>
+                    <h3>FAR OVERSEAS</h3>
+                    <span>WHERE BORDERS ARE BRIDGES</span>
+                </div>
+            </div>
+
+            <p>
+                An international trade and sourcing company connecting
+                Indian producers with global markets — organic, non-GMO
+                ingredients, exported worldwide with full traceability.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/far-overseas/home/" aria-label="LinkedIn">in</a>
+                <a href="https://www.instagram.com/far_overseas?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" aria-label="Instagram">◎</a>
+            </div>
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+            <h4>QUICK LINKS</h4>
+             <a href="process.html">Our Process</a>
+            <a href="about.html">About Us</a>
+      
+            <a href="blogs.html">Blogs</a>
+      
+            <a href="contact.html">Contact Us</a>
+            <a href="quote.html">Request a Quote</a>
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="footer-column">
+            <h4>PRODUCTS</h4>
+
+            <a href="products-spices.html">Spices</a>
+            <a href="products-herbs.html">Herbs</a>
+            <a href="products-pulses.html">Pulses, Lentils &amp; Beans</a>
+            <a href="products-oil-seeds.html">Oil Seeds</a>
+            <a href="products-cereals.html">Cereals &amp; Millets</a>
+            <a href="products-dry-fruits.html">Dry Fruits</a>
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT + NEWSLETTER -->
+    <div class="footer-contact-box">
+
+        <div class="footer-contact">
+
+            <h4>CONTACT</h4>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌖</span>
+                <p>
+                    411, Sapna Sangeeta Road,<br>
+                    Indore, Madhya Pradesh, India
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌕</span>
+                <p>+91 91317 73122</p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <p>faroverseas11@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-newsletter">
+
+            <h4>STAY CONNECTED</h4>
+
+            <p>
+                Subscribe to get the latest updates on our products,
+                certifications and global presence.
+            </p>
+
+            <form class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe <span>→</span>
+                </button>
+
+            </form>
+
+
+            <div class="footer-highlights">
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>100%</strong>
+                    <small>Quality Assured</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">◎</span>
+                    <strong>Global</strong>
+                    <small>Export Network</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♧</span>
+                    <strong>Sustainable</strong>
+                    <small>Sourcing</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>Long-Term</strong>
+                    <small>Partnerships</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Far Overseas. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms &amp; Conditions</a>
+            <span>|</span>
+            <a href="#">Sitemap</a>
+        </div>
+
+    </div>
+
+</footer>
+
+  <!-- ==========================================================
+       WhatsApp Widget (fixed, site-wide) — reused verbatim.
+       ========================================================== -->
+  <div class="whatsapp-widget">
+    <span class="whatsapp-widget__tooltip">Chat with our Export Team</span>
+    <a href="#" class="whatsapp-widget__button" aria-label="Chat with us on WhatsApp">
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.84 19.01L7.54 18.83L4.42 19.65L5.26 16.61L5.06 16.29C4.23 14.98 3.79 13.46 3.79 11.91C3.79 7.37 7.5 3.66 12.05 3.66C14.25 3.66 16.32 4.52 17.87 6.08C19.42 7.64 20.29 9.71 20.28 11.92C20.28 16.46 16.57 20.15 12.04 20.15ZM16.56 13.97C16.31 13.85 15.11 13.25 14.89 13.17C14.66 13.09 14.5 13.05 14.34 13.29C14.17 13.54 13.71 14.09 13.56 14.26C13.42 14.42 13.28 14.44 13.03 14.32C12.79 14.19 12 13.93 11.06 13.09C10.33 12.44 9.84 11.63 9.7 11.39C9.56 11.14 9.68 11.01 9.81 10.89C9.92 10.77 10.06 10.59 10.19 10.44C10.32 10.29 10.36 10.19 10.45 10.02C10.53 9.86 10.49 9.71 10.43 9.59C10.36 9.46 9.87 8.27 9.67 7.78C9.47 7.3 9.27 7.37 9.12 7.36C8.98 7.35 8.82 7.35 8.65 7.35C8.49 7.35 8.23 7.41 8 7.65C7.78 7.9 7.15 8.49 7.15 9.68C7.15 10.87 8.02 12.02 8.14 12.18C8.27 12.34 9.86 14.79 12.3 15.83C12.88 16.08 13.33 16.23 13.68 16.34C14.26 16.53 14.79 16.5 15.21 16.44C15.68 16.37 16.65 15.85 16.85 15.28C17.05 14.7 17.05 14.21 16.99 14.11C16.93 14 16.77 13.94 16.53 13.83L16.56 13.97Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Existing site scripts only — no new JS dependency added for this page. -->
+  <script src="js/navbar.js"></script>
+  <script src="js/reveal.js"></script>
+</body>
+</html>
