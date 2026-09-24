@@ -354,38 +354,74 @@
 }
 .blog-chip:hover { background: rgbargba(14, 124, 123); }
 .blog-chip[aria-pressed="true"] { background:rgba(14, 124, 123); color: #fff; }
-.blog-chip:focus-visible,
-.blog-search input:focus-visible {
-  outline: 2px solid var(--blog-green-500);
-  outline-offset: 2px;
-}
+/* ---------- Search ---------- */
 
 .blog-search {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+
   flex: 0 0 auto;
   width: min(100%, 14.5rem);
+
   padding: 0 1rem;
+
   border: 1px solid var(--blog-line);
   border-radius: 999px;
+
   background: rgba(255, 255, 255, 0.7);
   color: var(--blog-green-900);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
-.blog-search:focus-within { border-color: var(--blog-green-500); background: #fff; }
-.blog-search svg { width: 18px; height: 18px; flex: none; }
+
+.blog-search:focus-within {
+  border-color: var(--blog-green-500);
+  background: #fff;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 56, 58, 0.08);
+}
+
+.blog-search svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
 .blog-search input {
   width: 100%;
   min-width: 0;
+
   padding: 0.75rem 0;
+
   border: 0;
+  outline: none;
+
   background: transparent;
   color: var(--blog-ink);
-  font: 400 0.875rem/1.2 var(--blog-font-body);
-  outline-offset: 6px;
+
+  font:
+    400 0.875rem/1.2
+    var(--blog-font-body);
 }
-.blog-search input::placeholder { color: var(--blog-muted); }
+
+.blog-search input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.blog-search input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.blog-search input::placeholder {
+  color: var(--blog-muted);
+}
 
 /* ---------- 5. Card grid ---------- */
 .blog-grid {
