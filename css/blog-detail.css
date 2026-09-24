@@ -1,0 +1,540 @@
+/* ==========================================================
+   Far Overseas — Blog article page
+   ----------------------------------------------------------
+   Extends css/blogs.css
+   Only article-specific rules live here.
+   ========================================================== */
+
+
+/* ==========================================================
+   HERO / TITLE BLOCK
+   ========================================================== */
+
+.article-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding:
+    calc(
+      var(--blog-nav-offset, 0px)
+      + clamp(2.25rem, 4.5vw, 3.5rem)
+    )
+    0
+    clamp(4.5rem, 8vw, 6.5rem);
+
+  background: #eef2e8;
+}
+
+
+/* ==========================================================
+   DYNAMIC BLURRED ARTICLE IMAGE
+   ----------------------------------------------------------
+   Uses the same featured image as the current blog article.
+   ========================================================== */
+
+.article-hero__bg {
+  position: absolute;
+  inset: -45px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.article-hero__bg img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: blur(1.5px);
+
+  transform: scale(1.12);
+
+  opacity: 0.62;
+}
+
+
+.article-hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(244, 242, 232, 0.94) 0%,
+      rgba(244, 242, 232, 0.82) 30%,
+      rgba(244, 242, 232, 0.58) 52%,
+      rgba(232, 239, 226, 0.28) 76%,
+      rgba(232, 239, 226, 0.14) 100%
+    );
+}
+
+
+.article-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================
+   HERO CONTENT
+   ----------------------------------------------------------
+   Keeps breadcrumb, category and title above the image.
+   ========================================================== */
+
+.article-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ==========================================================
+   BREADCRUMBS
+   ========================================================== */
+
+.article-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-bottom: 1.75rem;
+
+  font:
+    500 0.82rem/1.3
+    var(--blog-font-body);
+
+  color: var(--blog-muted);
+}
+
+.article-crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-crumbs a:hover {
+  color: var(--blog-green-700);
+  text-decoration: underline;
+}
+
+.article-crumbs [aria-current="page"] {
+  color: var(--blog-green-900);
+  font-weight: 600;
+}
+
+
+/* ==========================================================
+   ARTICLE TITLE
+   ========================================================== */
+
+.article-title {
+  max-width: 24em;
+
+  margin: 0;
+
+  font:
+    700 clamp(1.9rem, 4vw, 3.1rem)/1.14
+    var(--blog-font-heading);
+
+  letter-spacing: -0.025em;
+
+  color: var(--blog-green-900);
+
+  text-wrap: balance;
+}
+
+
+/* ==========================================================
+   ARTICLE META
+   ========================================================== */
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.5rem 1.5rem;
+
+  margin: 1.5rem 0 0;
+
+  font:
+    500 0.9rem/1.3
+    var(--blog-font-body);
+
+  color: var(--blog-muted);
+}
+
+
+/* ==========================================================
+   LEAD IMAGE
+   ----------------------------------------------------------
+   Sharp version of the article image below the hero.
+   ========================================================== */
+
+.article-figure {
+  position: relative;
+  z-index: 2;
+
+  aspect-ratio: 21 / 9;
+
+  margin:
+    calc(-1 * clamp(2.5rem, 5vw, 4rem))
+    0
+    0;
+
+  overflow: hidden;
+
+  border-radius: var(--blog-radius-lg);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blog-green-100),
+      var(--blog-green-200)
+    );
+
+  box-shadow: var(--blog-shadow-lift);
+}
+
+.article-figure img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.article-figure.is-missing img {
+  display: none;
+}
+
+
+/* ==========================================================
+   EDITORIAL BODY
+   ========================================================== */
+
+.article-layout {
+  max-width: 44rem;
+
+  margin: 0 auto;
+
+  padding:
+    clamp(2.25rem, 5vw, 3.5rem)
+    0
+    clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.article-body p {
+  margin: 0 0 1.4em;
+
+  font:
+    400 1.0625rem/1.85
+    var(--blog-font-body);
+
+  color: var(--blog-ink);
+}
+
+.article-body p:first-child,
+.article-summary {
+  font:
+    500 clamp(1.15rem, 1.8vw, 1.3rem)/1.7
+    var(--blog-font-body);
+
+  color: var(--blog-green-900);
+}
+
+
+/* ==========================================================
+   EXCERPT-ONLY STATE
+   ========================================================== */
+
+.article-summary {
+  margin: 0;
+}
+
+
+/* ==========================================================
+   ARTICLE SECTIONS
+   ========================================================== */
+
+.article-sections {
+  margin: 2.25rem 0 0;
+
+  padding:
+    clamp(1.25rem, 3vw, 1.75rem);
+
+  border-left: 3px solid var(--blog-green-500);
+
+  border-radius:
+    0
+    var(--blog-radius)
+    var(--blog-radius)
+    0;
+
+  background: var(--blog-sand);
+}
+
+.article-sections h2 {
+  margin: 0 0 1rem;
+
+  font:
+    700 1.05rem/1.3
+    var(--blog-font-heading);
+
+  color: var(--blog-green-900);
+}
+
+.article-sections ol {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.article-sections li {
+  position: relative;
+
+  padding:
+    0.6rem
+    0
+    0.6rem
+    1.4rem;
+
+  border-top: 1px solid var(--blog-line);
+
+  font:
+    500 0.95rem/1.5
+    var(--blog-font-body);
+
+  color: var(--blog-ink);
+}
+
+.article-sections li:first-child {
+  border-top: 0;
+}
+
+.article-sections li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 1.15rem;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--blog-green-500);
+}
+
+
+/* ==========================================================
+   BACK TO ARTICLES
+   ========================================================== */
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-top: 2.5rem;
+
+  font:
+    700 0.9rem/1
+    var(--blog-font-heading);
+
+  color: var(--blog-green-900);
+
+  text-decoration: none;
+}
+
+.article-back svg {
+  width: 14px;
+  height: 14px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.article-back:hover svg {
+  transform: translateX(-4px);
+}
+
+.article-back:focus-visible,
+.article-related__all:focus-visible {
+  outline:
+    2px solid
+    var(--blog-green-500);
+
+  outline-offset: 4px;
+
+  border-radius: 4px;
+}
+
+
+/* ==========================================================
+   RELATED ARTICLES
+   ========================================================== */
+
+.article-related {
+  padding:
+    clamp(2.5rem, 5vw, 4rem)
+    0
+    0;
+
+  border-top:
+    1px solid
+    var(--blog-line);
+}
+
+.article-related__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+}
+
+.article-related__head h2 {
+  margin: 0;
+
+  font:
+    700 clamp(1.4rem, 2.4vw, 1.8rem)/1.2
+    var(--blog-font-heading);
+
+  letter-spacing: -0.015em;
+
+  color: var(--blog-green-900);
+}
+
+.article-related__all {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.45rem;
+
+  flex: none;
+
+  font:
+    700 0.85rem/1
+    var(--blog-font-heading);
+
+  color: var(--blog-green-900);
+
+  text-decoration: none;
+}
+
+.article-related__all svg {
+  width: 14px;
+  height: 14px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.article-related__all:hover svg {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================
+   ARTICLE NOT FOUND
+   ========================================================== */
+
+.article-missing {
+  padding:
+    calc(
+      var(--blog-nav-offset, 0px)
+      + clamp(3.5rem, 8vw, 6rem)
+    )
+    0
+    clamp(3rem, 7vw, 5rem);
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f2e8 0%,
+      #e8efe2 100%
+    );
+}
+
+.article-missing__text {
+  max-width: 34rem;
+
+  margin:
+    1.25rem
+    0
+    1.75rem;
+
+  font:
+    400 1.05rem/1.65
+    var(--blog-font-body);
+
+  color: var(--blog-muted);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  /* Hero */
+
+  .article-hero {
+    padding:
+      calc(
+        var(--blog-nav-offset, 0px)
+        + 2rem
+      )
+      0
+      4.5rem;
+  }
+
+  .article-hero__bg {
+    inset: -30px;
+  }
+
+  .article-hero__bg img {
+    filter: blur(22px);
+
+    transform: scale(1.10);
+
+    opacity: 0.30;
+  }
+
+  .article-hero__overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(244, 242, 232, 0.96) 0%,
+        rgba(232, 239, 226, 0.84) 100%
+      );
+  }
+
+
+  /* Lead image */
+
+  .article-figure {
+    aspect-ratio: 16 / 10;
+  }
+
+
+  /* Related heading */
+
+  .article-related__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Title and description/og tags are set by js/blog-detail.js from the loaded article; no description is hard-coded here -->
+  <title>Article | Far Overseas</title>
+  <meta property="og:type" content="article" />
+
+  <!-- Fonts (same as homepage) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Existing site styles -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/whatsapp-widget.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Blog styles: blogs.css holds the shared tokens, cards and CTA band -->
+  <link rel="stylesheet" href="css/blogs.css" />
+  <link rel="stylesheet" href="css/blog-detail.css" />
+</head>
+<body class="blog-page blog-detail-page">
+
+  <!-- ==========================================================
+       Navigation — identical to index.html
+       ========================================================== -->
+  <header class="navbar" data-navbar>
+    <div class="navbar__progress" data-scroll-progress></div>
+    <div class="container navbar__inner">
+
+      <a href="index.html" class="navbar__brand" aria-label="Far Overseas home">
+        <img
+          src="assets/images/logo-mark.png"
+          alt="Far Overseas"
+          class="navbar__logo"
+        />
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="navbar__links" data-navbar-links>
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li class="navbar__item--dropdown" data-navbar-dropdown-item>
+            <a href="#" class="navbar__link" data-navbar-dropdown-trigger>
+              Products
+              <svg class="navbar__chevron" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="navbar__dropdown">
+              <div class="navbar__dropdown-card">
+                <a href="products-spices.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Spices</a>
+                <a href="products-herbs.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Herbs</a>
+                <a href="products-pulses.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Pulses, Lentils &amp; Beans</a>
+                <a href="products-oil-seeds.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Oil Seeds</a>
+                <a href="products-cereals-millets.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Cereals &amp; Millets</a>
+                <a href="products-dehydrated.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dehydrated Products</a>
+                <a href="products-dry-fruits.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Dry Fruits</a>
+                <a href="products-sweeteners.html" class="navbar__dropdown-link"><span class="navbar__dropdown-dot"></span>Sweeteners</a>
+              </div>
+            </div>
+          </li>
+
+          <li><a href="process.html" class="navbar__link">Our Process</a></li>
+          <li><a href="about.html" class="navbar__link">About Us</a></li>
+          <li><a href="blogs.html" class="navbar__link" aria-current="page">Blogs</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact Us</a></li>
+
+          <!-- Shown only inside the mobile slide-in menu -->
+          <li><a href="quote.html" class="btn btn-primary navbar__cta--mobile">Request a Quote</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="quote.html" class="btn btn-primary navbar__cta">Request a Quote</a>
+        <button class="navbar__toggle" data-navbar-toggle aria-label="Toggle menu" aria-expanded="false">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================
+         Article — every hook below is filled by js/blog-detail.js
+         ========================================================== -->
+    <article class="article" data-article hidden>
+<header class="article-hero">
+
+  <!-- Dynamic blurred version of the article's featured image -->
+  <div class="article-hero__bg" aria-hidden="true">
+    <img data-article-bg alt="" decoding="async" />
+  </div>
+
+  <!-- Readability layer -->
+  <div class="article-hero__overlay" aria-hidden="true"></div>
+
+  <div class="container article-hero__inner">
+
+    <nav class="article-crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="blogs.html">Blog</a>
+      <span aria-hidden="true">/</span>
+      <span data-article-crumb aria-current="page"></span>
+    </nav>
+
+    <p class="blog-eyebrow" data-article-category></p>
+
+    <h1 class="article-title" data-article-title></h1>
+
+    <p class="article-meta" data-article-meta hidden></p>
+
+  </div>
+</header>
+
+      <div class="container">
+        <figure class="article-figure" data-article-figure>
+          <img data-article-img alt="" decoding="async" />
+        </figure>
+
+        <div class="article-layout">
+          <!-- Shown only when the full article is unavailable (content: "") -->
+          <p class="article-summary" data-article-summary hidden></p>
+
+          <!-- Shown only when full content exists -->
+          <div class="article-body" data-article-body></div>
+
+          <aside class="article-sections" aria-labelledby="article-sections-title" data-article-sections hidden>
+            <h2 id="article-sections-title">In this article</h2>
+            <ol data-article-section-list></ol>
+          </aside>
+
+          <a class="article-back" href="blogs.html">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+              <path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to all articles
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Unknown or missing ?slug= -->
+    <section class="article-missing" data-article-missing hidden>
+      <div class="container">
+        <p class="blog-eyebrow">Article not found</p>
+        <h1 class="article-title">We couldn’t find that article</h1>
+        <p class="article-missing__text">The link may be out of date. Browse all articles to find what you were looking for.</p>
+        <a href="blogs.html" class="btn btn-primary">Browse all articles</a>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         Related articles
+         ========================================================== -->
+    <section class="article-related" aria-labelledby="related-title" data-related hidden>
+      <div class="container">
+        <div class="article-related__head">
+          <h2 id="related-title">Related Articles</h2>
+          <a class="article-related__all" href="blogs.html">
+            View all articles
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="blog-grid" data-related-grid></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         Closing CTA band (same component as the listing page)
+         ========================================================== -->
+    <section class="blog-cta" aria-labelledby="blog-cta-title" data-reveal>
+     <img
+  class="blog-cta__art"
+  src="assets/images/blog/cta.png"
+  alt=""
+  aria-hidden="true"
+  loading="lazy"
+  decoding="async"
+/>
+      <div class="container blog-cta__inner">
+        <div>
+          <h2 id="blog-cta-title" class="blog-cta__title">Have a Question or Want to Collaborate?</h2>
+          <p class="blog-cta__text">
+            Connect with our team to learn more about our products, sourcing, or global export opportunities.
+          </p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">
+          Talk to Our Export Team
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       Footer — identical to index.html
+       ========================================================== -->
+ <footer class="site-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="./assets/images/logo-mark.png" alt="Far Overseas">
+                <div>
+                    <h3>FAR OVERSEAS</h3>
+                    <span>WHERE BORDERS ARE BRIDGES</span>
+                </div>
+            </div>
+
+            <p>
+                An international trade and sourcing company connecting
+                Indian producers with global markets — organic, non-GMO
+                ingredients, exported worldwide with full traceability.
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/company/far-overseas/home/" aria-label="LinkedIn">in</a>
+                <a href="https://www.instagram.com/far_overseas?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" aria-label="Instagram">◎</a>
+            </div>
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+            <h4>QUICK LINKS</h4>
+             <a href="process.html">Our Process</a>
+            <a href="about.html">About Us</a>
+      
+            <a href="blogs.html">Blogs</a>
+      
+            <a href="contact.html">Contact Us</a>
+            <a href="quote.html">Request a Quote</a>
+        </div>
+
+
+        <!-- PRODUCTS -->
+        <div class="footer-column">
+            <h4>PRODUCTS</h4>
+
+            <a href="products-spices.html">Spices</a>
+            <a href="products-herbs.html">Herbs</a>
+            <a href="products-pulses.html">Pulses, Lentils & Beans</a>
+            <a href="products-oil-seeds.html">Oil Seeds</a>
+            <a href="products-cereals-millets.html">Cereals & Millets</a>
+            <a href="products-dry-fruits.html">Dry Fruits</a>
+        </div>
+
+    </div> 
+
+
+    <!-- CONTACT + NEWSLETTER -->
+    <div class="footer-contact-box">
+
+        <div class="footer-contact">
+
+            <h4>CONTACT</h4>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌖</span>
+                <p>
+                    411, Sapna Sangeeta Road,<br>
+                    Indore, Madhya Pradesh, India
+                </p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">⌕</span>
+                <p>+91 91317 73122</p>
+            </div>
+
+            <div class="contact-item">
+                <span class="contact-icon">✉</span>
+                <p>faroverseas11@gmail.com</p>
+            </div>
+
+        </div>
+
+
+        <div class="footer-newsletter">
+
+            <h4>STAY CONNECTED</h4>
+
+            <p>
+                Subscribe to get the latest updates on our products,
+                certifications and global presence.
+            </p>
+
+            <form class="newsletter-form">
+
+                <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+                <button type="submit">
+                    Subscribe <span>→</span>
+                </button>
+
+            </form>
+
+
+            <div class="footer-highlights">
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>100%</strong>
+                    <small>Quality Assured</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">◎</span>
+                    <strong>Global</strong>
+                    <small>Export Network</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♧</span>
+                    <strong>Sustainable</strong>
+                    <small>Sourcing</small>
+                </div>
+
+                <div>
+                    <span class="highlight-icon">♢</span>
+                    <strong>Long-Term</strong>
+                    <small>Partnerships</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Far Overseas. All rights reserved.
+        </p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Terms & Conditions</a>
+            <span>|</span>
+            <a href="#">Sitemap</a>
+        </div>
+
+    </div>
+
+</footer>
+
+  <!-- ==========================================================
+       WhatsApp Widget — identical to index.html
+       ========================================================== -->
+  <div class="whatsapp-widget">
+    <span class="whatsapp-widget__tooltip">Chat with our Export Team</span>
+    <a href="#" class="whatsapp-widget__button" aria-label="Chat with us on WhatsApp">
+      <span class="whatsapp-widget__pulse" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.84 19.01L7.54 18.83L4.42 19.65L5.26 16.61L5.06 16.29C4.23 14.98 3.79 13.46 3.79 11.91C3.79 7.37 7.5 3.66 12.05 3.66C14.25 3.66 16.32 4.52 17.87 6.08C19.42 7.64 20.29 9.71 20.28 11.92C20.28 16.46 16.57 20.15 12.04 20.15ZM16.56 13.97C16.31 13.85 15.11 13.25 14.89 13.17C14.66 13.09 14.5 13.05 14.34 13.29C14.17 13.54 13.71 14.09 13.56 14.26C13.42 14.42 13.28 14.44 13.03 14.32C12.79 14.19 12 13.93 11.06 13.09C10.33 12.44 9.84 11.63 9.7 11.39C9.56 11.14 9.68 11.01 9.81 10.89C9.92 10.77 10.06 10.59 10.19 10.44C10.32 10.29 10.36 10.19 10.45 10.02C10.53 9.86 10.49 9.71 10.43 9.59C10.36 9.46 9.87 8.27 9.67 7.78C9.47 7.3 9.27 7.37 9.12 7.36C8.98 7.35 8.82 7.35 8.65 7.35C8.49 7.35 8.23 7.41 8 7.65C7.78 7.9 7.15 8.49 7.15 9.68C7.15 10.87 8.02 12.02 8.14 12.18C8.27 12.34 9.86 14.79 12.3 15.83C12.88 16.08 13.33 16.23 13.68 16.34C14.26 16.53 14.79 16.5 15.21 16.44C15.68 16.37 16.65 15.85 16.85 15.28C17.05 14.7 17.05 14.21 16.99 14.11C16.93 14 16.77 13.94 16.53 13.83L16.56 13.97Z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/reveal.js"></script>
+  <!-- blogs.js supplies the data + card renderer; blog-detail.js reads ?slug= -->
+  <script src="js/blogs.js"></script>
+  <script src="js/blog-detail.js"></script>
+</body>
+</html>
