@@ -54,10 +54,10 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr 0.8fr;
+    grid-template-columns: 1.25fr 0.75fr 1.5fr;
 
-    gap: 80px;
-    
+    gap: 55px;
+
     padding-bottom: 65px;
 }
 
@@ -171,9 +171,11 @@
 
     letter-spacing: 2.5px;
 }
+/* =========================================================
+   FOOTER QUICK LINKS
+   ========================================================= */
 
-
-.footer-column a {
+.footer-column--links a {
     display: block;
 
     margin-bottom: 17px;
@@ -187,7 +189,7 @@
     transition: all 0.25s ease;
 }
 
-.footer-column a::before {
+.footer-column--links a::before {
     content: "→";
 
     display: inline-block;
@@ -203,15 +205,86 @@
     transition: all 0.25s ease;
 }
 
-.footer-column a:hover {
+.footer-column--links a:hover {
     color: #ffffff;
     transform: translateX(4px);
 }
 
-.footer-column a:hover::before {
+.footer-column--links a:hover::before {
     opacity: 1;
     transform: translateX(0);
 }
+/* =========================================================
+   PRODUCT CATEGORY GRID
+   ========================================================= */
+
+.footer-column--products {
+    min-width: 0;
+}
+
+.footer-products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 13px;
+}
+
+.footer-product-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 15px;
+    line-height: 1.3;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-product-item:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.footer-product-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(0, 190, 175, 0.5);
+    border-radius: 10px;
+
+    color: #00b8aa;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.footer-product-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.footer-product-item:hover .footer-product-icon {
+    background: rgba(0, 169, 157, 0.12);
+    border-color: #00b8aa;
+    transform: translateY(-1px);
+}
+
 
 
 /* =========================================================
@@ -392,13 +465,18 @@
 }
 
 .highlight-icon {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     margin-bottom: 8px;
 
     color: #00b8aa;
+}
 
-    font-size: 27px;
+.highlight-icon svg {
+    width: 25px;
+    height: 25px;
 }
 
 .footer-highlights strong {
