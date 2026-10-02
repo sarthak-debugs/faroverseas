@@ -15,7 +15,7 @@
             rgba(0, 160, 150, 0.05),
             transparent 30%
         ),
-        #063b3b;
+        rgb(7, 28, 28);
 
     color: #ffffff;
     padding: 80px 7vw 25px;
@@ -57,7 +57,7 @@
     grid-template-columns: 1.5fr 0.8fr 0.8fr;
 
     gap: 80px;
-
+    
     padding-bottom: 65px;
 }
 

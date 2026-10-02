@@ -16,9 +16,7 @@
   z-index: var(--z-nav);
 
   background: linear-gradient(
-    to bottom,
-    rgba(10, 46, 47, 0.72),
-    rgba(10, 46, 47, 0)
+   rgb(7, 28, 28)
   );
 
   transition:
@@ -35,7 +33,7 @@
 .navbar.is-scrolled {
   height: var(--nav-height-scrolled);
 
-  background: rgba(6, 35, 36, 0.97);
+  background: rgb(7, 28, 28);
 
   box-shadow: var(--shadow-md);
 }
