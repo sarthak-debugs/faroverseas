@@ -1409,3 +1409,111 @@ display: none !important;
     transform: translateY(-4px);
   }
 }
+@media (max-width: 640px) {
+
+  .process-value:nth-child(4) h3 {
+    font-size: 0;
+    margin-left: 0 !important;
+    transform: none !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .process-value:nth-child(4) h3::before,
+  .process-value:nth-child(4) h3::after {
+    display: block;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 1000;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .process-value:nth-child(4) h3::before {
+    content: "Delivering Goodness";
+  }
+
+  .process-value:nth-child(4) h3::after {
+    content: "Worldwide";
+  }
+.process-value:nth-child(1) h3 {
+    font-size: 0;
+    margin-left: 0 !important;
+    transform: none !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .process-value:nth-child(1) h3::before,
+  .process-value:nth-child(1) h3::after {
+    display: block;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 1000;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .process-value:nth-child(1) h3::before {
+    content: "Responsibly"; ;
+  }
+
+  .process-value:nth-child(1) h3::after {
+    content: " Sourced";
+  }
+}
+
+  @media (min-width: 641px) and (max-width: 1080px) {
+
+  .process-value:nth-child(4) h3 {
+    font-size: 0;
+    margin-left: 0 !important;
+    transform: none !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .process-value:nth-child(4) h3::before,
+  .process-value:nth-child(4) h3::after {
+    display: block;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 1000;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .process-value:nth-child(4) h3::before {
+    content: "Delivering Goodness";
+  }
+
+  .process-value:nth-child(4) h3::after {
+    content: "Worldwide";
+  }
+  .process-value:nth-child(1) h3 {
+    font-size: 0;
+    margin-left: 0 !important;
+    transform: none !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .process-value:nth-child(1) h3::before,
+  .process-value:nth-child(1) h3::after {
+    display: block;
+    font-family: inherit;
+    font-size: 0.92rem;
+    font-weight: 1000;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .process-value:nth-child(1) h3::before {
+    content: "Responsibly"; ;
+  }
+
+  .process-value:nth-child(1) h3::after {
+    content: " Sourced";
+  }
+
+}
