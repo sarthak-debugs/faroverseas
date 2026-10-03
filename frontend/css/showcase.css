@@ -255,6 +255,10 @@
 }
 
 @media (max-width: 640px) {
+    .showcase__header h2,
+  .showcase__header p {
+    top: 0;
+  }
   .showcase__grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -286,4 +290,5 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  
 }

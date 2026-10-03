@@ -141,7 +141,21 @@
   .brand-standard__promise-card {
     justify-self: center;
   }
+.about-preview {
+  position: relative;
+  z-index: 5;
+  padding-top: 90px;
+}
 
+.about-preview__media {
+  position: relative;
+  z-index: 6;
+}
+
+.about-preview__stat-card {
+  z-index: 10;
+  bottom: -1rem;
+}
   .about-preview__media {
     max-width: 560px;
   }

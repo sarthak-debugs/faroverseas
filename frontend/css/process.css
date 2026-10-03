@@ -1208,7 +1208,29 @@ display: none !important;
     grid-template-columns: 1fr;
     gap: var(--pp-space-md);
   }
+    .process-value {
+    align-items: center;
+    transform: none;
+  }
 
+  .process-value__icon {
+    transform: none;
+  }
+
+  .process-value h3,
+  .process-value:nth-child(1) h3,
+  .process-value:nth-child(2) h3,
+  .process-value:nth-child(3) h3,
+  .process-value:nth-child(4) h3 {
+    margin-left: 0;
+    transform: none;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .process-value:hover .process-value__icon {
+    transform: translateY(-4px);
+  }
   .process-timeline {
     padding-top: 1.5rem;
   }
@@ -1317,8 +1339,10 @@ display: none !important;
   .process-timeline__seed {
     display: none;
   }
+  
 
 }
+
 
 /* ==========================================================
    PROCESS BACKGROUND — RESPONSIVE
@@ -1342,5 +1366,46 @@ display: none !important;
   .process-timeline {
     background-size: 190% auto;
     background-position: center top;
+  }
+}
+@media (max-width: 640px) {
+  .process-hero__image {
+    object-position: 20% center;
+  }
+}
+/* ==========================================================
+   TABLET ONLY — 961px to 1080px
+   ========================================================== */
+
+@media (min-width: 961px) and (max-width: 1080px) {
+
+  .process-commitment__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .process-value {
+    align-items: center;
+    transform: none;
+    text-align: center;
+  }
+
+  .process-value__icon {
+    transform: none;
+  }
+
+  .process-value h3,
+  .process-value:nth-child(1) h3,
+  .process-value:nth-child(2) h3,
+  .process-value:nth-child(3) h3,
+  .process-value:nth-child(4) h3 {
+    margin-left: 0;
+    transform: none;
+    padding-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .process-value:hover .process-value__icon {
+    transform: translateY(-4px);
   }
 }

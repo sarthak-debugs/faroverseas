@@ -603,7 +603,21 @@
 }
 
 @media (max-width: 900px) {
-    
+  .contact-hero::before {
+  width: 100%;
+  opacity: 1;
+
+  -webkit-mask-image: none;
+  mask-image: none;
+
+  -webkit-mask: none;
+  mask: none;
+}
+
+.contact-hero::after {
+  background: transparent;
+}
+
   .contact-grid { grid-template-columns: 1fr; }
   .contact-info-card { padding: 0 0 2rem; border-right: 0; border-bottom: 1px solid var(--c-line-soft); }
   .contact-form-card { padding: 2rem 0 0; }

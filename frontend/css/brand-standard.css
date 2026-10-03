@@ -806,3 +806,8 @@
   opacity: 0.8;
 }
 }
+@media (max-width: 640px) {
+  .brand-standard__promise-image::before {
+    display: none;
+  }
+}
