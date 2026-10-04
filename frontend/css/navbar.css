@@ -465,15 +465,16 @@
 
     flex-direction: column;
 
-    justify-content: center;
+    justify-content: flex-start;
 
     align-items: flex-start;
 
     gap: var(--space-lg);
 
-    padding:
-      var(--space-3xl)
-      var(--space-xl);
+   padding:
+    90px
+    var(--space-xl)
+    40px;
 
     transform: translateX(100%);
 
@@ -491,9 +492,10 @@
   }
 
 
-  .navbar__link {
+ .navbar__link {
     font-size: var(--fs-display-sm);
-  }
+    color: #0A2E2F;
+}
 
 
   .navbar__item--dropdown {
@@ -589,7 +591,7 @@
 
 
   .navbar__dropdown-link {
-    color: rgba(247, 245, 240, 0.82);
+    color: rgba(7, 28, 28, 0.82);
   }
 
 
