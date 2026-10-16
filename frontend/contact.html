@@ -118,7 +118,11 @@
             </div>
           </div>
 
-          <form class="contact-form" action="#" method="post">
+          <form class="contact-form" action="https://submitkit.dev/api/f/cmvayyxv5001kspv4uuycm6u8" method="POST" enctype="multipart/form-data">
+            <!-- SubmitKit spam protection: off-screen honeypot -->
+            <input type="text" name="_honeypot" aria-label="Leave this field empty" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+            <!-- SubmitKit timing check: populated when the page loads -->
+            <input type="hidden" name="_timestamp" id="sk-contact-timestamp">
             <div class="form-row">
               <div class="form-field"><label for="name">Full Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required></div>
               <div class="form-field"><label for="company">Company</label><input id="company" name="company" type="text" placeholder="Company name" autocomplete="organization"></div>
@@ -546,5 +550,11 @@
 
 <script src="js/navbar.js"></script>
 <script src="js/reveal.js"></script>
+<script>
+  const submitKitContactTimestamp = document.getElementById('sk-contact-timestamp');
+  if (submitKitContactTimestamp) {
+    submitKitContactTimestamp.value = Date.now();
+  }
+</script>
 </body>
 </html>
