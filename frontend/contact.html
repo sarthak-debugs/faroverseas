@@ -14,6 +14,7 @@
 <link href="css/navbar.css" rel="stylesheet"/>
 <link href="css/contact.css" rel="stylesheet"/><link href="css/contact-preview.css" rel="stylesheet"/><link href="css/responsive.css" rel="stylesheet"/>
 <link href="css/footer.css" rel="stylesheet"/>
+ <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="contact-page">
 <!-- Navbar (identical to index.html; Contact Us marked as current page) -->
@@ -179,8 +180,8 @@
 <p>Please fill in the details below and we'll get in touch.</p>
 </div>
 </div>
-<form action="https://submitkit.dev/api/f/cmvayyxv5001kspv4uuycm6u8" class="contact-preview__form" enctype="multipart/form-data" method="POST">
-<!-- SubmitKit anti-spam fields -->
+<form id="faroverseas-contact-form" action="#" class="contact-preview__form" method="POST">
+<!-- Extra honeypot deterrent; CAPTCHA verification is enforced by EmailJS. -->
 <input aria-hidden="true" autocomplete="off" name="_honeypot" style="position:absolute;left:-9999px" tabindex="-1" type="text"/>
 <input id="quote-sk-timestamp" name="_timestamp" type="hidden"/>
 <div class="contact-preview__form-grid">
@@ -269,26 +270,8 @@
 </select>
 </div>
 </div>
-<div class="contact-preview__upload">
-<div class="contact-preview__upload-icon">
-<svg fill="none" viewbox="0 0 24 24">
-<path d="M6 3H14L18 7V21H6V3Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
-<path d="M14 3V7H18" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"></path>
-<path d="M9 13H15" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
-<path d="M9 17H13" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path>
-</svg>
-</div>
-<div class="contact-preview__upload-text">
-<strong>Upload any document</strong>
-<span>Certificate, product specification, company profile, etc.</span>
-</div>
-<label class="contact-preview__file-button">
-              Choose File
-              <input name="document" type="file"/>
-</label>
-<span class="contact-preview__file-name">
-              No file chosen
-            </span>
+<div class="contact-preview__captcha" style="margin: 0 0 1rem; max-width: 100%; overflow-x: auto;">
+  <div class="g-recaptcha" data-sitekey="6LcWNPgtAAAAAPWrBKURpIxcQGw-ztJnwWeI1PYj"></div>
 </div>
 <div class="contact-preview__submit-row">
 <button class="contact-preview__submit" type="submit">
@@ -311,13 +294,8 @@
               </span>
 </div>
 </div>
+<p id="quote-form-status" role="status" aria-live="polite" hidden style="margin: 12px 0 0; font-size: 0.95rem;"></p>
 </form>
-<script>
-          (function () {
-            const timestampField = document.getElementById('quote-sk-timestamp');
-            if (timestampField) timestampField.value = Date.now();
-          })();
-        </script>
 </div>
 </div>
 <!-- BOTTOM CONTACT DETAILS -->
@@ -598,6 +576,76 @@
 </div></div></footer>
 <script src="js/navbar.js"></script>
 <script src="js/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  const EMAILJS_PUBLIC_KEY = "2CCJrOeQPczO1s6F-";
+  const EMAILJS_SERVICE_ID = "service_n5kzb5c";
+  const EMAILJS_TEMPLATE_ID = "template_516zj55";
+
+  const form = document.getElementById("faroverseas-contact-form");
+  const status = document.getElementById("quote-form-status");
+  const submitButton = form ? form.querySelector('button[type="submit"]') : null;
+  const honeypot = form ? form.querySelector('[name="_honeypot"]') : null;
+  const timestampField = form ? form.querySelector('[name="_timestamp"]') : null;
+
+  function showStatus(message, state) {
+    if (!status) return;
+    status.hidden = false;
+    status.textContent = message;
+    status.dataset.state = state || "info";
+    status.style.color = state === "success" ? "#047857" : state === "error" ? "#b42318" : "#52635b";
+  }
+
+  if (!form || !window.emailjs) {
+    if (form) showStatus("The enquiry form could not load. Please refresh and try again.", "error");
+    return;
+  }
+
+  if (timestampField) timestampField.value = String(Date.now());
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    // A filled honeypot indicates likely automated submission.
+    if (honeypot && honeypot.value.trim() !== "") {
+      showStatus("We could not submit this request. Please refresh the page and try again.", "error");
+      return;
+    }
+
+    if (typeof window.grecaptcha === "undefined" || !window.grecaptcha.getResponse()) {
+      showStatus("Please complete the 'I'm not a robot' verification before submitting.", "error");
+      return;
+    }
+
+    if (submitButton) submitButton.disabled = true;
+    showStatus("Sending your enquiry…", "sending");
+
+    try {
+      await window.emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        form,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      showStatus("Thank you! Your enquiry has been sent successfully. Our team will get back to you soon.", "success");
+      form.reset();
+      if (timestampField) timestampField.value = String(Date.now());
+    } catch (error) {
+      console.error("FarOverseas EmailJS submission failed:", error);
+      showStatus("We couldn't send your enquiry right now. Please try again in a moment.", "error");
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+      if (typeof window.grecaptcha !== "undefined") window.grecaptcha.reset();
+    }
+  });
+})();
+</script>
 
 </body>
 </html>

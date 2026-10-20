@@ -703,3 +703,14 @@
         font-size: 0.66rem;
     }
 }
+/* Center CAPTCHA in the marked area */
+.contact-preview__captcha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 18px;
+    overflow-x: auto;
+    transform: translatey(10px);
+}

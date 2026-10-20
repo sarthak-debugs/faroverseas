@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/chatbot.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -1273,13 +1274,13 @@
         </div>
 
 
-        <form
+  <form
+  id="faroverseas-home-quote-form"
   class="contact-preview__form"
-  action="https://submitkit.dev/api/f/cmvayyxv5001kspv4uuycm6u8"
+  action="#"
   method="POST"
-  enctype="multipart/form-data"
 >
-<!-- SubmitKit spam protection -->
+<!-- Extra honeypot deterrent -->
 <input
   type="text"
   name="_honeypot"
@@ -1449,46 +1450,22 @@
           </div>
 
 
-          <div class="contact-preview__upload">
+          
 
-            <div class="contact-preview__upload-icon">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 3H14L18 7V21H6V3Z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linejoin="round"/>
-                <path d="M14 3V7H18"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linejoin="round"/>
-                <path d="M9 13H15"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"/>
-                <path d="M9 17H13"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"/>
-              </svg>
-            </div>
-
-            <div class="contact-preview__upload-text">
-              <strong>Upload any document</strong>
-              <span>Certificate, product specification, company profile, etc.</span>
-            </div>
-
-            <label class="contact-preview__file-button">
-              Choose File
-              <input type="file" name="document">
-            </label>
-
-            <span class="contact-preview__file-name">
-              No file chosen
-            </span>
-
-          </div>
-
-
+         
+          <div class="contact-preview__captcha">
+    <div
+        class="g-recaptcha"
+        data-sitekey="6LcWNPgtAAAAAPWrBKURpIxcQGw-ztJnwWeI1PYj">
+    </div>
+</div>
+         <p
+  id="home-quote-form-status"
+  role="status"
+  aria-live="polite"
+  hidden
+  style="margin: 12px 0; font-size: 14px;"
+></p>
           <div class="contact-preview__submit-row">
 
             <button type="submit" class="contact-preview__submit">
@@ -2033,5 +2010,95 @@
   <script src="js/reveal.js"></script>
   <script src="js/global-reach.js"></script>
   <script src="js/chatbot.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  const PUBLIC_KEY = "2CCJrOeQPczO1s6F-";
+  const SERVICE_ID = "service_n5kzb5c";
+  const TEMPLATE_ID = "template_516zj55";
+
+  const form = document.getElementById("faroverseas-home-quote-form");
+  if (!form) return;
+
+  const button = form.querySelector('button[type="submit"]');
+  const status = document.getElementById("home-quote-form-status");
+  const honeypot = form.querySelector('[name="_honeypot"]');
+  const timestamp = form.querySelector('[name="_timestamp"]');
+
+  function showStatus(message, state) {
+    if (!status) return;
+
+    status.hidden = false;
+    status.textContent = message;
+    status.style.color =
+      state === "success" ? "#86efac" :
+      state === "error" ? "#ffaaa5" : "#dcefe9";
+  }
+
+  if (timestamp) timestamp.value = String(Date.now());
+
+  if (!window.emailjs) {
+    showStatus("The enquiry form could not load. Please refresh.", "error");
+    return;
+  }
+
+  emailjs.init({ publicKey: PUBLIC_KEY });
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    if (honeypot && honeypot.value.trim() !== "") {
+      showStatus("Unable to submit this enquiry. Please try again.", "error");
+      return;
+    }
+
+    if (
+      typeof window.grecaptcha === "undefined" ||
+      !window.grecaptcha.getResponse()
+    ) {
+      showStatus("Please complete the CAPTCHA first.", "error");
+      return;
+    }
+
+    if (button) button.disabled = true;
+    showStatus("Sending your enquiry...", "sending");
+
+    try {
+      await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        form
+      );
+
+      showStatus(
+        "Thank you! Your enquiry has been sent successfully.",
+        "success"
+      );
+
+      form.reset();
+
+    } catch (error) {
+      console.error("Homepage EmailJS error:", error);
+
+      showStatus(
+        "We couldn't send your enquiry. Please try again.",
+        "error"
+      );
+
+    } finally {
+      if (button) button.disabled = false;
+
+      if (timestamp) timestamp.value = String(Date.now());
+
+      if (window.grecaptcha) window.grecaptcha.reset();
+    }
+  });
+})();
+</script>
 </body>
 </html>
