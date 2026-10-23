@@ -5,9 +5,9 @@
   if (window.__farOverseasChatbotInitialized) return;
   window.__farOverseasChatbotInitialized = true;
 
-const EMAILJS_PUBLIC_KEY = '2CCJrOeQPczO1s6F-';
-const EMAILJS_SERVICE_ID = 'service_n5kzb5c';
-const EMAILJS_TEMPLATE_ID = 'template_516zj55';
+const EMAILJS_PUBLIC_KEY = 'yg-8QBsc4G2hA-B_r';
+const EMAILJS_SERVICE_ID = 'service_xxt1q4n';
+const EMAILJS_TEMPLATE_ID = 'template_05xkvmu';
 
 // Copy the production Site Key from your working contact.html.
 const RECAPTCHA_SITE_KEY = '6LcWNPgtAAAAAPWrBKURpIxcQGw-ztJnwWeI1PYj';
