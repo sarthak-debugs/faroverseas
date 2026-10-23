@@ -5,8 +5,18 @@
   if (window.__farOverseasChatbotInitialized) return;
   window.__farOverseasChatbotInitialized = true;
 
-  const SUBMITKIT_ENDPOINT =
-    'https://submitkit.dev/api/f/cmvayyxv5001kspv4uuycm6u8';
+const EMAILJS_PUBLIC_KEY = '2CCJrOeQPczO1s6F-';
+const EMAILJS_SERVICE_ID = 'service_n5kzb5c';
+const EMAILJS_TEMPLATE_ID = 'template_516zj55';
+
+// Copy the production Site Key from your working contact.html.
+const RECAPTCHA_SITE_KEY = '6LcWNPgtAAAAAPWrBKURpIxcQGw-ztJnwWeI1PYj';
+
+const EMAILJS_SDK_URL =
+  'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+
+const RECAPTCHA_SDK_URL =
+  'https://www.google.com/recaptcha/api.js?render=explicit';
 
   const PRODUCTS_BY_CATEGORY = {
     "Spices": [
@@ -291,6 +301,115 @@
     let activeOptions = null;
     let inputHandler = null;
     let busy = false;
+    let captchaWidgetId = null;
+let captchaCard = null;
+let captchaToken = '';
+
+const scriptLoadPromises = new Map();
+
+function ensureScript(src, readyCheck) {
+  if (readyCheck()) return Promise.resolve();
+
+  if (scriptLoadPromises.has(src)) {
+    return scriptLoadPromises.get(src);
+  }
+
+  const promise = new Promise((resolve, reject) => {
+    const baseUrl = src.split('?')[0];
+
+    let script = Array.from(document.scripts).find(
+      item => item.src && item.src.split('?')[0] === baseUrl
+    );
+
+    let settled = false;
+    const startedAt = Date.now();
+
+    function finish(error) {
+      if (settled) return;
+      settled = true;
+
+      if (error) reject(error);
+      else resolve();
+    }
+
+    function checkReady() {
+      if (settled) return;
+
+      if (readyCheck()) {
+        finish();
+      } else if (Date.now() - startedAt > 20000) {
+        finish(new Error('Timed out loading ' + src));
+      } else {
+        setTimeout(checkReady, 100);
+      }
+    }
+
+    if (!script) {
+      script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    script.addEventListener(
+      'error',
+      () => finish(new Error('Could not load ' + src)),
+      { once: true }
+    );
+
+    checkReady();
+  });
+
+  scriptLoadPromises.set(src, promise);
+
+  promise.catch(() => scriptLoadPromises.delete(src));
+
+  return promise;
+}
+
+async function ensureSubmissionServices() {
+  await Promise.all([
+    ensureScript(
+      EMAILJS_SDK_URL,
+      () => window.emailjs &&
+        typeof window.emailjs.send === 'function'
+    ),
+    ensureScript(
+      RECAPTCHA_SDK_URL,
+      () => window.grecaptcha &&
+        typeof window.grecaptcha.render === 'function'
+    )
+  ]);
+
+  window.emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY
+  });
+
+  await new Promise(resolve => window.grecaptcha.ready(resolve));
+}
+
+function clearCaptchaUI() {
+  if (
+    captchaWidgetId !== null &&
+    window.grecaptcha &&
+    typeof window.grecaptcha.reset === 'function'
+  ) {
+    try {
+      window.grecaptcha.reset(captchaWidgetId);
+    } catch (error) {
+      console.warn('Could not reset chatbot CAPTCHA:', error);
+    }
+  }
+
+  if (captchaCard && captchaCard.parentNode) {
+    captchaCard.parentNode.removeChild(captchaCard);
+  }
+
+  captchaCard = null;
+  captchaWidgetId = null;
+  captchaToken = '';
+}
 
     function scrollLog() {
       requestAnimationFrame(() => {
@@ -406,6 +525,7 @@
 
     function startConversation(clear = false) {
       if (clear) {
+        clearCaptchaUI();
         log.innerHTML = '';
         clearOptions();
         resetState();
@@ -862,6 +982,7 @@
     }
 
     function reviewInquiry() {
+      clearCaptchaUI();
       state.step = 'review';
       hideInput();
 
@@ -889,60 +1010,212 @@
     }
 
     function submitInquiry() {
-      if (busy) return;
+  if (busy) return;
 
-      busy = true;
-      hideInput();
+  clearOptions();
+  hideInput();
+  clearCaptchaUI();
+
+  botMessage(
+    'Before sending your enquiry, please complete this security check.'
+  );
+
+  const card = element('div', 'fo-chat-captcha-card');
+  const caption = element(
+    'p',
+    'fo-chat-captcha-message',
+    'Verify that you are human to continue.'
+  );
+  const widget = element('div', 'fo-chat-captcha-widget');
+
+  card.appendChild(caption);
+  card.appendChild(widget);
+
+  captchaCard = card;
+  log.appendChild(card);
+  scrollLog();
+
+  ensureSubmissionServices()
+    .then(() => {
+      window.grecaptcha.ready(() => {
+        if (!captchaCard || !captchaCard.isConnected) return;
+
+        captchaWidgetId = window.grecaptcha.render(widget, {
+          sitekey: RECAPTCHA_SITE_KEY,
+          theme: 'light',
+
+          callback: token => {
+            captchaToken = token;
+
+            clearOptions();
+
+            botMessage(
+              'Verification complete. Confirm below to send your enquiry.'
+            );
+
+            showOptions([
+              {
+                label: 'Confirm & send enquiry',
+                run: () => sendInquiryWithCaptcha()
+              },
+              {
+                label: 'Review enquiry',
+                run: () => reviewInquiry()
+              }
+            ]);
+          },
+
+          'expired-callback': () => {
+            captchaToken = '';
+            clearOptions();
+
+            botMessage(
+              'Your verification expired. Please complete it again.'
+            );
+
+            showOptions([
+              {
+                label: 'Verify again',
+                run: () => submitInquiry()
+              },
+              {
+                label: 'Review enquiry',
+                run: () => reviewInquiry()
+              }
+            ]);
+          },
+
+          'error-callback': () => {
+  captchaToken = '';
+  clearOptions();
+
+  botMessage(
+    'The security check encountered an error. Please try verification again or review your enquiry.'
+  );
+
+  showOptions([
+    {
+      label: 'Retry verification',
+      run: () => submitInquiry()
+    },
+    {
+      label: 'Review enquiry',
+      run: () => reviewInquiry()
+    }
+  ]);
+}
+        });
+      });
+    })
+    .catch(error => {
+      console.error('Chatbot security setup failed:', error);
 
       botMessage(
-        'Thank you. Your enquiry is being sent to the FarOverseas team. The submission confirmation will open here.'
+        'We could not load the security check. Please try again.'
       );
 
-      const summary = makeSummary();
+      showOptions([
+        {
+          label: 'Try again',
+          run: () => submitInquiry()
+        },
+        {
+          label: 'Review enquiry',
+          run: () => reviewInquiry()
+        }
+      ]);
+    });
+}
 
-      const details =
-        `${summary}\nAdditional requirements: ${state.requirements || 'Not specified'}\nSubmitted through: FarOverseas website chatbot`;
+async function sendInquiryWithCaptcha() {
+  if (busy) return;
 
-      const payload = {
-        name: state.name,
-        company: state.company,
-        email: state.email,
-        phone: state.phone,
-        country: state.country,
-        category: state.category,
-        product: state.product,
-        quantity: state.quantity,
-        volume: state.quantity,
-        timeline: state.timeline,
-        details,
-        message: details,
-        source: 'FarOverseas website chatbot',
-        _honeypot: '',
-        _timestamp: String(Date.now())
-      };
+  const token =
+    captchaWidgetId !== null &&
+    window.grecaptcha
+      ? window.grecaptcha.getResponse(captchaWidgetId)
+      : captchaToken;
 
-      const form = document.createElement('form');
+  if (!token) {
+    botMessage('Please complete the CAPTCHA before submitting.');
+    return;
+  }
 
-      form.method = 'POST';
-      form.action = SUBMITKIT_ENDPOINT;
-      form.enctype = 'multipart/form-data';
-      form.acceptCharset = 'UTF-8';
-      form.style.position = 'absolute';
-      form.style.left = '-9999px';
+  busy = true;
+  clearOptions();
+  hideInput();
 
-      Object.entries(payload).forEach(([name, value]) => {
-        const field = document.createElement('input');
+  botMessage('Sending your enquiry securely to the FarOverseas team...');
 
-        field.type = 'hidden';
-        field.name = name;
-        field.value = String(value == null ? '' : value);
+  const details =
+    `${makeSummary()}\n` +
+    `Additional requirements: ${state.requirements || 'Not specified'}\n` +
+    'Submitted through: FarOverseas website chatbot';
 
-        form.appendChild(field);
-      });
+  const templateParams = {
+    name: state.name,
+    company: state.company || 'Not provided',
+    email: state.email,
+    phone: state.phone || 'Not provided',
+    country: state.country || 'Not specified',
+    category: state.category,
+    quantity: state.quantity || 'Not specified',
+    timeline: state.timeline || 'Not specified',
+    details,
+    'g-recaptcha-response': token
+  };
 
-      document.body.appendChild(form);
-      form.submit();
+  let succeeded = false;
+
+  try {
+    await ensureSubmissionServices();
+
+    await window.emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      templateParams
+    );
+
+    succeeded = true;
+
+    botMessage(
+      'Thank you! Your enquiry has been sent successfully. Our export team will get back to you.'
+    );
+  } catch (error) {
+    console.error('FarOverseas chatbot EmailJS submission failed:', error);
+
+    botMessage(
+      'We could not send your enquiry right now. Please try the security check again.'
+    );
+  } finally {
+    busy = false;
+    clearCaptchaUI();
+
+    if (succeeded) {
+      showOptions([
+        {
+          label: 'Start a new enquiry',
+          run: () => startConversation(true)
+        },
+        {
+          label: 'Contact our team',
+          run: () => showContactOptions()
+        }
+      ]);
+    } else {
+      showOptions([
+        {
+          label: 'Retry submission',
+          run: () => submitInquiry()
+        },
+        {
+          label: 'Review enquiry',
+          run: () => reviewInquiry()
+        }
+      ]);
     }
+  }
+}
 
     function showSupportMenu() {
       state.step = 'support';

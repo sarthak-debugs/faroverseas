@@ -516,3 +516,41 @@
     max-height: calc(100dvh - 140px);
   }
 }
+/* CAPTCHA shown only at the chatbot's final submission step */
+.fo-chat-captcha-card {
+  width: calc(100% - 32px);
+  max-width: 330px;
+  margin: 0 0 4px 32px;
+  padding: 10px;
+  border: 1px solid #e7ebe5;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.fo-chat-captcha-message {
+  margin: 0 0 9px;
+  color: #263e3b;
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.fo-chat-captcha-widget {
+  width: 304px;
+  max-width: 100%;
+  min-height: 78px;
+  transform-origin: top left;
+}
+
+@media (max-width: 380px) {
+  .fo-chat-captcha-card {
+    width: calc(100% - 25px);
+    margin-left: 25px;
+    padding: 8px;
+  }
+
+  .fo-chat-captcha-widget {
+    transform: scale(.86);
+    height: 68px;
+  }
+}
