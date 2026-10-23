@@ -1043,7 +1043,7 @@ function clearCaptchaUI() {
         captchaWidgetId = window.grecaptcha.render(widget, {
           sitekey: RECAPTCHA_SITE_KEY,
           theme: 'light',
-
+          
           callback: token => {
             captchaToken = token;
 
@@ -1054,7 +1054,7 @@ function clearCaptchaUI() {
             );
 
             showOptions([
-              {
+              { 
                 label: 'Confirm & send enquiry',
                 run: () => sendInquiryWithCaptcha()
               },
@@ -1104,10 +1104,16 @@ function clearCaptchaUI() {
     }
   ]);
 }
+              });
+
+        // Scroll after Google inserts the CAPTCHA widget.
+        requestAnimationFrame(() => {
+          scrollLog();
+          setTimeout(scrollLog, 300);
         });
       });
     })
-    .catch(error => {
+    .catch(error => {  
       console.error('Chatbot security setup failed:', error);
 
       botMessage(

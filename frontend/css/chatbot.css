@@ -554,3 +554,39 @@
     height: 68px;
   }
 }
+/* FIX: Keep the CAPTCHA card from collapsing inside the chat log */
+#fo-chat-widget .fo-chat-log > .fo-chat-captcha-card {
+  flex: 0 0 auto !important;
+  min-height: 126px !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Keep the verification message readable */
+#fo-chat-widget .fo-chat-captcha-message {
+  display: block;
+  height: auto;
+  margin: 0 0 9px;
+  white-space: normal;
+}
+
+/* Give Google's CAPTCHA widget enough space */
+#fo-chat-widget .fo-chat-captcha-widget {
+  display: block !important;
+  flex: 0 0 78px !important;
+  width: 304px !important;
+  max-width: none !important;
+  min-height: 78px !important;
+  height: 78px !important;
+  transform: scale(0.9);
+  transform-origin: top left;
+  margin-bottom: -8px;
+}
+
+/* Fit the widget inside the narrower mobile chat window */
+@media (max-width: 640px) {
+  #fo-chat-widget .fo-chat-captcha-widget {
+    transform: scale(0.86);
+    margin-bottom: -11px;
+  }
+}
