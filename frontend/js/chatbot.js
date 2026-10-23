@@ -191,7 +191,7 @@ const RECAPTCHA_SDK_URL =
         aria-label="Open FarOverseas product assistant"
         aria-expanded="false"
         aria-controls="fo-chat-window"
-        title="Product & export assistant">
+        title="Tara — FarOverseas Virtual Assistant">
 
         <svg
   class="fo-chat-launcher-icon"
@@ -238,20 +238,22 @@ const RECAPTCHA_SDK_URL =
 
       <section class="fo-chat-window"
         id="fo-chat-window"
-        aria-label="FarOverseas assistant"
+        aria-label="Tara, FarOverseas Virtual Assistant"
         hidden>
 
         <header class="fo-chat-header">
           <div class="fo-chat-brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 21V11M12 14C7.5 14 5 11 5 6c5 0 7 3 7 8ZM12 17c4.5 0 7-3 7-8-5 0-7 3-7 8Z"/>
-            </svg>
-          </div>
+  <img
+    src="assets/images/chatbot-logo.png"
+    class="fo-chat-brand-logo"
+    alt=""
+  >
+</div>
 
-          <div class="fo-chat-heading">
-            <strong>FarOverseas Assistant</strong>
-            <span><i></i> Product & export support</span>
-          </div>
+         <div class="fo-chat-heading">
+  <strong>Tara</strong>
+  <span><i></i> Your FarOverseas Assistant</span>
+</div>
 
           <button class="fo-chat-reset" type="button"
             aria-label="Restart conversation"
@@ -284,7 +286,7 @@ const RECAPTCHA_SDK_URL =
         </form>
 
         <div class="fo-chat-footnote">
-          Guided assistance · Your inquiry goes to our export team
+           Tara · Here to help with your export enquiries
         </div>
       </section>`;
 
@@ -419,7 +421,7 @@ function clearCaptchaUI() {
 
     function botMessage(text) {
       const line = element('div', 'fo-chat-line fo-chat-line--bot');
-      line.appendChild(element('span', 'fo-chat-avatar', 'F'));
+      line.appendChild(element('span', 'fo-chat-avatar', 'T'));
       line.appendChild(element('div', 'fo-chat-bubble', text));
       log.appendChild(line);
       scrollLog();
@@ -535,7 +537,7 @@ function clearCaptchaUI() {
       state.step = 'main';
 
       botMessage(
-        'Welcome to FarOverseas! I can help you explore our agricultural products, learn about export requirements, or start a quotation request. How can I help you today?'
+        "Hi! I'm Tara, your FarOverseas assistant. I can help you explore our  products, understand export requirements, or request a quotation. What can I help you with today?"
       );
 
       showOptions([
